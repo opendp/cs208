@@ -40,3 +40,7 @@ analysis.
 
 Course Website is [here](https://opendp.github.io/cs208/spring2022)
 
+### Spring 2019
+
+Course Website is [here](https://opendp.github.io/cs208/spring2019)
+
