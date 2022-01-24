@@ -34,3 +34,9 @@ large-scale deployments by Google, Apple, Microsoft and the US Census Bureau. Th
 will set out a foundation in the underlying theory of differential privacy, and then consider the
 practical elements of implementing and deploying privacy-preserving techniques for data
 analysis.
+
+
+## Spring 2022
+
+
+
