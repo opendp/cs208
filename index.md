@@ -36,7 +36,7 @@ practical elements of implementing and deploying privacy-preserving techniques f
 analysis.
 
 
-## Spring 2022
+### Spring 2022
 
-
+Course Website is [here](https://opendp.github.io/cs208/spring2022)
 
