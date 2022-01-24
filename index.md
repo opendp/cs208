@@ -1,37 +1,36 @@
-## Welcome to GitHub Pages
+# CS 208 (Applied Privacy for Data Science)
 
-You can use the [editor on GitHub](https://github.com/opendp/cs208/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Overview
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/opendp/cs208/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Data scientists, including industry analysts, scientific researchers and data-driven policy makers,
+often want to analyze data that contains sensitive personal information that must remain private.
+However, common techniques for data sharing that attempt to preserve privacy either bring
+great privacy risks or great loss of information. Moreover, the increasing ability of big data,
+ubiquitous sensors, and social media to record lives in detail brings new ethical responsibilities
+to safeguard privacy.
+The traditional approach to protecting privacy when sharing data is to remove "personally
+identifying information,'' but it is now known that this approach does not work, because
+seemingly innocuous information is often sufficient to uniquely identify individuals. A long
+literature has shown that anonymization techniques for data releases are generally open to
+reidentification attacks. Indeed, there have been many high-profile examples in which
+individuals in supposedly anonymized datasets were re-identified by linking the remaining fields
+with other, publicly available datasets. Aggregated information can reduce but not prevent this
+risk, while also reducing the utility of the data to researchers.
+This class will provide an overview of the risks of private data leakage in data science
+applications and a firm foundation in how to measure and protect against these risks using the
+framework of differential privacy, together with a hands-on examination of how to build
+algorithms and software to preserve privacy, including a review of the deployed solutions in
+industry and government.
+Differential privacy, deriving from roots in cryptography, is a formal, mathematical conception of
+privacy preservation. It guarantees that any released statistical result does not reveal
+information about any single individual. That is, the distribution of answers one would get with
+differentially private algorithms from a dataset that does not include myself must be
+indistinguishable from the distribution of answers where I have added my own information.
+Using differential privacy enables us to provide wide access to statistical information from a
+privacy sensitive dataset without worries of individual-level information being leaked
+inadvertently or due to an adversarial attack. There is now both a rich theoretical literature on
+differential privacy and numerous efforts to bring differential privacy closer to practice, including
+large-scale deployments by Google, Apple, Microsoft and the US Census Bureau. This course
+will set out a foundation in the underlying theory of differential privacy, and then consider the
+practical elements of implementing and deploying privacy-preserving techniques for data
+analysis.
