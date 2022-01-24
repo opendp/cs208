@@ -8,7 +8,7 @@ Instructors: **[James Honaker](http://hona.kr/) and [Salil Vadhan](http://salil.
 
 ### Schedule
 
-| **Date**             | **Title**     | **Slides/Notes** | **Advance Reading **(see also [annotated course bibliography](cs208_annotated_bibliography.pdf))
+| **Date**             | **Title**     | **Slides/Notes** | **Advance Reading** (see also [annotated course bibliography](cs208_annotated_bibliography.pdf))
 |----------------------|---------------|------------------ |---------------------------------------------------------------------------------------------------:|
 | Mon 1/28 | Course overview |  [pdf](overview-slides.pdf) | |
 | **Attacks on Privacy** |
