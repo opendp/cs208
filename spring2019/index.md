@@ -6,7 +6,7 @@
 
 Instructors: **[James Honaker](http://hona.kr/) and [Salil Vadhan](http://salil.seas.harvard.edu)**  
 
-### Tentative Schedule
+### Schedule
 
 | **Date**             | **Title**     | **Slides/Notes** | **Advance Reading **(see also [annotated course bibliography](cs208_annotated_bibliography.pdf))
 |----------------------|---------------|------------------ |---------------------------------------------------------------------------------------------------:|
