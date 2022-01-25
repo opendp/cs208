@@ -6,6 +6,8 @@
 
 **Location**: Harvard Science & Engineering Complex SEC LL2.221, 150 Western Ave, Allston, MA
 
+Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf)
+
 ### Schedule
 
 | **Date**             | **Title**     | **Slides/Notes** | **Advance Reading** (see also [annotated course bibliography](files/cs208_annotated_bibliography.pdf))
