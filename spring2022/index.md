@@ -4,7 +4,7 @@
 
 **Regular meeting time**: Tuesdays & Thursdays 11:15-12:30, starting 1/25
 
-**Location**: Harvard Science & Engineering Complex ROOM TBA, 150 Western Ave, Allston, MA
+**Location**: Harvard Science & Engineering Complex SEC LL2.221, 150 Western Ave, Allston, MA
 
 ### Schedule
 
