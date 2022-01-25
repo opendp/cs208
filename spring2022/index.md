@@ -10,4 +10,5 @@
 
 | **Date**             | **Title**     | **Slides/Notes** | **Advance Reading** (see also [annotated course bibliography](files/cs208_annotated_bibliography.pdf))
 |----------------------|---------------|------------------ |---------------------------------------------------------------------------------------------------:|
+| Tue 1/18 | Course Preview |  [pdf](files/course_preview.pdf   ) | |
 | Tue 1/25 | Course Overview & Attacks on Privacy |  [pdf](files/overview-reidentification.pdf) | |
