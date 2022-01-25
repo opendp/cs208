@@ -2,6 +2,8 @@
 
 **Instructors**: Salil Vadhan, James Honaker, and Wanrong Zhang
 
+**Teaching Fellows**: Daniel Alabi, Jayshree Sarathy, Michael Shoemate, and Connor Wagaman
+
 **Regular meeting time**: Tuesdays & Thursdays 11:15-12:30, starting 1/25
 
 **Location**: Harvard Science & Engineering Complex SEC LL2.221, 150 Western Ave, Allston, MA
