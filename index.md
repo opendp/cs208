@@ -15,6 +15,7 @@ The risks to privacy when making human subjects data available for research and 
 - [Syllabus](http://people.seas.harvard.edu/~salil/cs208/spring19/syllabus.pdf)
 - [Schedule, Lecture Notes, and Assignments](https://opendp.github.io/cs208/spring2019)
 - [Annotated Course Bibliography](http://people.seas.harvard.edu/~salil/cs208/spring19/cs208_annotated_bibliography.pdf)
-- [Q evaluation results](https://course-evaluation-reports.fas.harvard.edu/fas/course_summary.html?course_id=57862)
 - [Guidelines for Reading and Commenting](http://people.seas.harvard.edu/~salil/cs208/spring19/reading.html)
 - [Final Project Guidelines](http://people.seas.harvard.edu/~salil/cs208/spring19/project-guidelines.pdf)
+- [Q evaluation results](https://course-evaluation-reports.fas.harvard.edu/fas/course_summary.html?course_id=57862)
+
