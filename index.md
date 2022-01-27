@@ -8,7 +8,7 @@ The risks to privacy when making human subjects data available for research and 
 
 - [Syllabus](/spring2022/files/cs208_spring2022_syllabus.pdf)
 - [Schedule, Lecture Notes, and Assignments](/spring2022)
-- [Annotated Course Bibliography](/files/cs208_annotated_bibliography.pdf)
+- [Annotated Course Bibliography](/spring2022/files/cs208_annotated_bibliography.pdf)
 - [Guidelines for Reading and Commenting](/spring2022/files/reading_and_commenting_guidelines.pdf)
 
 ### Spring 2019
