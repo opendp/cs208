@@ -1,0 +1,204 @@
+%=================================================================
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm,enumitem, graphicx,verbatim,url,verbatim,color,rotating,setspace}
+\usepackage[top=1in, right=1in, left=1in, bottom=1.5in]{geometry}
+
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Exp}{\mathrm{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Normal}{\mathcal{N}}
+\newcommand{\Bin}{\mathrm{Bin}}
+
+\title{\vspace{-1.5cm} HW 1:  Probability Review and Reidentification Attacks}
+\author{CS 208 Applied Privacy for Data Science, Spring 2022}
+\date{\textbf{Version 1.1: Due Weds, Feb. 2, 5pm.}}
+
+\definecolor{spot}{rgb}{0.6,0,0}
+\usepackage[pdftex, bookmarksopen=true, bookmarksnumbered=true,
+  pdfstartview=FitH, breaklinks=true, urlbordercolor={0 1 0},
+  citebordercolor={0 0 1}, colorlinks=true,
+            citecolor=spot,
+            linkcolor=spot,
+            urlcolor=spot,
+            pdfauthor={James Honaker, Salil Vadhan, Jayshree Sarathy},
+            pdftitle={Title}]{hyperref}
+
+
+%=================================================================
+
+\begin{document}
+\maketitle
+
+
+\vspace{-5ex}
+
+\noindent \textbf{Instructions:} Submit a single PDF file to Gradescope containing your solutions, plots, and analyses. Submit any code files and notebooks separately on Gradescope.  
+Make sure to list all collaborators and references.
+
+\begin{enumerate}[leftmargin=*]
+
+\item \textbf{Probability Review}
+
+\begin{enumerate}
+    \item  Let $S\sim \Bin(n,p)$ be a binomial random variable.  That is, $S=X_1+X_2+\cdots+X_n$, where 
+    $X_1,\ldots,X_n$ are independent $\{0,1\}$-valued Bernoulli random variables where $\Pr[X_i = 1]=p$ (i.e. coin tosses where the probability of heads is $p$).  Calculate the standard deviation $\sigma[S]$.  (Hint: recall that if $X$ and $Y$ are independent random variables, then $\Var[X+Y]=\Var[X]+\Var[Y]$, where $\Var$ denotes the variance.)
+    
+    \item Let $Z_1,\ldots,Z_k$ be independent random variables that are drawn from a Gaussian distribution $\Normal(0, \sigma^2)$, let $M=\max\{|Z_1|,|Z_2|,\ldots,|Z_k|\}$ and let $\Phi : \R\rightarrow [0,1]$ be the CDF of a standard normal $\Normal(0,1)$ distribution.  Show that for every $t>0$
+    $$\Pr[M \geq t\sigma ] = 2\cdot (1-\Phi(t)^k) \leq 2k\cdot (1-\Phi(t)).$$
+    \label{part:maxnormals-exact}
+    
+    \item It is known that for all $x\geq 0$, we have 
+    $$1-\Phi(x) \leq \frac{1}{\sqrt{2\pi}}\cdot \frac{1}{x}\cdot e^{-x^2/2}.$$
+    Using this fact and Part~\ref{part:maxnormals-exact}, show that for $t = \sqrt{2\ln k+7}$, we have
+    $$\Pr[M \geq t\sigma] < .01,$$
+    where $M$ is defined as in Part~\ref{part:maxnormals-exact}.
+    
+    \item Let $S_1,\ldots,S_k$ be independent $\Bin(n,p)$ random variables.  The Central Limit Theorem (CLT) implies that as $n\rightarrow \infty$, each $Y_i=(S_i-\Exp[S_i])/\sigma[S_i]$ converges in distribution to a standard $\Normal(0,1)$ normal distribution. Pretending that $Y_i$ is actually a normal distribution (i.e. ignoring the rate of convergence), show that
+    $$\Pr\left[\max_i |S_i-pn| \geq \sqrt{2\ln k + 7} \cdot\sqrt{p(1-p) n}\right] < .01.$$
+    
+    
+    {\em Comment: While we have ignored the rate of convergence in the Central Limit Theorem here, similar bounds with slightly worse constants can be proven rigorously using ``Chernoff-Hoeffding Bounds,'' provided that $p(1-p)n\geq c\log k$ for an appropriate constant $c$}
+  
+    
+    \item Review the definitions of asymptotic notation in Section 1 notes or Section 3.1 of the Cormen-Leiserson-Rivest-Stein text.
+    Fill in the table below with T (true) or F (false) to indicate the relationship between $f$ and $g$. For example, if $f=O(g)$, the first cell of the row should be T.
+    
+    %\begin{table}[h]
+        \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+             $f$ & $g$ & $O$ & $o$ & $\Omega$ & $\omega$ & $\Theta$\\
+             \hline
+             $n^3+2n+1$ & $5n^2+4$ & & & & & \\            
+             \hline
+             $6\sqrt{n\log n}$ & $2n$ & & & & & \\
+             \hline
+             $1/n$ & $e^{1/n}-1$ & & & & & \\
+             \hline
+             $2.5^n$ & $n^2 2^n$ & & & & & \\
+             \hline
+             $\ln n^2$ & $(\log n) +5$ & & & & & \\
+             \hline
+        \end{tabular}
+     %   \label{tab:my_label}
+    %\end{table}
+    \end{center}
+    
+    Above and throughout the course, $\log$ denotes the logarithm base 2, and $\ln$ denotes the logarithm base $e$.
+    
+
+\end{enumerate}
+
+
+\item \textbf{Reidentification Attack}
+
+In the GitHub repo,\footnote{\url{https://github.com/opendp/cs208/tree/master/data}} you will find the Public Use Micro Sample (PUMS) dataset from the 2000 US Census \texttt{FultonPUMS5full.csv}.  This is a sample from the ``Long Form'' from Georgia residents, which contained many more questions than the regular questionnaire, and was randomly assigned to some individuals during the decennial Census. (It has since been replaced by a continuously collected survey known as the \emph{American Community Survey}.)  
+
+Also in that folder is the codebook file for the PUMS dataset that lists the variables available in the release.  Note this is the 5\% sample which means that five percent of records are randomly sampled and released.
+Assume that there was no disclosure avoidance techniques applied to this data.
+
+In the style of Latanya Sweeney's record linkage reidentification attack,\footnote{\url{https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1748-720X.1997.tb01885.x}} in this problem you will propose a reidentification attack on the PUMS dataset by identifying demographic variables that, if known from another auxiliary source, could uniquely identify individuals.  Note that while Sweeney used zipcodes as the geographic indicator, individuals in this Census release are identified by Public Use Microdata Areas (PUMAs) which are Census constructed geographic areas that contain at least 100,000 individuals. 
+
+\begin{enumerate}
+    \item Create a new Jupyter notebook and read in the PUMS dataset.
+    \item Determine the variables that you would match across the auxiliary source and the PUMS dataset. 
+ 
+    \begin{enumerate}
+        \item In your notebook, plot the distribution or histograms of each of these variables. 
+        \item In your notebook, write a short function to calculate what fraction of individuals in the data supplied are unique, given a set of features/variables in the dataset. \footnote{Note there is also a short subset of the data in the file \texttt{FultonPUMS5sample100.csv} which might be useful for testing purposes as you write your function.}
+        \item Using your function, and your proposed reidentification attack using an auxiliary source, what is the fraction of unique individuals in the dataset you could attempt to reidentify from your proposed attack?  
+        \item Recall that this is a 5\% sample from the full Census data.   As a ``back-of-the-envelope" calculation, roughly approximate what fraction of individuals would you expect to be unique if you could instead run your function on the entire Census dataset? Write a few sentences stating the assumptions underlying your calculation.\footnote{Hint: There are many ways to go about this, either analytically with some simplifying assumptions, or numerically with a simulation.  Analytically, if an individual has a $p$ chance of being unique among $N$ individuals, then think about what assumption you'd make to be able to say they have a $p^k$ chance of being unique among $kN$ individuals.  
+        %Or you could think about whether any pair of individuals matches as a weighted coinflip, and use the binomial distribution to think about the probability of 0 matches from $N$ trials and from $kN$ trials. 
+        Numerically, you could instead plot the value your function from part (iii.) gives you as you use subsamples of the available data and increase the sample size up to the current size of the data, and then try to project that curve out to where it would be with 20 times that amount of data.} Write a few sentences stating the assumptions underlying your calculation.  Your logic is more important than the accuracy of the number itself.  
+        \item Assuming your answer from part (iv.) is lower than part (iii.), what does that mean? That is, if your proposed attack reidentifies a unique individual from the sample data, \emph{what is the probability that you have actually reidentified the correct individual?}  In a sentence or two, discuss any implication for privacy protections that are afforded by random sampling.
+    \end{enumerate}
+
+\end{enumerate}
+
+\newcommand{\pub}{\texttt{PUB}}
+\newcommand{\us}{\texttt{USCITIZEN}}
+\newcommand{\sex}{\texttt{SEX}}
+\newcommand{\age}{\texttt{AGE}}
+\newcommand{\educ}{\texttt{EDUC}}
+\newcommand{\married}{\texttt{MARRIED}}
+\newcommand{\divorced}{\texttt{DIVORCED}}
+\newcommand{\latino}{\texttt{LATINO}}
+\newcommand{\black}{\texttt{BLACK}}
+\newcommand{\asian}{\texttt{ASIAN}}
+\newcommand{\children}{\texttt{CHILDREN}}
+\newcommand{\employed}{\texttt{EMPLOYED}}
+\newcommand{\militaryservice}{\texttt{MILITARYSERVICE}}
+\newcommand{\disability}{\texttt{DISABILITY}}
+\newcommand{\englishability}{\texttt{ENGLISHABILITY}}
+
+\newcommand{\nval}{100}
+
+
+\end{enumerate}
+
+\newpage
+\vspace{-1cm}
+\begin{tabular}{lll}
+\multicolumn{3}{c}{\textbf{Codebook for Census PUMS 5 Percent CS208 Datasets}}\\
+\hline
+\texttt{X.1} &\multicolumn{2}{l}{Deprecated, removed from dataset}\\
+\texttt{state} &\multicolumn{2}{l}{The US State of residence.}\\
+\texttt{puma} &\multicolumn{2}{l}{The Public Use Microdata Area, a Census constructed region}\\ 
+&& of about 100,000 persons.\\
+\texttt{jpumarow} &\multicolumn{2}{l}{Deprecated, removed from dataset}\\
+\texttt{serialno.household} &\multicolumn{2}{l}{Deprecated, removed from dataset}\\
+\texttt{sex} & 0: &Male, \\
+            &    1: &Female.\\
+\texttt{age} &\multicolumn{2}{l}{Age in years.}\\
+\texttt{educ} & 1:&		No schooling completed,\\
+&2:&		Nursery school to 4th grade,\\
+&3:&		5th grade or 6th grade,\\
+&4:&		7th grade or 8th grade,\\
+&5:&		9th grade,\\
+&6:&		10th grade,\\
+&7:&		11th grade,\\
+&8:&		12th grade, no diploma,\\
+&9:&		High school graduate,\\
+&10:&		Some college, but less than 1 year,\\
+&11:&		One or more years of college, no degree,\\
+&12:&		Associate degree,\\
+&13:&		Bachelor's degree,\\
+&14:&		Master's degree,\\
+&15:&		Professional degree,\\
+&16:&		Doctorate degree.\\
+\texttt{income} &\multicolumn{2}{l}{Person's total income.} \\
+\texttt{latino} & 0: & Not Hispanic or Latino,\\
+                & 1: & Hispanic or Latino.\\
+\texttt{black} & 0: & Not Black or African American,\\
+               & 1: & Black or African American, alone or in combination with\\ && one or more other races.\\
+\texttt{asian} & 0: & Not Asian,\\
+               & 1: & Asian, alone or in combination with one or more other races.\\
+\texttt{married} & 0: & Presently married, not separated,\\
+                         & 1: & Widowed, divorced, separated, never married.\\
+\texttt{divorced} & 0: & Married or not married but not divorced,\\
+                         & 1: & Divorced and not remarried.\\
+\texttt{uscitizen} & 0: & Not a citizen of the United States,\\
+                   & 1: & Citizen of United States.\\
+\texttt{children} & 0: & No own minor children living in residence,\\
+                         & 1: & Lives with own minor children.\\     
+\texttt{disability} & 0: & Without a disability,\\
+                         & 1:& With a disability (sensory, physical, mental)\\
+\texttt{militaryservice} & 0: & No military service,\\
+                         & 1: & Past or present active duty service, or training for reserves or \\ && National Guard. \\
+\texttt{employed} & 0: & Unemployed or not in labor force,\\
+                         & 1: & Employed, including armed services.\\
+\texttt{englishability} & 0: & Spoken English ability is "First Language", "Very Well" or "Well",\\
+                         & 1: & Spoken English ability categorized as "Not Well" or "Not at all".\\
+\texttt{fips} & \multicolumn{2}{l}{Federal Information Processing Standards County Code.} \\
+\end{tabular}
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  END
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
