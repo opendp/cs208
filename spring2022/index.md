@@ -19,4 +19,4 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 | Tue 1/18 | Course Preview |  [pdf](files/course_preview.pdf), [Recording](https://harvard.zoom.us/rec/play/rNU5_swSdM3xVtAd3rTReJtniCNhE4oKY54CWsA2hIPpnt2PmZGPbO-yOvIs0NpIS9y1ilRJ6SWsvH9P.hVnF5j1z4LYMDVYM) | |
 | Tue 1/25 | Course Overview & Attacks on Privacy |  [pdf](files/overview-reidentification.pdf) | |
 | Thu 1/27 | Reconstruction Attacks |   | [Tanner](https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9), [Barbaro-Zeller](https://www.nytimes.com/2006/08/09/technology/09aol.html), [Narayanan-Shmatikov](https://dl.acm.org/citation.cfm?id=1743558)|
-| Problem Set 1 (due Weds 2/2) | | [pdf](https://github.com/opendp/cs208/blob/master/homework/CS208_hw1.pdf) | |
+| Problem Set 1 (due Weds 2/2) | | [pdf](files/CS208_hw1.pdf) | |
