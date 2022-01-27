@@ -6,10 +6,10 @@ The risks to privacy when making human subjects data available for research and 
 
 ### Spring 2022
 
-- [Syllabus](/spring2022/files/cs208_spring2022_syllabus.pdf)
-- [Schedule, Lecture Notes, and Assignments](/spring2022)
-- [Annotated Course Bibliography](/spring2022/files/cs208_annotated_bibliography.pdf)
-- [Guidelines for Reading and Commenting](/spring2022/files/reading_and_commenting_guidelines.pdf)
+- [Syllabus](https://opendp.github.io/cs208/spring2022/files/cs208_spring2022_syllabus.pdf)
+- [Schedule, Lecture Notes, and Assignments](https://opendp.github.io/cs208/spring2022)
+- [Annotated Course Bibliography](https://opendp.github.io/cs208/spring2022/files/cs208_annotated_bibliography.pdf)
+- [Guidelines for Reading and Commenting](https://opendp.github.io/cs208/spring2022/files/reading_and_commenting_guidelines.pdf)
 
 ### Spring 2019
 
