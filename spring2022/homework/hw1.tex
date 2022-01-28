@@ -12,7 +12,7 @@
 
 \title{\vspace{-1.5cm} HW 1:  Probability Review and Reidentification Attacks}
 \author{CS 208 Applied Privacy for Data Science, Spring 2022}
-\date{\textbf{Version 1.2: Due Weds, Feb. 2, 5pm.}}
+\date{\textbf{Version 1.3: Due Weds, Feb. 2, 5pm.}}
 
 \definecolor{spot}{rgb}{0.6,0,0}
 \usepackage[pdftex, bookmarksopen=true, bookmarksnumbered=true,
@@ -45,7 +45,7 @@ Make sure to list all collaborators and references.
     $X_1,\ldots,X_n$ are independent $\{0,1\}$-valued Bernoulli random variables where $\Pr[X_i = 1]=p$ (i.e. coin tosses where the probability of heads is $p$).  Calculate the standard deviation $\sigma[S]$.  (Hint: recall that if $X$ and $Y$ are independent random variables, then $\Var[X+Y]=\Var[X]+\Var[Y]$, where $\Var$ denotes the variance.)
     
     \item Let $Z_1,\ldots,Z_k$ be independent random variables that are drawn from a Gaussian distribution $\Normal(0, \sigma^2)$, let $M=\max\{|Z_1|,|Z_2|,\ldots,|Z_k|\}$ and let $\Phi : \R\rightarrow [0,1]$ be the CDF of a standard normal $\Normal(0,1)$ distribution.  Show that for every $t>0$
-    $$\Pr[M \geq t\sigma ] = 1- (2\Phi(t)-1)^k < 2k\cdot (1-\Phi(t)).$$
+    $$\Pr[M \geq t\sigma ] = 1- (2\Phi(t)-1)^k \leq 2k\cdot (1-\Phi(t)).$$
     \label{part:maxnormals-exact}
     
     \item It is known that for all $x\geq 0$, we have 
