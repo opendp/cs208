@@ -34,3 +34,5 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 | Thu 1/27 | Reconstruction Attacks | [pdf](presentations/reconstruction.pdf) | [Tanner](https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9), [Barbaro-Zeller](https://www.nytimes.com/2006/08/09/technology/09aol.html), [Narayanan-Shmatikov](https://dl.acm.org/citation.cfm?id=1743558)|
 | Problem Set 1 (due Weds 2/2) | | [pdf](homework/hw1.pdf), [tex](homework/hw1.tex)                                                                                                                           | |
 | Section 1 | | [pdf](section/section1.pdf)                                                                                                                          | |
+| Thu 2/01 | Membership Attacks | [pdf](presentations/membership.pdf) | [Shokri Slides](https://www.dropbox.com/s/hfz1rdf6eu31snj/01-Reza%20Shokri-Membership%20Inference%20Attacks%20against%20Machine%20Learning%20Models.pdf) |
+
