@@ -12,6 +12,19 @@ If you have not done so already, please fill out the [background survey](https:/
 
 Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 
+
+### Resources
+
+* [Discussions at ed][ed]
+* [Video recordings at Panopto][panopto]
+* [Reading at Perusall][perusall] ([reading guidelines])
+
+[ed]: https://edstem.org/us/courses/19868/
+[panopto]: https://harvard.hosted.panopto.com/Panopto/Pages/Sessions/List.aspx#folderID=%227c2acb15-8529-47e9-9989-ae1d01404c5a%22
+[perusall]: https://app.perusall.com/courses/compsci-208-applied-privacy-for-data-science/
+[reading guidelines]: files/reading_and_commenting_guidelines.pdf
+
+
 ### Schedule
 
 | **Date**             | **Title**     | **Slides/Notes/Videos**                                                                                                                                                          | **Advance Reading** (see also [annotated course bibliography](files/cs208_annotated_bibliography.pdf))
