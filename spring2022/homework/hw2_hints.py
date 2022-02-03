@@ -68,3 +68,7 @@ def plot_losses(name, dataframe):
     plt.xlabel("Parameter")
     plt.ylabel("Loss")
     plt.show()
+
+
+# Problem 2
+# See membership_attack.ipynb, and accompanying practicum 2/3 lecture.
