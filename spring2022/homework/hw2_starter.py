@@ -3,9 +3,12 @@ import numpy as np
 import pandas as pd
 
 
-# Problem 1
+# Problem 1 setup
+
+# a dataframe containing the data to be attacked
 data: pd.DataFrame = pd.read_csv(
     "https://raw.githubusercontent.com/opendp/cs208/main/spring2022/data/FultonPUMS5reconstruction.csv")
+TARGET = "uscitizen"
 
 # names of public identifier columns
 pub = ["sex", "age", "educ", "latino", "black", "asian",
@@ -15,8 +18,12 @@ pub = ["sex", "age", "educ", "latino", "black", "asian",
 
 def execute_subsetsums_exact(predicates):
     """Count the number of citizens that satisfy each predicate.
-    Resembles a public query interface on a sequestered dataset."""
-    return data['uscitizen'].values @ np.stack([pred(data) for pred in predicates], axis=1)
+    Resembles a public query interface on a sequestered dataset.
+    Computed as in equation (1).
+
+    :param predicates: a list of predicates on the public variables
+    :returns a 1-d np.ndarray of exact answers the subset sum queries"""
+    return data[TARGET].values @ np.stack([pred(data) for pred in predicates], axis=1)
 
 
 if __name__ == "__main__":
