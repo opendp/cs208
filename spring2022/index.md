@@ -26,6 +26,11 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 
 ### Schedule
 
+* [Google Calendar link][gcal]
+
+[gcal]: https://calendar.google.com/calendar/u/0?cid=Y19lYjYwZ2NzcDdoZTBwamZqMG1ldGs0NnE3MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+
+
 | **Date**                     | **Title**                            | **Slides/Notes/Videos**                          |          **Advance Reading** (see also [annotated course bibliography]) 
 |------------------------------|--------------------------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------------:|
 | Tue 1/18                     | Course Preview                       | [pdf][jan18:pdf], [Recording][jan18:video]       |                                                                                                                 |
