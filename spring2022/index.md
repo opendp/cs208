@@ -41,9 +41,9 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 | Section 1                                |                                      | [pdf](section/section1.pdf)                      |                                                                                                                 |
 | Tue 2/01                                 | Reconstruction & Membership Attacks  | [pdf](presentations/membership.pdf)              | [Smith-Ullman] Reconstruction lecture notes, Sec 1-2.1, Sec 3, [Ruggles-van Riper], [Jessica Hullman blog post] |
 | Thu 2/03                                 | Membership Attacks                   | [pdf](presentations/membership-attacks.pdf)      |                                                                 [P3G Consortium et al.],  [Korolova (§1,4,6,8)] |
+| Problem Set 2 (due Fri 2/11)             |                                      | [pdf](homework/hw2.pdf) |                                                                                                                 |
 | **Foundations of Differential Privacy**  |
 | Tue 2/08                                 | Definition, basic mechanisms         |                                                  |                                                                                       [DP Primer Secs III-IV.B] |
-| Problem Set 2 (due Fri 2/11)             |                                      | [pdf](homework/hw2.pdf) |                                                                                                                 |
 
 
 [jan18:pdf]: files/course_preview.pdf
