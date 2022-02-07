@@ -31,17 +31,19 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 [gcal]: https://calendar.google.com/calendar/u/0?cid=Y19lYjYwZ2NzcDdoZTBwamZqMG1ldGs0NnE3MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
 
 
-| **Date**                     | **Title**                            | **Slides/Notes/Videos**                          |          **Advance Reading** (see also [annotated course bibliography]) 
-|------------------------------|--------------------------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------------:|
-| Tue 1/18                     | Course Preview                       | [pdf][jan18:pdf], [Recording][jan18:video]       |                                                                                                                 |
-| Tue 1/25                     | Course Overview & Attacks on Privacy | [pdf][jan25:pdf]                                 |                                                                                                                 |
-| Thu 1/27                     | Reconstruction Attacks               | [pdf](presentations/reconstruction.pdf)          |                                                               [Tanner], [Barbaro-Zeller], [Narayanan-Shmatikov] |
-| Problem Set 1 (due Weds 2/2) |                                      | [pdf](homework/hw1.pdf), [tex](homework/hw1.tex) |                                                                                                                 |
-| Section 1                    |                                      | [pdf](section/section1.pdf)                      |                                                                                                                 |
-| Tue 2/01                     | Reconstruction & Membership Attacks  | [pdf](presentations/membership.pdf)              | [Smith-Ullman] Reconstruction lecture notes, Sec 1-2.1, Sec 3, [Ruggles-van Riper], [Jessica Hullman blog post] |
-| Thu 2/03                     | Membership Attacks                   | [pdf](presentations/membership-attacks.pdf)      |                                                                 [P3G Consortium et al.],  [Korolova (§1,4,6,8)] |
-| Tue 2/08                     | Definition, basic mechanisms         |                                                  |                                                                                       [DP Primer Secs III-IV.B] |
-| Problem Set 2 (due Fri 2/11) |                                      | [pdf](homework/hw2.pdf) |                                                                                                                 |
+| **Date**                                 | **Title**                            | **Slides/Notes/Videos**                          |          **Advance Reading** (see also [annotated course bibliography]) 
+|------------------------------------------|-------------------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------------:|
+| Tue 1/18                                 | Course Preview                       | [pdf][jan18:pdf], [Recording][jan18:video]       |                                                                                                                 |
+| **Attacks on Privacy**                   |
+| Tue 1/25                                 | Course Overview & Attacks on Privacy | [pdf][jan25:pdf]                                 |                                                                                                                 |
+| Thu 1/27                                 | Reconstruction Attacks               | [pdf](presentations/reconstruction.pdf)          |                                                               [Tanner], [Barbaro-Zeller], [Narayanan-Shmatikov] |
+| Problem Set 1 (due Weds 2/2)             |                                      | [pdf](homework/hw1.pdf), [tex](homework/hw1.tex) |                                                                                                                 |
+| Section 1                                |                                      | [pdf](section/section1.pdf)                      |                                                                                                                 |
+| Tue 2/01                                 | Reconstruction & Membership Attacks  | [pdf](presentations/membership.pdf)              | [Smith-Ullman] Reconstruction lecture notes, Sec 1-2.1, Sec 3, [Ruggles-van Riper], [Jessica Hullman blog post] |
+| Thu 2/03                                 | Membership Attacks                   | [pdf](presentations/membership-attacks.pdf)      |                                                                 [P3G Consortium et al.],  [Korolova (§1,4,6,8)] |
+| **Foundations of Differential Privacy**  |
+| Tue 2/08                                 | Definition, basic mechanisms         |                                                  |                                                                                       [DP Primer Secs III-IV.B] |
+| Problem Set 2 (due Fri 2/11)             |                                      | [pdf](homework/hw2.pdf) |                                                                                                                 |
 
 
 [jan18:pdf]: files/course_preview.pdf
