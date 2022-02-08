@@ -1,0 +1,121 @@
+%=================================================================
+\documentclass[11pt]{article}
+
+%\def\draft{1}
+
+\usepackage{amsmath,amssymb,amsthm,enumitem, graphicx,verbatim,hyperref,verbatim,xcolor,rotating,setspace}
+\usepackage[top=1in, right=1in, left=1in, bottom=1.5in]{geometry}
+\definecolor{spot}{rgb}{0.6,0,0}
+\newcommand{\instructions}{\noindent \textbf{Instructions:} Submit a single PDF file to Gradescope containing your solutions, plots, and analyses. Submit any code files and notebooks separately on Gradescope. Make sure to list all collaborators and references.}
+\newcommand{\data}{\texttt{data}}
+\newcommand{\pub}{\texttt{pub}}
+\newcommand{\pubA}{\texttt{alice}}
+\newcommand{\us}{\texttt{uscitizen}}
+\newcommand{\sex}{\texttt{sex}}
+\newcommand{\age}{\texttt{age}}
+\newcommand{\educ}{\texttt{educ}}
+\newcommand{\married}{\texttt{married}}
+\newcommand{\divorced}{\texttt{divorced}}
+\newcommand{\latino}{\texttt{latino}}
+\newcommand{\black}{\texttt{black}}
+\newcommand{\asian}{\texttt{asian}}
+\newcommand{\children}{\texttt{children}}
+\newcommand{\employed}{\texttt{employed}}
+\newcommand{\militaryservice}{\texttt{militaryservice}}
+\newcommand{\disability}{\texttt{disability}}
+\newcommand{\englishability}{\texttt{englishability}}
+
+
+\title{\vspace{-1.5cm} HW 2: Reconstruction and Membership Attacks}
+\author{CS 208 Applied Privacy for Data Science, Spring 2022}
+\date{\textbf{Version 1.0: Due Fri, Feb. 11, 5:00pm.}}
+
+
+%=================================================================
+
+\begin{document}
+	\maketitle
+	
+	\instructions
+	
+	
+	\newcommand{\nval}{100}
+	
+	\begin{enumerate}[leftmargin=*]
+		
+		\item \textbf{Reconstruction Attack}  \label{prob:reconstruction}
+		
+		Among the variables in the 2000 PUMS dataset above is $\us$, which asks the resident about their US Citizenship status.
+
+		This is a sensitive piece of information, and including this question on the regular Census questionnaire has been a topic of recent controversy.\footnote{See e.g. \url{https://www.nytimes.com/2019/01/15/us/census-citizenship-question.html}} This PUMS dataset is public, but makes a good stand-in for a database that might be secured behind a query interface. We've provided a sample of size $n=\nval$.\ 
+		
+		In this problem, you will run experiments to evaluate the performance of the reconstruction attack on determining individuals' citizenship status. Treat the following variables in the dataset as public (so as an attacker you know them for all of the individuals in the dataset): 
+		\begin{align}
+		\pub =& (\sex, \age, \educ, \latino, \black, \asian, \married, \divorced, \children, \nonumber \\ &\quad \disability, \militaryservice, \employed,   \englishability).\nonumber
+		\end{align}
+
+		Each query in your attack should specify a ``random'' boolean predicate $q$ on the public variables (e.g. $q(\pub_i) = [\age_i/\educ_i > 4 ~\&\&~ \sex_i == 0]$), and receive as an answer an approximation to the subset sum query:
+		\begin{equation}
+		\sum_{i : q(\pub_i)=1} \us_i,
+		\label{eqn:sumquery}
+		\end{equation}
+		where $i$ ranges over the $n=\nval$ individuals in the PUMS dataset sample, \texttt{FultonPUMS5reconstruction.csv}, that we have provided.
+
+		We have provided you with some (optional) starter code in \texttt{hw2\_starter.py}
+		\footnote{Starter code at \url{https://github.com/opendp/cs208/blob/main/spring2022/homework/hw2_starter.py}} in the GitHub repo; the code
+		from section on 2/7--2/8 may also be helpful.
+
+		This includes definitions of:
+		\begin{itemize}
+			\item \texttt{data}, a DataFrame containing the dataset you will be attacking.
+			\item \texttt{pub}, the names of the columns we are treating as public knowledge.
+
+			\item \texttt{execute\_subsetsums\_exact(predicates)}, a function that takes as input a list \texttt{predicates} on the \texttt{pub} variables and returns the list of (exact) answers to the corresponding subset sum queries on \texttt{data}, computed as in Equation~(\ref{eqn:sumquery}). 
+			\item An example of using \texttt{execute\_subsetsums\_exact} to count both the number of female citizens in the dataset and the number of married citizens in the dataset.
+			\item A function \texttt{make\_random\_predicate()} that returns a (pseudo)random predicate $q$, which you can use to emulate the random subset sums that are used in the reconstruction attack as presented in class.
+
+		\end{itemize}
+		
+		Carry out your attack and experiments in the following steps:
+		\begin{enumerate}
+
+			
+			\item Write a function \texttt{reconstruction\_attack(data\_pub,predicates,answers)} that takes as input \texttt{data\_pub}, a DataFrame restricted to public columns, a list \texttt{predicates} of predicates on the public attributes, and a list of  (possibly approximate) \texttt{answers} to the queries, and returns an attempted reconstruction of the sensitive ($\us$) column as an array of boolean values of length $n$, where $n$ is the number of rows in $\texttt{data\_pub}$.  
+			Test your attack against $\data$ using $2n$ random queries generated by \texttt{make\_random\_predicate} and answered by \texttt{execute\_queries\_exact}.  It should, with high probability, reconstruct all of the sensitive bits correctly.
+			
+			\item Implement the following defenses by modifying \texttt{execute\_subsetsums\_exact}:  
+			\begin{enumerate}
+				\item \texttt{execute\_subsetsums\_round(R,predicates)}: round each result to the nearest multiple of $R$. 
+				\item \texttt{execute\_subsetsums\_noise(sigma,predicates)}:  add independent Gaussian noise of mean zero and variance $\sigma^2$ to each result.
+				\item\texttt{execute\_subsetsums\_sample(t,predicates)}: given a parameter $t\in \{1,\ldots,n\}$, randomly subsample a set $T$ consisting of $t$ out of the $n$ rows and calculate all of the answers using only the rows in $T$ (scaling up answers by a factor of $n/t$). 
+			\end{enumerate}
+			\item Finally, run experiments on how your attack performs against the three defenses above.
+
+			\begin{enumerate}
+				\item Create functions to compute the accuracy of the answers returned by each of the \texttt{execute\_subsetsums\_*} functions
+				(root-mean-squared-error between answers and exact values) and success of the attack (average fraction of values $\us_i$ that are successfully reconstructed).
+				\item Vary parameters $R$, $\sigma$, and $t$ as integers from $1$ to $n$.
+				For each parameter setting, run 10 experiments with fresh randomness and plot the averages of the accuracy and reconstruction success fractions. 
+				\item Compare the trade-off between accuracy and success of the attack. 
+				Make sure to identify the regime where your attack transitions from near-perfect reconstruction (fraction close to 1) to failed reconstruction (fraction reconstructed is no higher than the proportion of the majority value). 
+
+			\end{enumerate}
+			
+			\item In section on 2/7--2/8, similar coding and experiments as above will be carried out for membership inference attacks against the subsampling defense, also on a dataset of size $n=100$.  Set the subsampling parameter to be $t=50$. Run the code from section with a growing number $d$ of queries (starting at $d=2n$ and increasing from there) until the true positive probability of the reconstruction attack either converges or it becomes too computationally expensive to continue.  Based on your experiments above and/or analytical reasoning, how do you think a reconstruction attack would perform against subsampling with $t=50$ and the same number $d$ of queries?  Which attack do you consider to be a more worrisome privacy violation, and why? Discuss.
+		\end{enumerate}
+		
+
+		
+		
+		\item \textbf{Research Access vs. Privacy Protection} 
+		
+		Recall the reading on ``Public Access to Genome-Wide Data: Five Views on Balancing Research with Privacy and Protection." 
+		Select two of the five views, and in a short paragraph (100-300 words), reflect on how the authors characterize uncertainty about the future when discussing risks or possibilities (eg. around privacy of human subjects, family disclosures, public participation in genomic studies, and scientific breakthroughs that benefit the public). Which future events are depicted as more certain or uncertain than others? What risks or possibilities are downplayed versus emphasized? What are the implicit assumptions made by the authors, and how do these assumptions shape their arguments?
+	
+
+	
+
+\end{enumerate}
+	
+	
+\end{document}
