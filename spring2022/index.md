@@ -44,7 +44,7 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 | Problem Set 2 (due Fri 2/11)             |                                      | [pdf](homework/hw2.pdf)                          |                                                                                                                 |
 | **Foundations of Differential Privacy**  |
 | Tue 2/08                                 | Definition, basic mechanisms         | [pdf](presentations/DP-foundations1.pdf)         |                                                                                       [DP Primer Secs III-IV.B] |
-| Thu 2/10                                 | DP Foundations: the Laplace Mechanism| [pdf](presentations/laplace.pdf)         |                                                                                       [U.S. Broadband Coverage Data Set: A Differentially Private Data Release](https://arxiv.org/pdf/2103.14035v2.pdf) |
+| Thu 2/10                                 | DP Foundations: the Laplace Mechanism| [pdf](presentations/laplace.pdf)         |                                                                                       [U.S. Broadband Coverage Data Set: A Differentially Private Data Release](https://arxiv.org/pdf/2103.14035v2.pdf), [Smith-Ullman] Lecture 4, Sec 4  |
 
 
 [jan18:pdf]: files/course_preview.pdf
