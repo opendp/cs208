@@ -48,7 +48,7 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 | Thu 2/10                                 | DP Foundations: the Laplace Mechanism| [pdf](presentations/DP-laplace.pdf)              |                                                                                       [U.S. Broadband Coverage Data Set: A Differentially Private Data Release](https://arxiv.org/pdf/2103.14035v2.pdf), [Smith-Ullman] Lecture 4, Sec 4  |
 | Problem Set 3 (due Fri 2/18)             |                                      | [pdf](homework/hw3.pdf)                          |
 | Section 3                                |                                      | [pdf](section/section3.pdf)                      | |
-| Tue 2/15                                 | More DP Foundations                  | [pdf](presentations/)                            |                                                                                       [DP Primer Secs IV.C-VI.B] |
+| Tue 2/15                                 | More DP Foundations                  | [pdf](presentations/DP-foundations2.pdf)         |                                                                                       [DP Primer Secs IV.C-VI.B] |
 
 [jan18:pdf]: files/course_preview.pdf
 [jan18:video]: https://harvard.zoom.us/rec/play/rNU5_swSdM3xVtAd3rTReJtniCNhE4oKY54CWsA2hIPpnt2PmZGPbO-yOvIs0NpIS9y1ilRJ6SWsvH9P.hVnF5j1z4LYMDVYM
