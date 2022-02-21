@@ -1,0 +1,173 @@
+%=================================================================
+\documentclass[11pt]{article}
+
+\def\draft{1}
+
+\usepackage{amsmath,amssymb,amsthm,enumitem, graphicx,verbatim,hyperref,verbatim,xcolor,rotating,setspace}
+\usepackage[top=1in, right=1in, left=1in, bottom=1.5in]{geometry}
+\definecolor{spot}{rgb}{0.6,0,0}
+\newcommand{\instructions}{\noindent \textbf{Instructions:} Submit a single PDF file to Gradescope containing your solutions, plots, and analyses. Submit any code files and notebooks separately on Gradescope. Make sure to list all collaborators and references.}
+\newcommand{\data}{\texttt{data}}
+\newcommand{\pub}{\texttt{pub}}
+\newcommand{\pubA}{\texttt{alice}}
+\newcommand{\us}{\texttt{uscitizen}}
+\newcommand{\sex}{\texttt{sex}}
+\newcommand{\age}{\texttt{age}}
+\newcommand{\educ}{\texttt{educ}}
+\newcommand{\married}{\texttt{married}}
+\newcommand{\divorced}{\texttt{divorced}}
+\newcommand{\latino}{\texttt{latino}}
+\newcommand{\black}{\texttt{black}}
+\newcommand{\asian}{\texttt{asian}}
+\newcommand{\children}{\texttt{children}}
+\newcommand{\employed}{\texttt{employed}}
+\newcommand{\militaryservice}{\texttt{militaryservice}}
+\newcommand{\disability}{\texttt{disability}}
+\newcommand{\englishability}{\texttt{englishability}}
+
+% Math macros
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Exp}{\mathrm{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Normal}{\mathcal{N}}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Lap}{\mathrm{Lap}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\Range}{\mathrm{Range}}
+\newcommand{\zo}{\{0,1\}}
+
+\title{\vspace{-1.5cm} HW 4: Differential Privacy Foundations 2}
+\author{CS 208 Applied Privacy for Data Science, Spring 2022}
+\date{\textbf{Version 1.1: Due Fri, Feb. 25, 5:00pm.}}
+
+
+%=================================================================
+
+\begin{document}
+\maketitle
+
+\instructions
+
+\begin{enumerate}[leftmargin=*]
+
+\item \textbf{Approximate DP:} Consider the following mechanisms $M$ that takes a dataset $x\in [0,1]^n$ and returns
+an estimate of the mean $\bar{x} = (\sum_{i=1}^n x_i)/n$.
+
+\begin{enumerate}[label=\roman*.]
+    % \item $M(x) = \bar{x} + Z$ for $Z \sim \textrm{Uniform}(-1,1).$
+    \item $M(x) = [\bar{x}+Z]^1_0$, for $Z\sim \mathrm{Lap}(2/n)$,
+    where for real numbers $y$ and $a\leq b$, $[y]^b_a$ denotes the ``clamping'' function:
+$$[y]^b_a = 
+\begin{cases}
+a & \text{if } y < a\\
+y & \text{if } a\leq y\leq b\\
+b & \text{if } y >b
+\end{cases}.$$
+    \item $M(x) = \bar{x}+[Z]^1_{-1}$, for $Z\sim \mathrm{Lap}(2/n)$.
+    \item 
+    $$M(x) = \begin{cases} 1 & \text{w.p. } \overline{x}\\
+    0 & \text{w.p. } 1-\overline{x}.
+    \end{cases}.$$
+    % \item $M(x) = \bar{x}+Z$ for $Z\sim \textrm{Geo}(5/n)$, where  .
+    % \item $M(x) = (\lceil 100 \bar{x}\rceil + Z)/100$ for $Z\sim \textrm{Geo}(4)$, where $\lceil y\rceil$ denotes the smallest integer greater than or equal to $y$.
+    \item $M(x) = Y$ where $Y$ has probability density function $f_Y$ given as follows:
+    
+    $$f_Y(y) = \begin{cases}
+    \frac{e^{-n|y-\bar{x}|/10}}{\int_0^1 e^{-n|z-\bar{x}|/10} dz} & \text{if } y\in [0,1].\\
+    0 & \text{if } y\notin [0,1].
+    \end{cases}$$
+    (This is an instantiation of a continuous version
+    of the exponential mechanism.)
+    
+\end{enumerate}
+
+In HW3, we have identified some of the above mechanisms that do not meet the definition of $(\epsilon,0)$-differential privacy. For those mechanisms,
+    calculate the smallest value of $\delta$ (again possibly as a function of $n$) for which they satisfy $(\epsilon,\delta)$ differential privacy for a finite value of $\epsilon$.
+
+\item \textbf{Regression: } 
+Consider a dataset where each of its $n$ rows is a pair of real numbers $(x_i,y_i)$, each from an interval $[-b,b]$.  Suppose we wish to find a best-fit linear relationship $y_i \approx \beta x_i$ between the $y$'s and the $x$'s.  Non-privately, a standard way to estimate $\beta$ is via the OLS regression formula 
+$$\hat{\beta} = \hat{\beta}(x,y) =  \frac{S_{xy}}{S_{yy}}
+= \frac{\sum_i x_iy_i}{\sum_i x_i^2}.$$
+This is called {\em ordinary least-squares (OLS)} regression, since $\hat{\beta}$ is the minimizer of the mean-squared residuals 
+\begin{equation} \label{eqn:residuals}
+    \frac{1}{n} \sum_i (y_i -\hat{\beta} x_i)^2.
+\end{equation}
+
+\begin{enumerate}
+    \item Show that the function $\hat{\beta}(x,y)$ has infinite global sensitivity, and hence we cannot get a useful DP estimate of it via a direct application of the Laplace or Gaussian mechanisms.
+    \item Show that $S_{xy}$ and $S_{xx}$ have global sensitivity that is bounded solely as a function of $b$, and hence each of these can be approximated in a DP manner using the Laplace mechanism. \label{part:suffstats}
+    \item Using Part~\ref{part:suffstats} together with basic composition and post-processing,  devise and implement an $\epsilon$-DP algorithm for approximating $\hat{\beta}$ on an arbitrary dataset with $x_i,y_i\in \R$.  In addition to the dataset $((x_1,y_1),\ldots,(x_n,y_n))$, your implementation should take as input parameters a clipping bound $b$ and the privacy-loss parameter $\epsilon$.
+
+    
+    \item \label{part:MonteCarlo}
+    Evaluate the performance of your
+    algorithm using a Monte Carlo simulation with
+    synthetic data.
+    Set $\epsilon=.1$, $b=1$, generate the $x_i$'s uniformly at random from $[-1/2,1/2]$,
+    and generate the $y_i$'s 
+    according to a linear model with slope 1 and Gaussian noise, but clipped to $[-1,1]$ to satisfy the range requirements:
+    $$y_i = \left[x_i + \mathcal{N}(0,.02)\right]_{-1}^1.$$
+    For each $n=100,200,300,\ldots,5000$, run many Monte Carlo trials to estimate and plot the bias and standard deviation of both the OLS estimate $\hat{\beta}$ and the DP estimate $\tilde{\beta}$.  Your plot should have $n$ on the $x$-axis, and bias and standard deviation on the $y$-axis on a scale from $-1.0$ to $1.0$, with the endpoints also representing values of magnitude larger than 1.  Try to run enough trials to obtain smooth curves.
+    
+    (If $\hat{\theta}=\hat{\theta}(z)$ is an estimator of a  population parameter $\theta$ based on a dataset $z$, then the {\em bias} of $\hat{\theta}$ is $\Exp[\hat{\theta}-\theta]$, where the expectation is taken over both the dataset $z$ and any randomization used by estimator $\hat{\theta}$; note that the bias can be positive or negative - do keep track of the sign.  The ``bias-variance tradeoff'' says that the MSE of an estimator is the sum of its squared bias and its variance; in previous homeworks, we evaluated the (R)MSE of DP estimators, now we are doing a finer analysis by separating the MSE into the bias and variance.)
+    
+    \item Try to give an intuitive explanation of the source of the bias you see in 
+    Part~\ref{part:MonteCarlo} and on what kinds of dataset distributions this might be largest.  How might bias in particular (not just MSE) have an impact on downstream applications?
+    
+\iffalse    Measure utility by the mean-squared residuals, as defined in Equation~(\ref{eqn:residuals}), but using your DP estimate for $\hat{\beta}$ instead of the OLS estimate.
+    Plot and compare the distributions of mean-squared residuals you get with your differentially private simple linear regression versus with a non-private OLS regression.
+    %A box-and-whisker plot is a useful way to show this, but you can explore visualization method
+\fi   
+    \iffalse
+    sum of the squared residuals
+    Then use your implementation from part (a) to  show the utility for the slope and the intercept releases as a function of dataset size, over some reasonably chosen different values of $\epsilon$.
+    \fi
+    
+\iffalse   
+    \item  Now, run experiments to see if there is
+    a different
+    partition $p$ of your privacy budget $\epsilon$
+    in your algorithm that yields better utility.
+    Use a grid search\footnote{Grid search is a term from optimization and machine learning that refers to an exhaustive search through the hyperparameter space discretized into a grid (to make the search finite).} to explore different
+    partitions of $\epsilon$ and see if you find one that is convincingly better (in terms
+    of mean-squared residuals)
+    than an equal partition ($p=1/2$) under the given
+    data distribution. Show and explain your results. \CWnote{Perhaps offer more guidance on what the grid search should look like? For example, maybe suggest the interval of values to search over, and the spacing between these values.}
+\fi
+
+    \iffalse
+    Assume that your algorithm for DP-$\alpha$ and DP-$\beta$ (hereafter $\tilde{\alpha}$, $\tilde{\beta}$) have component queries $q_1,\cdots,q_k$, which each use a differentially private mechanism that consume privacy parameters that sum to a global total as $\Vec{\epsilon}=(\epsilon_1, \cdots, \epsilon_k):\sum_{i=1}^k \epsilon_i = \epsilon_{\textrm{global}}$. We can fix $\epsilon_{\textrm{global}}=1$ and the the dataset size $n=1000$.  For dataset $x$, let the dataset dependent utility, $U(x, \tilde{\alpha}, \tilde{\beta}|\Vec{\epsilon})$ be some measure of utility.  
+    
+    We have used RMSE as the common measure of the utility of a release, however, in different contexts there are different desirable properties of the release, and these can translate into different appropriate utility measures.  If, for example, we want a regression model that makes good predictions to individual data points, then the average squared residual $1/n\sum_{i=1}^n (y_i-\hat{y})^2$ might be a better indicator of utility than the error in the coefficients.\footnote{The linear regression model is estimated by finding the coefficients that minimize sum of squared residuals, so it might also make sense to measure utility using the same objective that the original model estimates utilized.} Numerically demonstrate a region where $U(x, \tilde{\alpha}, \tilde{\beta}|\Vec{\epsilon}) > U(x, \tilde{\alpha}, \tilde{\beta}| (\epsilon/k, \cdots, \epsilon/k)$, that is, a different division of the global epsilon leads to higher utility than equipartition. 
+  
+    \item Find an estimate of the optimal partition of epsilon in this dataset for this task.  To do this, you can grid search through the possible $\Vec{\epsilon}$.  If you search at a grid of 0.05, then there are about a 1000 valid combinations.  Make sure to make the number of simulations at each point you evaluate high enough to produce an answer with low enough average simulation error to reasonable distinguish better regions from worse.  (To judge if your function that reports error at some $\Vec{\epsilon}$ has enough simulations, call it with the same $\Vec{\epsilon}$ multiple times, and see at what significant figure the answers disagree.)  Note, in practice, as in the previous problem, it is not the case that we can test all partitions of $\epsilon_{textrm{global}}$ and release the one we find has lowest error in that dataset, however, in our simulation study, we can use this approach to demonstrate the behavior of the algorithm in an experimental setting.
+    \fi
+
+\end{enumerate}
+
+\item \textbf{DP vs. Reconstruction Attacks:}  Suppose $M : \zo^n\rightarrow \mathcal{Y}$ is an $(\epsilon,\delta)$-DP mechanism
+and $A : \mathcal{Y}\rightarrow \zo^n$ is an adversary that is trying to reconstruct the sensitive bits in the dataset $x\in \zo^n$ from
+the output $M(x)$.   Suppose the dataset is a random variable $X=(X_1,\ldots,X_n)$ consisting of $n$ iid draws from a $\mathrm{Bernoulli}(p)$ distribution, for a known value of $p$.   Prove that the expected fraction of bits that the adversary successfully reconstructs is not much larger than the trivial bound of $\max\{p,1-p\}$ (which can be achieved by guessing the all-zeroes or all-ones dataset).  Specifically:
+$$\mathrm{E}\left[\#\{ i\in [n] : A(M(X))_i=X_i\}/n\right]\leq e^{\epsilon} \cdot \max\{p,1-p\}+\delta.$$
+(Hint: write the quantity inside the expectation
+as an average of indicator random variables, and for each
+$i$, consider running $M$ on the dataset $X^{(i)}$ where
+we replace the $i$'th row of $X$ with the fixed value 0.)
+
+
+
+\item \textbf{Final Project Ideas} 
+The final projects are an important focus of this course, and we want you to start thinking about yours as soon as possible.  Please read the
+``Final Project Guidelines'' (\url{https://github.com/opendp/cs208/blob/main/spring2022/final%20project/Final%20Project%20Guidelines.pdf}) 
+%\Snote{needs to be updated for this year}
+document on the course website and
+submit about a paragraph as described in the ``Topic Ideas'' bullet.
+
+
+\end{enumerate}
+
+\end{document}
