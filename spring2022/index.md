@@ -60,7 +60,7 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 [jan25:pdf]: presentations/overview-reidentification.pdf
 [wk2_mem]: examples/wk2_membership_attack.ipynb
 [wk3_lap]: examples/wk3_laplace_mechanism_and_opendp.ipynb
-[ipynb wk4_*]: examples/
+[ipynb wk4_*]: https://github.com/opendp/cs208/tree/main/spring2022/examples
 [wk5_exponential]: examples/wk5_exponential.ipynb
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
