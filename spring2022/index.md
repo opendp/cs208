@@ -51,7 +51,7 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 | Tue 2/15                                | More DP Foundations                   | [pdf](presentations/DP-foundations2.pdf)                     | [DP Primer Secs IV.C-VI.B]                                                                                      |
 | Thu 2/17                                | The Gaussian Mechanism                | [pdf](presentations/DP-gaussian-mechanism.pdf) [ipynb wk4_*] | [Smith-Ullman] Lecture 5 Sec 1, Lecture 9 (Lemma 1.2), Lecture 9, Sec 2 up to Thm 2.1, Lecture 10 Sec 1.        |
 | Problem Set 4 (due Fri 2/25)            |                                       | [pdf](homework/hw4.pdf) [tex](homework/hw4.tex)              |                                                                                                                 |
-| Tue 2/21                                | Beyond Noise Addition                 |                                                              | [Smith-Ullman] Lecture 6 Secs 1.0-1.1, [Smith-Raskhodnikova encyclopedia] about DP for graph data                                                                                                                |
+| Tue 2/21                                | Beyond Noise Addition                 |                                                              | [Smith-Ullman] Lecture 6 Secs 1.0-1.1, [Smith-Raskhodnikova encyclopedia] article: DP for graph data                                                                                                                |
 
 
 [jan18:pdf]: files/course_preview.pdf
@@ -66,7 +66,7 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
 [Narayanan-Shmatikov]: https://dl.acm.org/citation.cfm?id=1743558
 [Smith-Ullman]: https://dpcourse.github.io/
-[Smith-Rashkodnivkova encyclopedia]: https://link.springer.com/referenceworkentry/10.1007/978-3-642-27848-8_549-1
+[Smith-Raskhodnikova encyclopedia]: https://link.springer.com/referenceworkentry/10.1007/978-3-642-27848-8_549-1
 [Ruggles-van Riper]: https://link.springer.com/article/10.1007%2Fs11113-021-09674-3
 [Jessica Hullman blog post]: https://statmodeling.stat.columbia.edu/2021/08/27/shots-taken-shots-returned-regarding-the-census-motivation-for-using-differential-privacy-and-btw-its-not-an-algorithm
 [P3G Consortium et al.]: https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1000665
