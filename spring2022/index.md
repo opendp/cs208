@@ -50,7 +50,8 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 | Section 3                               |                                       | [pdf](section/section3.pdf)                                     |                                                                                                                 |
 | Tue 2/15                                | More DP Foundations                   | [pdf](presentations/DP-foundations2.pdf)                        | [DP Primer Secs IV.C-VI.B]                                                                                      |
 | Thu 2/17                                | The Gaussian Mechanism                | [pdf](presentations/DP-gaussian-mechanism.pdf) [ipynb wk4_*]    | [Smith-Ullman] Lecture 5 Sec 1, Lecture 9 (Lemma 1.2), Lecture 9, Sec 2 up to Thm 2.1, Lecture 10 Sec 1.        |
-| Problem Set 4 (due Fri 2/25)            |                                       | [pdf](homework/hw4.pdf), [tex](homework/hw4.tex)                |                                                                                                                 |
+| Problem Set 4 (due Fri 2/25)            |                                       | [pdf](homework/hw4.pdf), [tex](homework/hw4.tex)                |
+| Section 4                               |                                       | [pdf](section/section4.pdf)                                     |  
 | Tue 2/21                                | Beyond Noise Addition                 | [pdf](presentations/beyond-noise.pdf), [ipynb][wk5_exponential] | [Smith-Ullman] Lecture 6 Secs 1.0-1.1, [Smith-Raskhodnikova encyclopedia] article: DP for graph data            |
 | Thu 2/24                                | Centralized DP                        |                                                                 | [2020 Census Data Products and Privacy Methods] Sec 2.0-2.2, Sec 3 (all), Sec 5.0                               |
 
