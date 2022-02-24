@@ -8,11 +8,6 @@
 
 **Location**: Harvard Science & Engineering Complex SEC LL2.221, 150 Western Ave, Allston, MA
 
-If you have not done so already, please fill out the [background survey](https://docs.google.com/forms/d/e/1FAIpQLSfYrvV08oMJr5idotBG1eIyE6rafbKymxs_8gm9iUqpC73vKg/viewform).
-
-Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
-
-
 ### Resources
 
 * [Syllabus]
@@ -20,14 +15,17 @@ Access the (updated) syllabus [here](files/cs208_spring2022_syllabus.pdf).
 * [Discussions at ed][ed]
 * [Reading at Perusall][perusall] ([reading guidelines])
 * Video recordings at Panopto (access via Canvas)
-* [annotated course bibliography]
- 
+* [Annotated Course Bibliography]
+* [Guidelines for Reading and Commenting]
+
 [Syllabus]: https://opendp.github.io/cs208/spring2022/files/cs208_spring2022_syllabus.pdf
 [gcal]: https://calendar.google.com/calendar/u/0?cid=Y19lYjYwZ2NzcDdoZTBwamZqMG1ldGs0NnE3MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
 [ed]: https://edstem.org/us/courses/19868/
 [perusall]: https://app.perusall.com/courses/compsci-208-applied-privacy-for-data-science/
 [reading guidelines]: files/reading_and_commenting_guidelines.pdf
-[annotated course bibliography]: files/cs208_annotated_bibliography.pdf
+[Annotated Course Bibliography]: files/cs208_annotated_bibliography.pdf
+[Guidelines for Reading and Commenting]: https://opendp.github.io/cs208/spring2022/files/reading_and_commenting_guidelines.pdf
+
 
 ### Schedule
 
