@@ -1,7 +1,7 @@
 %=================================================================
 \documentclass[11pt]{article}
 
-\def\draft{1}
+\def\draft{2}
 
 
 \usepackage{amsmath,amssymb,amsthm,enumitem, graphicx,verbatim,verbatim,xcolor,rotating,setspace,hyperref}
@@ -104,19 +104,17 @@
             \item \textbf{Create synthetic data.}
             First, generate similar data from HW4, where the
 
-            $x_i$ variables are generated uniformly  random from $[-5,5]$ and the
+            $x_i$ variables are sampled uniformly at random from $[-5,5]$ and the
             $y_i$'s
-            are generated according to a linear model with slope 1, intercept 0, and Gaussian noise, but clipped to $[-10,10]$:
+            are generated according to a linear model with slope 1, intercept 0, and Gaussian noise clipped to $[-10,10]$:
             $$y_i = \left[x_i + \mathcal{N}(0,.2)\right]_{-10}^{10}.$$
             We will treat this data as sensitive. Then,
             create a DP
             histogram\footnote{That is, a histogram representation counting the occurrences of having all possible combinations of the
-            two binned variables.} release of income and education.
+            two binned variables.} release of the $x_i$'s and $y_i$'s.
             You do not need to graph this histogram, just compute the release for each binned combination of the variables.  From this, you should be able to generate synthetic data of these two
             variables. (For continuous data, you will need to do binning to apply a histogram.)
-            \item \textbf{Run a linear regression algorithm.} Run a linear regression as a post-process on your synthetic data, predicting income from education
-            \footnote{You will likely find that \texttt{log(income)} has a more linear relationship with education,
-                so feel free to shift from \texttt{income} to \texttt{log(income)} if you prefer. However, you will need to decide how to treat zero values in income; one option is to clip the lower bound of income to some small positive value.} using the equation:
+            \item \textbf{Run a linear regression algorithm.} Run a linear regression as a post-process on your synthetic data, predicting $y_i$'s from $x_i$'s
             \begin{align}
                 y_i =  \beta_1 x_i
                 + \nu_i; \qquad \nu_i \sim \mathcal{N}(0, \sigma^2) \label{eq:ydist}
