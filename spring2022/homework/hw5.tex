@@ -8,23 +8,6 @@
 \usepackage[top=1in, right=1in, left=1in, bottom=1.5in]{geometry}
 \definecolor{spot}{rgb}{0.6,0,0}
 \newcommand{\instructions}{\noindent \textbf{Instructions:} Submit a single PDF file to Gradescope containing your solutions, plots, and analyses. As usual, the notebooks from class and section may be helpful starting points for coding solutions. Submit any code files and notebooks separately on Gradescope. Make sure to list all collaborators and references.}
-\newcommand{\data}{\texttt{data}}
-\newcommand{\pub}{\texttt{pub}}
-\newcommand{\pubA}{\texttt{alice}}
-\newcommand{\us}{\texttt{uscitizen}}
-\newcommand{\sex}{\texttt{sex}}
-\newcommand{\age}{\texttt{age}}
-\newcommand{\educ}{\texttt{educ}}
-\newcommand{\married}{\texttt{married}}
-\newcommand{\divorced}{\texttt{divorced}}
-\newcommand{\latino}{\texttt{latino}}
-\newcommand{\black}{\texttt{black}}
-\newcommand{\asian}{\texttt{asian}}
-\newcommand{\children}{\texttt{children}}
-\newcommand{\employed}{\texttt{employed}}
-\newcommand{\militaryservice}{\texttt{militaryservice}}
-\newcommand{\disability}{\texttt{disability}}
-\newcommand{\englishability}{\texttt{englishability}}
 
 % Math macros
 \newcommand{\Var}{\mathrm{Var}}
@@ -36,18 +19,17 @@
 \newcommand{\Lap}{\mathrm{Lap}}
 \newcommand{\naturals}{\mathbb{N}}
 \newcommand{\calX}{\mathcal{X}}
+\newcommand{\calY}{\mathcal{Y}}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\eps}{\epsilon}
 \newcommand{\Range}{\mathrm{Range}}
 \newcommand{\zo}{\{0,1\}}
-\newcommand{\calR}{\mathcal{R}}
-\newcommand{\calY}{\mathcal{Y}}
 
 
 \title{\vspace{-1.5cm} HW 5: Beyond Noise Addition
 }
 \author{CS 208 Applied Privacy for Data Science, Spring 2022}
-\date{\textbf{Version 3.0: Due Fri, Mar. 4, 5:00pm.}}
+\date{\textbf{Version 3.1: Due Fri, Mar. 4, 5:00pm.}}
 
 
 %=================================================================
@@ -79,9 +61,9 @@
 			(Hint: observe that $f_Y$ is
 			piecewise constant.)
 			
-			\item Generate a dataset $x\in\calX^n$ from the truncated normal distribution $\left[\mathcal{N}(1/2,\sigma^2)\right]_{-1}^1.$ Vary $\sigma$ from $.1$ to $.5$, and for each $\sigma$, compute the private median of $x$ using your function from part (a) with $\epsilon=1$. Run many Monte Carlo (at least 100)
-			trials to estimate the RMSE
-			of the private median, and then plot the error against $\sigma$.
+			\item Generate a dataset $x\in\calX^n$ from the truncated normal distribution $\left[\mathcal{N}(1/2,\sigma^2)\right]_{-1}^1.$ 
+            Vary $\sigma$ from $.1$ to $.5$, and for each $\sigma$, compute the private median of $x$ using your function from part (a) with $\epsilon=.15$ and $n=200$. 
+            Run many Monte Carlo (at least 100) trials to estimate the RMSE of the private median, and then plot the error against $\sigma$.
 			
 			\item Notice from part (b) that the exponential mechanism does
 			not output very accurate answers when the data is too concentrated. Briefly explain the reason for this phenomenon.
