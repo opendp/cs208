@@ -7,7 +7,7 @@
 \usepackage{amsmath,amssymb,amsthm,enumitem, graphicx,verbatim,verbatim,xcolor,rotating,setspace,hyperref}
 \usepackage[top=1in, right=1in, left=1in, bottom=1.5in]{geometry}
 \definecolor{spot}{rgb}{0.6,0,0}
-\newcommand{\instructions}{\noindent \textbf{Instructions:} Submit a single PDF file to Gradescope containing your solutions, plots, and analyses. Submit any code files and notebooks separately on Gradescope. Make sure to list all collaborators and references.}
+\newcommand{\instructions}{\noindent \textbf{Instructions:} Submit a single PDF file to Gradescope containing your solutions, plots, and analyses. As usual, the notebooks from class and section may be helpful starting points for coding solutions. Submit any code files and notebooks separately on Gradescope. Make sure to list all collaborators and references.}
 \newcommand{\data}{\texttt{data}}
 \newcommand{\pub}{\texttt{pub}}
 \newcommand{\pubA}{\texttt{alice}}
@@ -40,126 +40,124 @@
 \newcommand{\eps}{\epsilon}
 \newcommand{\Range}{\mathrm{Range}}
 \newcommand{\zo}{\{0,1\}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calY}{\mathcal{Y}}
 
 
 \title{\vspace{-1.5cm} HW 5: Beyond Noise Addition
 }
 \author{CS 208 Applied Privacy for Data Science, Spring 2022}
-\date{\textbf{Version 2.0: Due Fri, Mar. 4, 5:00pm.}}
+\date{\textbf{Version 3.0: Due Fri, Mar. 4, 5:00pm.}}
 
 
 %=================================================================
 
 \begin{document}
-    \maketitle
+	\maketitle
+	
+	\instructions
+	
+	\begin{enumerate}[leftmargin=*]
+		
+		\item \textbf{Continuous Exponential Mechanism:}
+		In class, we saw how to use the exponential mechanism to compute a differentially private estimate of a median of a dataset on a discrete domain $\calX$, using the following score function for each possible output $y\in \calY$, where we set $\calY=\calX$ for median computations:
+		$s(x,y)=\min\{\#\{i: x_i\le y\},\#\{i: x_i\ge y\}\}.$
 
-    \instructions
-
-    \begin{enumerate}[leftmargin=*]
-
-        \item \textbf{Continuous Exponential Mechanism:}
-
-        In HW3, we saw an instantiation of a continuous version
-        of the exponential mechanism. To privately compute the median of a fixed dataset $x\in \mathcal{X}^n$, we consider the following score function:
-        \footnote{Note that, using the score function,
-            every element---whether in or out of $x$---has
-            score at most $n/2$ (including the median).}
-        $$s(x,y)=\min\{\#\{i: x_i\le y\},\#\{i: x_i\ge y\}\}.$$
-
-        The sensitivity of $s(x,y)$ is defined as
-        $$GS_s=\max_{x\sim x', y}|s(x,y)-s(x',y)|,$$
-        where $x\sim x'$ are neighboring datasets that differ in
-        one row.
-        Recall that the exponential mechanism $\mathcal{M}(x)$ with privacy parameter $\epsilon$ selects and outputs an element $y\in \mathcal{Y}$ with probability proportional to $\exp\left(\frac{\epsilon\cdot s(x,y)}{2\cdot GS_s}\right)$. Suppose each datapoint is within $[0,1]$
-        (i.e., $\mathcal{X}=[0,1]$) and
-        the potential output space for releasing the median is $\mathcal{Y}=[0,1]$.
-        The instantiation of a continuous version
-        of the exponential mechanism for releasing a private median is
-        $M(x) = Y$ where $Y$ has probability density function $f_Y$ given as follows:
-
-        $$f_Y(y) = \begin{cases}
-                       \frac{\exp\left(\frac{\epsilon\cdot s(x,y)}{2\cdot GS_s}\right)}{\int_0^1 \exp\left(\frac{\epsilon\cdot s(x,z)}{2\cdot GS_s}\right) dz} & \text{if } y\in [0,1].\\
-                       0 & \text{if } y\notin [0,1].
-        \end{cases}$$
-
-        \begin{enumerate}
-            \item Write a function that takes in a dataset $x$, and outputs the private median of $x\in\calX^n$ using the above mechanism.
-            \footnote{This notebook might be helpful as a starting point: \url{https://github.com/opendp/cs208/blob/main/spring2022/examples/wk5_exponential.ipynb}.}
-
-            \item Generate a dataset $x\in\calX^n$ from the truncated normal distribution $\left[\mathcal{N}(1/2,\sigma^2)\right]_{-1}^1.$ Vary $\sigma$ from $.1$ to $.5$, and for each $\sigma$, compute the private median of $x$ using your function from part (a). Run many Monte Carlo (at least 100)
-            trials to estimate the RMSE
-            of the private median, and then plot the error against $\sigma$.
-
-            \item Notice from part (b) that the exponential mechanism does
-            not output very accurate answers when the data is too concentrated. Briefly explain the reason behind this observation.
-
-
-        \end{enumerate}
-
-
-        \item \textbf{Synthetic Data:}
-        In this problem, you will expand the template from class to create and analyze DP synthetic data. You will compare the results of running a regression on the synthetic data with your DP regression algorithm from HW4.
-
-        \begin{enumerate}
-            \item \textbf{Create synthetic data.}
-            First, generate similar data from HW4, where the
-
-            $x_i$ variables are sampled uniformly at random from $[-5,5]$ and the
-            $y_i$'s
-            are generated according to a linear model with slope 1, intercept 0, and Gaussian noise clipped to $[-10,10]$:
-            $$y_i = \left[x_i + \mathcal{N}(0,.2)\right]_{-10}^{10}.$$
-            We will treat this data as sensitive. Then,
-            create a DP
-            histogram\footnote{That is, a histogram representation counting the occurrences of having all possible combinations of the
-            two binned variables.} release of the $x_i$'s and $y_i$'s.
-            You do not need to graph this histogram, just compute the release for each binned combination of the variables.  From this, you should be able to generate synthetic data of these two
-            variables. (For continuous data, you will need to do binning to apply a histogram.)
-            \item \textbf{Run a linear regression algorithm.} Run a linear regression as a post-process on your synthetic data, predicting $y_i$'s from $x_i$'s
-            \begin{align}
-                y_i =  \beta_1 x_i
-                + \nu_i; \qquad \nu_i \sim \mathcal{N}(0, \sigma^2) \label{eq:ydist}
-            \end{align}
-            \item \textbf{Compute the error.}
-            Let $\beta^*=\beta_1^*$
-            be the true coefficients in the full sensitive data, while  $\tilde{\beta}=\tilde{\beta_1}$ is the DP release we generate. The mean-squared error of a DP release of $\tilde{\beta}$ can be decomposed into the contributions of bias and variance as:
-            \begin{align}
-                \textrm{MSE}(\tilde{\beta}) &= \textrm{bias}(\tilde{\beta})^2 + \textrm{var}(\tilde{\beta})  =  (\textrm{E}[ \beta^* - \tilde{\beta}])^2 +    \textrm{E}[(\bar{\tilde{\beta}} - \tilde{\beta})^2] ,
-            \end{align}
-            where $\bar{\tilde{\beta}}$ is the average of the generated
-            DP estimates $\tilde\beta$.
-            For this calculation, we are taking the (sensitive) regression coefficients $\beta^*$ on the entire dataset as the true values of $\beta$. Show the contributions to MSE of the bias and variance of the DP-regression coefficients.\footnote{To numerically compute the expectations, simply repeat your simulation many times and average.}
-            \item \textbf{Analyze the error.} As a baseline to decide if these squared bias and error terms are large, compare with the error on your HW4 DP regression algorithm. How do the bias and variance terms compare?
-        \end{enumerate}
-
-
-        \item \textbf{Composition:}
-
-        \begin{enumerate}
-            \item  \label{part:optimal}
-            Suppose you have a global privacy budget of $\varepsilon=1$ (and are willing to tolerate $\delta=10^{-9}$) and you want to release $k$ count queries (i.e., sums of Boolean predicates\footnote{A Boolean predicate is a function that returns a 0 or a 1. An example of a count query might be the
-            number of Harvard college students that live in the Quad.}) using the Laplace mechanism with an individual privacy loss of $\varepsilon_0$.  By basic composition, you can set
-            $\varepsilon_0=\varepsilon/k$.   Using the advanced composition theorem, you can set
-            $\varepsilon_0=\varepsilon /\sqrt{2k\ln(1/\delta)}$.
-
-            For the two choices, plot (on the same graph) the standard deviation of the Laplace noise added to each query as a function of $k$.
-
-
-
-            \item
-            There is another variant of DP, called zCDP
-            (Zero-concentrated Differential Privacy), that is tailored to analyzing the Gaussian mechanism and its compositions. The formal definition of zCDP is not needed for this problem, but note that zCDP has a single privacy-loss parameter $\rho\geq 0$ and has the following properties:
-            \begin{enumerate}
-                \item The Gaussian mechanism with noise of variance $\sigma^2 = (\mathrm{GS}_q)^2/2\rho$ is $\rho$-zCDP, where
-                $\mathrm{GS}_q$ is the global sensitivity of the query
-                $q$.
-                \item Suppose $\mathcal{M}_1$ satisfies $\rho_1$-zCDP and $\mathcal{M}_2$ satisfies $\rho_2$-zCDP. Then their composition $(\mathcal{M}_1, \mathcal{M}_2)$ satisfies $(\rho_1+\rho_2)$-zCDP.
-                \item If a mechanism $\mathcal{M}$ satisfies $\rho$-zCDP, then for every $\delta>0$, it satisfies $(\varepsilon,\delta)$-DP for  $\varepsilon=\rho+\sqrt{4\rho\log(1/\delta)}.$
-            \end{enumerate}
-            Using these properties, we can calculate the smallest value of $\sigma$ that ensures $(\varepsilon=1,\delta=10^{-9})$-DP when using the Gaussian mechanism to answer $k$ counting queries. To see the benefit one gets from
-            using zCDP, plot (on the same graph) the standard deviation of the Gaussian noise added to each query as a function of $k$ using the composition of zCDP against that of the advanced composition for approximate DP (from part (a)).
-            From your plot, for what value of $k$ does the Gaussian mechanism outperform advanced composition (from part (a))?
-        \end{enumerate}
-
-    \end{enumerate}
-
+		
+		In this problem, you will apply the exponential mechanism
+		to estimate medians on {\em continuous} data.		
+		If we have a continuous output domain $\calY=[-1,1]$, the exponential mechanism produces output
+		$M(x) = Y$ where $Y$ has probability density function $f_Y$ given as follows:
+		
+		$$f_Y(y) = \begin{cases}
+		\frac{\exp\left(\frac{\epsilon\cdot s(x,y)}{2\cdot GS_s}\right)}{\int_{-1}^1 \exp\left(\frac{\epsilon\cdot s(x,z)}{2\cdot GS_s}\right) dz} & \text{if } y\in [-1,1].\\
+		0 & \text{if } y\notin [-1,1].
+		\end{cases}$$
+		
+		\begin{enumerate}
+			\item Write a function that takes in a dataset $x$, and outputs the private median of $x\in [-1,1]^n$ using the above mechanism.
+			(Hint: observe that $f_Y$ is
+			piecewise constant.)
+			
+			\item Generate a dataset $x\in\calX^n$ from the truncated normal distribution $\left[\mathcal{N}(1/2,\sigma^2)\right]_{-1}^1.$ Vary $\sigma$ from $.1$ to $.5$, and for each $\sigma$, compute the private median of $x$ using your function from part (a). Run many Monte Carlo (at least 100)
+			trials to estimate the RMSE
+			of the private median, and then plot the error against $\sigma$.
+			
+			\item Notice from part (b) that the exponential mechanism does
+			not output very accurate answers when the data is too concentrated. Briefly explain the reason for this phenomenon.
+		\end{enumerate}
+		
+		
+		\item \textbf{DP Synthetic Data:}
+		In this problem, you will create and analyze DP synthetic data. %\footnote{This notebook might be helpful as a starting point: \url{https://github.com/opendp/cs208/blob/main/spring2022/examples/wk5_exponential.ipynb}.}.
+		%In this problem, you will expand the template from class to create and analyze DP synthetic data. 
+		You will compare the results of running a regression on the synthetic data with your DP regression algorithm from HW4.
+		
+		
+		
+		\begin{enumerate}
+			\item \textbf{Write a DP synthetic data function.}
+			Write a function that takes a data bound $b$, a dataset $z=((x_1,y_1),\ldots,(x_n,y_n))\in (([-b,b]\times [-b,b])^n$
+			a parameter $\epsilon\geq 0$, a binning parameter $k$, and
+			does the following:
+			(a) bins the datapoints using a $k\times k$ grid, (b) constructs a $\epsilon$-DP histogram $h$ of of the dataset, and (c) post-processes $h$ to construct an $\epsilon$-DP synthetic dataset $\tilde{z} = ((\tilde{x_1},\tilde{y_1}),\ldots,(\tilde{x_m},\tilde{y_m}))
+			\in ([-1,1]\times [-1,1])^m$.  
+			\label{part:histogram}
+		
+			\item \textbf{Perform and evaluate linear regression on the synthetic data.} 
+			Given a
+			DP synthetic data generator from Part~\ref{part:histogram}, we can
+			perform DP linear regression by post-processing, running
+			standard OLS regression on $\tilde{z}$ to 
+			obtain an $\epsilon$-DP slope $\tilde{\beta}$ minimizing 
+			$\sum_i (\tilde{y_i}-\tilde{\beta}\tilde{x_i})^2$.
+			\iffalse
+	
+			\fi
+			Evaluate the resulting DP regression estimates exactly as in HW4                Problem 2d, using parameters $\epsilon=.1$, $b=1$, and $k=20$, and              many Monte Carlo trials of the following:
+			For each $n=100,200,300,\ldots,5000$, 
+			generate a dataset $z$, where the 
+			$x_i$'s are uniform in $[-1/2,1/2]$ and 
+			$y_i = \left[x_i + \mathcal{N}(0,.2)\right]_{-1}^{1}.$
+			Plot the bias and standard deviation of both the OLS estimate $\hat{\beta}$ and the DP estimate $\tilde{\beta}$ obtained by
+			post-processing the DP histogram.  
+			Your plot should have $n$ on the $x$-axis, and bias and standard deviation on the $y$-axis on a scale from $-1.0$ to $1.0$.
+			Try to run enough trials to obtain smooth curves.
+			
+			\item \textbf{Compare the error.} 
+			Compare the bias and standard deviation of the above DP-histogram-based regression with the results obtained on HW4. 
+			Give an intuitive explanation for the differences you find.
+		\end{enumerate}
+		
+		
+		\item \textbf{Composition:}
+		
+		\begin{enumerate}
+			\item  \label{part:optimal}
+			Suppose you have a global privacy budget of $\varepsilon=1$ and are willing to tolerate $\delta=10^{-9}$ and you want to release $k$ count queries (i.e., sums of Boolean predicates\footnote{A Boolean predicate is a function that returns a 0 or a 1. An example of a count query might be the
+				number of Harvard college students that live in the Quad.}) using the Laplace mechanism with an individual privacy loss of $\varepsilon_0$.  By basic composition, you can set
+			$\varepsilon_0=\varepsilon/k$.   Using the advanced composition theorem, you can set
+			$\varepsilon_0=\varepsilon /\sqrt{2k\ln(1/\delta)}$.
+			
+			For the two choices (basic and advanced composition), plot (on the same graph) the standard deviation of the Laplace noise added to each query as a function of $k$.
+			
+			
+			
+			\item
+			As we saw, for the 2020 Decennial Census, the US Census Bureau used a variant of differential privacy called zCDP
+			(Zero-concentrated Differential Privacy), that is tailored to analyzing the Gaussian mechanism and its compositions. The formal definition of zCDP is not needed for this problem, but only that zCDP has a single privacy-loss parameter $\rho\geq 0$ and has the following properties:
+			\begin{enumerate}
+				\item The Gaussian mechanism with noise of variance $\sigma^2 = (\mathrm{GS}_q)^2/2\rho$ is $\rho$-zCDP, where
+				$\mathrm{GS}_q$ is the global sensitivity of the query
+				$q$.
+				\item Suppose $\mathcal{M}_1$ satisfies $\rho_1$-zCDP and $\mathcal{M}_2$ satisfies $\rho_2$-zCDP. Then their composition $(\mathcal{M}_1, \mathcal{M}_2)$ satisfies $(\rho_1+\rho_2)$-zCDP.
+				\item If a mechanism $\mathcal{M}$ satisfies $\rho$-zCDP, then for every $\delta>0$, it satisfies $(\varepsilon,\delta)$-DP for  $\varepsilon=\rho+\sqrt{4\rho\ln(1/\delta)}.$
+			\end{enumerate}
+			We can calculate the smallest value of $\sigma$ that ensures $(\varepsilon=1,\delta=10^{-9})$-DP when using the above properties to analyze the Gaussian mechanism for answering $k$ counting queries. To see the benefit one gets from
+			using zCDP, plot (on the same graph) the standard deviation of the Gaussian noise added to each query as a function of $k$ using the composition of zCDP against that of basic and advanced composition for approximate DP (from part (a)).
+			From your plot, for what value of $k$ does the Gaussian mechanism outperform advanced composition (from part (a))?
+		\end{enumerate}
+		
+	\end{enumerate}
+	
 \end{document}
