@@ -1,0 +1,174 @@
+%=================================================================
+\documentclass[11pt]{article}
+
+\def\draft{1}
+
+\usepackage{amsmath,amssymb,amsthm,enumitem, graphicx,verbatim,hyperref,verbatim,xcolor,rotating,setspace}
+\usepackage[top=1in, right=1in, left=1in, bottom=1.5in]{geometry}
+\definecolor{spot}{rgb}{0.6,0,0}
+
+\newcommand{\instructions}{\noindent \textbf{Instructions:} Submit a single PDF file to Gradescope containing your solutions, code, plots, and analyses. Make sure to list all collaborators and references.}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{openprob}[theorem]{Open Problem}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{observation}[theorem]{Observation}
+
+\newtheoremstyle{solution}%
+{\topsep}{\topsep}{\normalfont}{}%
+{\itshape}{.}{5pt}{}
+\theoremstyle{solution}
+\newtheorem*{solution}{Solution}
+
+% Math macros
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Exp}{\mathrm{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Normal}{\mathcal{N}}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Lap}{\mathrm{Lap}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\Range}{\mathrm{Range}}
+
+% PUMS macros
+\newcommand{\data}{\texttt{data}}
+\newcommand{\pub}{\texttt{pub}}
+\newcommand{\pubA}{\texttt{alice}}
+\newcommand{\us}{\texttt{uscitizen}}
+\newcommand{\sex}{\texttt{sex}}
+\newcommand{\age}{\texttt{age}}
+\newcommand{\educ}{\texttt{educ}}
+\newcommand{\married}{\texttt{married}}
+\newcommand{\divorced}{\texttt{divorced}}
+\newcommand{\latino}{\texttt{latino}}
+\newcommand{\black}{\texttt{black}}
+\newcommand{\asian}{\texttt{asian}}
+\newcommand{\children}{\texttt{children}}
+\newcommand{\employed}{\texttt{employed}}
+\newcommand{\militaryservice}{\texttt{militaryservice}}
+\newcommand{\disability}{\texttt{disability}}
+\newcommand{\englishability}{\texttt{englishability}}
+
+\newcommand{\zo}{\{0,1\}}
+
+
+\title{\vspace{-1.5cm} HW 3: Differential Privacy Foundations}
+\author{CS 208 Applied Privacy for Data Science, Spring 2022}
+\date{\textbf{Version 1.0: Due Fri, Feb. 18, 5:00pm.}}
+
+
+%=================================================================
+
+\begin{document}
+    \maketitle
+
+    \instructions
+
+    \begin{enumerate}[leftmargin=*]
+
+        \item \textbf{Mechanisms:} Consider the following mechanisms $M$ that takes a dataset $x\in [0,1]^n$ and returns
+        an estimate of the mean $\bar{x} = (\sum_{i=1}^n x_i)/n$.
+
+        \begin{enumerate}[label=\roman*]
+            \item $M(x) = [\bar{x}+Z]^1_0$, for $Z\sim \mathrm{Lap}(2/n)$,
+            where for real numbers $y$ and $a\leq b$, $[y]^b_a$ denotes the ``clamping'' function:
+            $$[y]^b_a =
+            \begin{cases}
+                a & \text{if } y < a\\
+                y & \text{if } a\leq y\leq b\\
+                b & \text{if } y >b
+            \end{cases}.$$
+            \item $M(x) = \bar{x}+[Z]^1_{-1}$, for $Z\sim \mathrm{Lap}(2/n)$.
+            \item
+            $$M(x) = \begin{cases} 1 & \text{w.p. } \overline{x}\\
+            0 & \text{w.p. } 1-\overline{x}.
+            \end{cases}.$$
+            \item $M(x) = Y$ where $Y$ has probability density function $f_Y$ given as follows:
+
+            $$f_Y(y) = \begin{cases}
+                           \frac{e^{-n|y-\bar{x}|/10}}{\int_0^1 e^{-n|z-\bar{x}|/10} dz} & \text{if } y\in [0,1].\\
+                           0 & \text{if } y\notin [0,1].
+            \end{cases}$$
+
+        \end{enumerate}
+        \begin{enumerate}
+            \item Which of the above mechanisms meet the definition of $\epsilon$-differential privacy for a finite value of $\epsilon$, and what is the smallest value of $\epsilon$ (possibly as a function of $n$) for which they do? \label{part:epsilon}
+            As in class, here we are treating $n$ as public knowledge (so it is not a privacy violation to reveal $n$), and working with the ``change-one'' definition of DP.
+
+            \item Consider the algorithms that satisfy $\epsilon$-DP from Problem~\ref{part:epsilon}. Describe how you would modify these algorithms
+            to have a tunable privacy parameter $\epsilon$
+            and a tunable data
+            domain $[a,b]$ (rather than $[0,1]$). \label{part:tunable}
+            \item Of the algorithms from Problem~\ref{part:tunable}, which do you consider to be ``best'' for releasing a DP mean and why?  (There is
+            not a single ``right'' answer for this problem.)
+            \iffalse
+
+            \item If they satisfy the definition, what is the smallest value of $\epsilon$ for which they satisfy the definition?  Can you propose an adaptation that would provide greater utility to the release, as measured by mean squared error.
+            \item If they do not meet the definition, propose a minimal change that would create an algorithm that does meet the definition, and again, provide the minimal value of $\epsilon$ that meets the definition.  (Minimal is subjective, but the smaller we judge your change, the better we will subjectively consider your answer.)
+            \fi
+        \end{enumerate}
+
+        \newpage
+        \item \textbf{Evaluating DP Algorithms with Synthetic Data:}
+        \label{prob:Poisson}
+        Consider a dataset $x\in \mathbb{N}^n$ drawn from a Poisson process, which has probability distribution  $\Pr[x_i=k] = 10^ke^{-10}/k!$ for  natural numbers $k$ (where we consider $k=0$ to be a natural number and define $0!=1$).
+        \begin{enumerate}
+            \item \textbf{Generate data.} Write a \emph{data generating process} (DGP) function that generates a dataset $x\in \mathbb{N}^n$ according to the above Poisson process.
+            \item
+            \textbf{Write a DP function.}
+            Pick one of your differentially private mechanisms from question Problem~\ref{part:tunable} (generalized
+            to allow for arbitrary choices of $\epsilon$ and data range $[a,b]$ as parameters) that releases an estimate of $\bar{x}$. Write a function that takes in a vector of values $x\in [a,b]^n$ and an $\epsilon$, and outputs a differentially private mean.  To apply your mechanism to unbounded data $x\in \mathbb{R}^n$, you will have to clamp $x$ to
+            a chosen range $[a,b]$.    For simplicity,
+            we will fix $a=0$ and only consider varying $b$.
+            \item
+            \textbf{Plot the results of your function.} Recall the discussion on clamping from class: if the range is large, the global sensitivity increases,  so noise increases and utility drops.  However, if you clip the values too aggressively the answer will be biased, and again utility will drop. We study the effect of varying the upper bound $b$. Vary $b$ in your function and plot the root mean squared error of the results against $b$ for the setting $n=200$
+            and $\epsilon=.5$.
+            Identify the approximately optimal value $b^*$ of $b$
+            for this data distribution (in the sense of minimizing the RMSE).
+            \item
+            \textbf{Explain a potential issue.} Suppose we have an actual (not synthetic) dataset
+            $x\in \mathbb{N}^n$ for which we want to
+            release a differentially private mean,
+            and we don't know the exact underlying distribution
+            of $x$.
+            Again, we need to select the parameter $b$ and
+            want to do so in a way that minimizes the
+            error.   A natural idea is to use a {\em (nonparametric) bootstrap}\footnote{In a nonparametric bootstrap, we
+            generate new datasets
+            by sampling with replacement from $x$ itself. You may find the code to implement the bootstrap in the notebook on 2/10.}
+            to generate many datasets that are ``similar'' to $x$
+            in place of the data-generating process above, and optimize the choice of $b$ as above.
+            Once we find an optimal value $b^*$, we then
+            do our differentially private release on the
+            dataset $x$ itself.
+            Explain why this approach is not safe in general and may violate differential privacy.
+
+            \item
+            \textbf{Propose a method.} Propose some alternative methods for determining a good upper bound $b$ for a given sensitive dataset $x\in\mathbb{N}^n$, while continuing to provide the protections of differential privacy. (There is no single ``right answer'' for this problem.)
+        \end{enumerate}
+
+
+        \item \textbf{Translating DP.}
+        Consider how you would translate the mathematical definition and properties of differential privacy into societal terms. For example, what does it mean to define privacy semantically (as a property of the algorithm or information flow) rather than syntactically (as a property of a dataset, statistical release, or information output)? In one paragraph, reflect on how differential privacy comports with your personal views of privacy as both a technical and societal concept.
+
+    \end{enumerate}
+
+\end{document}

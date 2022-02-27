@@ -1,4 +1,8 @@
+# introduced in wk3
+# functions used regularly in examples
+
 import numpy as np
+
 
 def laplace(shift=0., scale=1., size=None):
     """Sample from the laplace distribution."""
@@ -8,6 +12,7 @@ def laplace(shift=0., scale=1., size=None):
 
     # the easy way
     # return np.random.laplace(loc=shift, scale=scale, size=size)
+
 
 def gaussian(shift=0., scale=1., size=None):
     """Sample from the Gaussian distribution."""
@@ -50,12 +55,22 @@ def release_dp_mean(x, bounds, epsilon, delta=1e-6, mechanism="laplace"):
 
     return dp_mean
 
-    # the compact way
-    # return laplace(shift=mean(x_clamped(x)), scale=(upper-lower)/(n*epsilon))
-    # return gaussian(shift=mean(x_clamped(x)), scale=(upper-lower)/(n*epsilon))
-    
 
 def bootstrap(x, n):
     """Sample n values with replacement from n."""
     index = np.random.randint(low=0., high=len(x), size=n)
     return x[index]
+
+
+def release_dp_histogram(x, epsilon, categories):
+    """Release an `epsilon`-DP estimate of the counts of each of the `categories`"""
+    sensitivity = 2
+    scale = sensitivity / epsilon
+
+    # create a {category: count} hashmap
+    counts = dict(zip(*np.unique(x, return_counts=True)))
+    # look up the count of each category, or zero if not exists
+    sensitive_histogram = np.array([counts.get(cat, 0) for cat in categories])
+
+    dp_histogram = sensitive_histogram + laplace(scale=scale, size=sensitive_histogram.shape)
+    return dp_histogram

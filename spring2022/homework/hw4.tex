@@ -58,7 +58,6 @@
 an estimate of the mean $\bar{x} = (\sum_{i=1}^n x_i)/n$.
 
 \begin{enumerate}[label=\roman*.]
-    % \item $M(x) = \bar{x} + Z$ for $Z \sim \textrm{Uniform}(-1,1).$
     \item $M(x) = [\bar{x}+Z]^1_0$, for $Z\sim \mathrm{Lap}(2/n)$,
     where for real numbers $y$ and $a\leq b$, $[y]^b_a$ denotes the ``clamping'' function:
 $$[y]^b_a = 
@@ -72,8 +71,6 @@ b & \text{if } y >b
     $$M(x) = \begin{cases} 1 & \text{w.p. } \overline{x}\\
     0 & \text{w.p. } 1-\overline{x}.
     \end{cases}.$$
-    % \item $M(x) = \bar{x}+Z$ for $Z\sim \textrm{Geo}(5/n)$, where  .
-    % \item $M(x) = (\lceil 100 \bar{x}\rceil + Z)/100$ for $Z\sim \textrm{Geo}(4)$, where $\lceil y\rceil$ denotes the smallest integer greater than or equal to $y$.
     \item $M(x) = Y$ where $Y$ has probability density function $f_Y$ given as follows:
     
     $$f_Y(y) = \begin{cases}
@@ -120,7 +117,6 @@ This is called {\em ordinary least-squares (OLS)} regression, since $\hat{\beta}
     
 \iffalse    Measure utility by the mean-squared residuals, as defined in Equation~(\ref{eqn:residuals}), but using your DP estimate for $\hat{\beta}$ instead of the OLS estimate.
     Plot and compare the distributions of mean-squared residuals you get with your differentially private simple linear regression versus with a non-private OLS regression.
-    %A box-and-whisker plot is a useful way to show this, but you can explore visualization method
 \fi   
     \iffalse
     sum of the squared residuals
@@ -162,8 +158,7 @@ we replace the $i$'th row of $X$ with the fixed value 0.)
 
 \item \textbf{Final Project Ideas} 
 The final projects are an important focus of this course, and we want you to start thinking about yours as soon as possible.  Please read the
-``Final Project Guidelines'' (\url{https://github.com/opendp/cs208/blob/main/spring2022/final%20project/Final%20Project%20Guidelines.pdf}) 
-%\Snote{needs to be updated for this year}
+``Final Project Guidelines'' (\url{https://github.com/opendp/cs208/blob/main/spring2022/final%20project/Final%20Project%20Guidelines.pdf})
 document on the course website and
 submit about a paragraph as described in the ``Topic Ideas'' bullet.
 
