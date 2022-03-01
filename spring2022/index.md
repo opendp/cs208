@@ -52,7 +52,7 @@
 | Section 4                               |                                       | [pdf](section/section4.pdf)                                     |  
 | Tue 2/22                                | Beyond Noise Addition                 | [pdf](presentations/beyond-noise.pdf), [ipynb][wk5_exponential] | [Smith-Ullman] Lecture 6 Secs 1.0-1.1, [Smith-Raskhodnikova encyclopedia] article: DP for graph data            |
 | Thu 2/24                                | Centralized DP                        |                                                                 | [2020 Census Data Products and Privacy Methods] Sec 2.0-2.2, Sec 3 (all), Sec 5.0                               |
-| Tue 3/1                                 | Practicum on Centralized DP           |                                                                 | [Opportunity Atlas]; [Chetty-Friedman JPC] Sec 3                                                                |
+| Tue 3/1                                 | Practicum on Centralized DP           |   [pdf](presentations/DP_OI_SGD.pdf)                            | [Opportunity Atlas]; [Chetty-Friedman JPC] Sec 3                                                                |
 | Problem Set 5 (due Fri 3/4)             |                                       | [pdf](homework/hw5.pdf), [tex](homework/hw5.tex)                |
 
 [jan18:pdf]: files/course_preview.pdf
