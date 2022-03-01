@@ -52,9 +52,11 @@
 | Section 4                               |                                                | [pdf](section/section4.pdf)                                     |  
 | Tue 2/22                                | Beyond Noise Addition                          | [pdf](presentations/beyond-noise.pdf), [ipynb][wk5_exponential] | [Smith-Ullman] Lecture 6 Secs 1.0-1.1, [Smith-Raskhodnikova encyclopedia] article: DP for graph data            |
 | **Implementing Centralized DP** |                                       |                                                                 |      
-| Thu 2/24                                | Synthetic Data: the 2020 Census                |  [pdf](presentations/DP_CensusSynthetic.pdf)                    | [2020 Census Data Products and Privacy Methods] Sec 2.0-2.2, Sec 3 (all), Sec 5.0                               |
-| Tue 3/1                                 | Statistical Releases: the Opportunity Atlas    |   [pdf](presentations/DP_OI_SGD.pdf)                            | [Opportunity Atlas]; [Chetty-Friedman JPC] Sec 3                                                                |
+| Thu 2/24                                | Synthetic Data: the 2020 Census                | [pdf](presentations/DP_CensusSynthetic.pdf)                     | [2020 Census Data Products and Privacy Methods] Sec 2.0-2.2, Sec 3 (all), Sec 5.0                               |
+| Tue 3/1                                 | Statistical Releases: the Opportunity Atlas    | [pdf](presentations/DP_CensusSynthetic.pdf)                           | [Opportunity Atlas]; [Chetty-Friedman JPC] Sec 3                                                                |
 | Problem Set 5 (due Fri 3/4)             |                                                | [pdf](homework/hw5.pdf), [tex](homework/hw5.tex)                |
+| Tue 3/1 and Thu 3/3                     | Machine Learning with DP                       | [pdf](presentations/DP_OI_SGD.pdf)                              | [Deep Learning with DP]                                                               |
+
 
 [jan18:pdf]: files/course_preview.pdf
 [jan18:video]: https://harvard.zoom.us/rec/play/rNU5_swSdM3xVtAd3rTReJtniCNhE4oKY54CWsA2hIPpnt2PmZGPbO-yOvIs0NpIS9y1ilRJ6SWsvH9P.hVnF5j1z4LYMDVYM
@@ -79,3 +81,4 @@
 [2020 Census Data Products and Privacy Methods]: https://www2.census.gov/programs-surveys/decennial/2020/program-management/planning-docs/2020-census-data-products-privacy-methods.pdf
 [Chetty-Friedman JPC]: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/716/688
 [Opportunity Atlas]: https://opportunityinsights.org/wp-content/uploads/2018/10/atlas_summary.pdf
+[Deep Learning with DP]: https://arxiv.org/abs/1607.00133
