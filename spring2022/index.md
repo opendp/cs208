@@ -17,6 +17,7 @@
 * Video recordings at Panopto (access via Canvas)
 * [Annotated Course Bibliography]
 * [Guidelines for Reading and Commenting]
+* [Example Notebooks (GitHub)]
 
 [Syllabus]: https://opendp.github.io/cs208/spring2022/files/cs208_spring2022_syllabus.pdf
 [gcal]: https://calendar.google.com/calendar/u/0?cid=Y19lYjYwZ2NzcDdoZTBwamZqMG1ldGs0NnE3MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
@@ -25,6 +26,7 @@
 [reading guidelines]: files/reading_and_commenting_guidelines.pdf
 [Annotated Course Bibliography]: files/cs208_annotated_bibliography.pdf
 [Guidelines for Reading and Commenting]: https://opendp.github.io/cs208/spring2022/files/reading_and_commenting_guidelines.pdf
+[Example Notebooks (GitHub)]: https://github.com/opendp/cs208/tree/main/spring2022/examples
 
 
 ### Schedule
