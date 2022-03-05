@@ -1,0 +1,179 @@
+%=================================================================
+\documentclass[11pt]{article}
+
+\def\draft{1}
+
+\usepackage{amsmath,amssymb,amsthm,enumitem, graphicx,verbatim,hyperref,verbatim,xcolor,rotating,setspace}
+\usepackage[top=1in, right=1in, left=1in, bottom=1.5in]{geometry}
+\definecolor{spot}{rgb}{0.6,0,0}
+\newcommand{\instructions}{\noindent \textbf{Instructions:} Submit a single PDF file to Gradescope containing your solutions, code, plots, and analyses. Make sure to list all collaborators and references.}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{openprob}[theorem]{Open Problem}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{observation}[theorem]{Observation}
+
+\newtheoremstyle{solution}%
+  {\topsep}{\topsep}{\normalfont}{}%
+  {\itshape}{.}{5pt}{}
+\theoremstyle{solution}
+\newtheorem*{solution}{Solution}
+
+% Math macros
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Exp}{\mathrm{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Normal}{\mathcal{N}}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Lap}{\mathrm{Lap}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\Range}{\mathrm{Range}}
+\newcommand{\Supp}{\mathrm{Supp}}
+\def\norm#1{\mathopen\| #1 \mathclose\|}% use instead of $\|x\|$
+\newcommand{\brackets}[1]{\langle #1\rangle}
+
+% PUMS macros
+\newcommand{\data}{\texttt{data}}
+\newcommand{\pub}{\texttt{pub}}
+\newcommand{\pubA}{\texttt{alice}}
+\newcommand{\us}{\texttt{uscitizen}}
+\newcommand{\sex}{\texttt{sex}}
+\newcommand{\age}{\texttt{age}}
+\newcommand{\educ}{\texttt{educ}}
+\newcommand{\married}{\texttt{married}}
+\newcommand{\divorced}{\texttt{divorced}}
+\newcommand{\latino}{\texttt{latino}}
+\newcommand{\black}{\texttt{black}}
+\newcommand{\asian}{\texttt{asian}}
+\newcommand{\children}{\texttt{children}}
+\newcommand{\employed}{\texttt{employed}}
+\newcommand{\militaryservice}{\texttt{militaryservice}}
+\newcommand{\disability}{\texttt{disability}}
+\newcommand{\englishability}{\texttt{englishability}}
+
+\newcommand{\zo}{\{0,1\}}
+
+% Macros from previous section notes
+\newcommand{\sol}{\noindent \textit{Solution.}~}
+\newcommand{\ezdp}{$(\epsilon,0)$-differentially private}
+\newcommand{\ezdpy}{$(\epsilon,0)$-differential privacy}
+\newcommand{\eddpy}{$(\epsilon, \delta)$-differential privacy}
+\newcommand{\eddp}{$(\epsilon, \delta)$-differentially private}
+
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\GS}{\mathrm{GS}}
+\newcommand{\LS}{\mathrm{LS}}
+\newcommand{\RS}{\mathrm{RS}}
+
+\newcommand{\sort}{\mathrm{sort}}
+
+\title{\vspace{-1.5cm} HW6: Variants of Sensitivity and Data-Dependent Bounds}
+\author{CS 208 Applied Privacy for Data Science, Spring 2022}
+\date{\textbf{Version 1.0: Due Fri, Mar. 11, 5:00pm.}}
+
+
+%=================================================================
+
+\begin{document}
+\maketitle
+
+\instructions
+
+\begin{enumerate}[leftmargin=*]
+
+\item \textbf{Graph Privacy and Different Types of Sensitivity:} 
+For $n\geq 2$, let $\cG = $ the set of undirected graphs (without self-loops) on vertex set $V=\{1,\ldots,n\}$, and for $G,G'\in \cG$, define $G\sim G'$ if there is a vertex $v\in V$ such that the only differences between $G$ and $G'$ involve edges incident to the vertex $v$.  (That is, we are considering node-level privacy.)
+For an integer $d\in [2,n-1]$, let $\cH \subseteq \cG$ denote the set of graphs of degree at most $d$.
+Define $q : \cG \rightarrow \N$ by taking $q(G)$ to be the number of isolated (i.e., degree $0$) nodes in $G$.
+Calculate the following measures of sensitivity of $q$:
+\begin{enumerate}
+    \item The global sensitivity: $\GS_q$.
+    \item The minimum local sensitivity: $\min_{G\in \cG} \LS_q(G)$.
+    \item The maximum local sensitivity on $\cH$: $\max_{G\in \cH} \LS_q(G)$.
+    \item The restricted sensitivity on $\cH$: $\RS_q^{\cH} = \max_{G,G'\in \cH, G\sim G'} |q(G)-q(G')|$.\footnote{The general definition of restricted sensitivity is a bit more involved, and also considers datasets $G$ and $G'$ that are not neighbors, but this simplified version is equivalent in the special case of $\cH$ and $\sim$ considered here.}
+    (The material we surveyed on graph privacy and restricted sensitivity tells us that there is a mechanism that is $\eps$-DP on all of $\cG$, but only adds noise proportional to $\RS_q^{\cH}$ for graphs in $\cH$.)
+\end{enumerate}
+
+\item \textbf{Data-Dependent Clipping Bounds:} In all of the parts below, the dataset is $x\in [0,B]^n$.   In all of the implementation parts, you should write
+code that takes as input $B\geq 0$, $n\in\mathbb{N}$, $x\in [0,B]^n$, and $\varepsilon>0$.
+
+\begin{enumerate}
+\item Show that the following algorithm for estimating a Trimmed mean is $\varepsilon$-DP:
+$$M(x) = \frac{1}{.9n}\cdot \left(\sum_{\lfloor .05n \rceil\leq i \leq \lfloor .95n \rceil} \sort(x)_i\right) +\mathrm{Lap}\left(\frac{B}{0.9\varepsilon n}\right),$$
+where $\sort(x)$ is a sorting of $x$ and $\lfloor z\rceil$ denotes the nearest integer to $z$ (breaking ties by rounding down).  That is, we are applying the Laplace mechanism after removing the bottom and top 5\% of the dataset.
+(Hint: Think about how changing one row of $x$ affects the trimmed dataset.)
+\label{part:TrimLap}
+
+\item Show that for large enough $n$, the analogous algorithm for the {\em Winsorized} mean is {\em not} $\varepsilon$-DP:
+$$M(x) = \frac{1}{n}\cdot \sum_{i=1}^n \left[x_i\right]_{P_{.05}}^{P_{.95}} +\mathrm{Lap}\left(\frac{B}{\varepsilon n}\right),$$
+where $P_t = \sort(x)_{\lfloor tn\rceil}$ is the $t$'th percentile of $x$ and $[x]_a^b$ is defined as in HW3.
+In Winsorization (which you saw in the Opportunity Insights Application), we clamp points rather than drop them. 
+To prove that the mechanism is not $\varepsilon$-DP, you should exhibit two adjacent datasets $x,x'\in [0,B]^n$ for
+which the distributions of $M(x)$ and $M(x')$ are not within an $e^{\epsilon}$ factor of each other. \label{part:Winsorized}
+
+\item In HW5, you implemented a continuous version of the exponential mechanism for releasing a median.  Describe and implement a continuous version of the exponential mechanism for releasing an estimate
+of the $t$th percentile $P_t$ of a dataset $x\in [0,B]^n$
+for any desired $t\in [0,100]$. Your function should take $t$ as an input. \label{part:percentile} 
+
+
+\iffalse
+\item Implement the following $\varepsilon$-DP algorithm for estimating a Trimmed mean of a dataset: use your algorithm from Part~\ref{part:percentile} to get  $\varepsilon/3$-DP estimates
+$\hat{P}_{.05}$ and $\hat{P}_{.95}$ of the 5th and 95th percentiles, drop all datapoints that lie outside the range $[\hat{P}_{.05},\hat{P}_{.95}]$, and then use the Laplace mechanism to compute an $(\varepsilon/3)$-DP mean of the trimmed data.  That is, your code should compute 
+$$M(x) = \frac{1}{.9n}\cdot \left(\sum_{i : \hat{P}_{.05}\leq x_i \leq \hat{P}_{.95}} x_i\right)
++ \mathrm{Lap}\left(\frac{3(\hat{P}_{.95}-\hat{P}_{.05})}{0.9\varepsilon n}\right).$$
+\label{part:ExpTrimLap}
+\fi
+
+\item Consider the following algorithm for estimating a Winsorized mean of a dataset: 
+use your algorithm from Part~\ref{part:percentile} to get  $\varepsilon/3$-DP estimates
+$\hat{P}_{.05}$ and $\hat{P}_{.95}$ of the 5th and 95th percentiles,
+and output
+$$M(x) = \frac{1}{n}\cdot \left(\sum_{i=1}^n \left[x_i\right]_{\hat{P}_{.05}}^{\hat{P}_{.95}}\right)
++ \mathrm{Lap}\left(\frac{3(\hat{P}_{.95}-\hat{P}_{.05})}{\varepsilon n}\right).$$
+Explain why $M$ is $\varepsilon$-DP even though the algorithm in Part~\ref{part:Winsorized} is not.  \label{part:ExpWinsorized}
+
+\item The dataset \texttt{MaPUMS5full.csv} provides the 5\% PUMS Census file for Massachusetts. For $\varepsilon=1$
+and each $B \in \{5\times 10^5, 5\times 10^6, 5\times 10^7\}$, estimate the RMSE of DP mean income for
+each PUMA in Massachusetts.\footnote{You can assume that the size
+of each PUMA dataset is public information.} Run this analysis to compare (i) the ordinary
+Laplace mechanism for a mean and (ii) the
+algorithm from Part~\ref{part:ExpWinsorized}.  Show box-and-whisker plots of the DP mean incomes for each PUMA and algorithm, noting the true means. 
+(In the GitHub repo, we have given you \texttt{hw6\_starter.py} for producing such plots comparing 
+the trimmed mean algorithm from Part~\ref{part:TrimLap} to the ordinary
+Laplace mechanism.)
+Order PUMA by mean income, or perhaps skew of income, or anything you think reveals an interesting pattern.  Give an intuitive explanation of the cases (datasets and parameter settings) in which algorithm (i) performs better than algorithm (ii) and vice-versa. 
+
+\end{enumerate}
+
+\item \textbf{Participation Highlights:} Recall that participation is an important part of CS208, and that there are many ways in which you can participate (Perusall, Ed, in-class discussions, section, collaboration with classmates, etc.)  To help us in assessing participation, 
+please share with us brief descriptions of up to 3 highlights of your participation in the class so far (up to Friday March 5), including a reflection on how each contributed positively to the learning environment of the class. 
+Also briefly discuss any adjustments you intend to make to your participation in the second half of the course.
+
+
+\end{enumerate}
+
+
+\end{document}
