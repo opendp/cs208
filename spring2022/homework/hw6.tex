@@ -155,9 +155,9 @@ $$M(x) = \frac{1}{n}\cdot \left(\sum_{i=1}^n \left[x_i\right]_{\hat{P}_{.05}}^{\
 + \mathrm{Lap}\left(\frac{3(\hat{P}_{.95}-\hat{P}_{.05})}{\varepsilon n}\right).$$
 Explain why $M$ is $\varepsilon$-DP even though the algorithm in Part~\ref{part:Winsorized} is not.  \label{part:ExpWinsorized}
 
-\item The dataset \texttt{MaPUMS5full.csv} provides the 5\% PUMS Census file for Massachusetts. For $\varepsilon=1$
+\item The dataset \texttt{FultonPUMS5full.csv} provides the 5\% PUMS Census file for Fulton. For $\varepsilon=1$
 and each $B \in \{5\times 10^5, 5\times 10^6, 5\times 10^7\}$, estimate the RMSE of DP mean income for
-each PUMA in Massachusetts.\footnote{You can assume that the size
+each PUMA in Fulton.\footnote{You can assume that the size
 of each PUMA dataset is public information.} Run this analysis to compare (i) the ordinary
 Laplace mechanism for a mean and (ii) the
 algorithm from Part~\ref{part:ExpWinsorized}.  Show box-and-whisker plots of the DP mean incomes for each PUMA and algorithm, noting the true means. 
