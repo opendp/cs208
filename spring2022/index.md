@@ -59,7 +59,8 @@
 | Tue 3/1                                 | Statistical Releases: the Opportunity Atlas    | [pdf](presentations/DP_CensusSynthetic.pdf)                           | [Opportunity Atlas]; [Chetty-Friedman JPC] Sec 3                                                                |
 | Problem Set 5 (due Fri 3/4)             |                                                | [pdf](homework/hw5.pdf), [tex](homework/hw5.tex)                |
 | Tue 3/1 and Thu 3/3                     | Machine Learning with DP                       | [pdf](presentations/DP_OI_SGD.pdf)                              | [Deep Learning with DP] (Sections 1-3.1; 5.2)                                                               |
-
+| Problem Set 6 (due Fri 3/11)             |                                                | [pdf](homework/hw6.pdf), [tex](homework/hw6.tex)                |
+| Section 6                               |                                                | [pdf](section/section6.pdf)                                     | 
 
 [jan18:pdf]: files/course_preview.pdf
 [jan18:video]: https://harvard.zoom.us/rec/play/rNU5_swSdM3xVtAd3rTReJtniCNhE4oKY54CWsA2hIPpnt2PmZGPbO-yOvIs0NpIS9y1ilRJ6SWsvH9P.hVnF5j1z4LYMDVYM
