@@ -61,7 +61,7 @@
 | Tue 3/1 and Thu 3/3                     | Machine Learning with DP                       | [pdf](presentations/DP_OI_SGD.pdf)                              | [Deep Learning with DP] (Sections 1-3.1; 5.2)                                                               |
 | Problem Set 6 (due Fri 3/11)             |                                                | [pdf](homework/hw6.pdf), [tex](homework/hw6.tex)                |
 | Section 6                               |                                                | [pdf](section/section6.pdf)                                     | 
-| Tue 3/8                                 | Machine Learning with DP (cont'd)    | [pdf](presentations/MLwithDP-lecture2_handout.pdf)                           |  |
+| Tue 3/8                                 | Machine Learning with DP (cont'd)    | [pdf](presentations/MLwithDP-lecture.pdf)                           |  |
 
 
 [jan18:pdf]: files/course_preview.pdf
