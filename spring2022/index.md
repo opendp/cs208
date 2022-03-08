@@ -55,9 +55,9 @@
 | Tue 2/22                                | Beyond Noise Addition                          | [pdf](presentations/beyond-noise.pdf), [ipynb][wk5_exponential] | [Smith-Ullman] Lecture 6 Secs 1.0-1.1, [Smith-Raskhodnikova encyclopedia] article: DP for graph data            |
 | **Implementing Centralized DP** |                                       |                                                                 |      
 | Thu 2/24                                | Synthetic Data: the 2020 Census                | [pdf](presentations/DP_CensusSynthetic.pdf)                     | [2020 Census Data Products and Privacy Methods] Sec 2.0-2.2, Sec 3 (all), Sec 5.0                               |
+| Problem Set 5 (due Fri 3/4)             |                                                | [pdf](homework/hw5.pdf), [tex](homework/hw5.tex)                |
 | Section 5                               |                                                | [pdf](section/section5.pdf)                                     |  
 | Tue 3/1                                 | Statistical Releases: the Opportunity Atlas    | [pdf](presentations/DP_CensusSynthetic.pdf)                           | [Opportunity Atlas]; [Chetty-Friedman JPC] Sec 3                                                                |
-| Problem Set 5 (due Fri 3/4)             |                                                | [pdf](homework/hw5.pdf), [tex](homework/hw5.tex)                |
 | Tue 3/1 and Thu 3/3                     | Machine Learning with DP                       | [pdf](presentations/DP_OI_SGD.pdf)                              | [Deep Learning with DP] (Sections 1-3.1; 5.2)                                                               |
 | Problem Set 6 (due Fri 3/11)             |                                                | [pdf](homework/hw6.pdf), [tex](homework/hw6.tex)                |
 | Section 6                               |                                                | [pdf](section/section6.pdf)                                     | 
