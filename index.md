@@ -20,7 +20,7 @@ The risks to privacy when making human subjects data available for research and 
 [ed]: https://edstem.org/us/courses/19868/
 [perusall]: https://app.perusall.com/courses/compsci-208-applied-privacy-for-data-science/
 [reading guidelines]: files/reading_and_commenting_guidelines.pdf
-[Annotated Course Bibliography]: files/cs208_annotated_bibliography.pdf
+[Annotated Course Bibliography]: https://opendp.github.io/cs208/spring2022/files/cs208_annotated_bibliography.pdf
 [Guidelines for Reading and Commenting]: https://opendp.github.io/cs208/spring2022/files/reading_and_commenting_guidelines.pdf
 
 
