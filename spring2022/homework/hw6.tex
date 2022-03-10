@@ -112,7 +112,7 @@ Calculate the following measures of sensitivity of $q$:
 \begin{enumerate}
     \item The global sensitivity: $\GS_q$.
     \item The minimum local sensitivity: $\min_{G\in \cG} \LS_q(G)$.
-    \item The maximum local sensitivity on $\cH$: $\max_{G\in \cH} \LS_q(G)$.
+    \item The maximum local sensitivity on $\cH$: $\max_{G\in \cH} \LS_q(G)$. \footnote{The answer differs from and motivates why we use restricted sensitivity.}
     \item The restricted sensitivity on $\cH$: $\RS_q^{\cH} = \max_{G,G'\in \cH, G\sim G'} |q(G)-q(G')|$.\footnote{The general definition of restricted sensitivity is a bit more involved, and also considers datasets $G$ and $G'$ that are not neighbors, but this simplified version is equivalent in the special case of $\cH$ and $\sim$ considered here.}
     (The material we surveyed on graph privacy and restricted sensitivity tells us that there is a mechanism that is $\eps$-DP on all of $\cG$, but only adds noise proportional to $\RS_q^{\cH}$ for graphs in $\cH$.)
 \end{enumerate}
@@ -153,7 +153,8 @@ $\hat{P}_{.05}$ and $\hat{P}_{.95}$ of the 5th and 95th percentiles,
 and output
 $$M(x) = \frac{1}{n}\cdot \left(\sum_{i=1}^n \left[x_i\right]_{\hat{P}_{.05}}^{\hat{P}_{.95}}\right)
 + \mathrm{Lap}\left(\frac{3(\hat{P}_{.95}-\hat{P}_{.05})}{\varepsilon n}\right).$$
-Explain why $M$ is $\varepsilon$-DP even though the algorithm in Part~\ref{part:Winsorized} is not.  \label{part:ExpWinsorized}
+What DP properties does $M$ use that makes it $\varepsilon$-DP, even though the algorithm in Part~\ref{part:Winsorized} is not?
+\label{part:ExpWinsorized}
 
 \item The dataset \texttt{FultonPUMS5full.csv} provides the 5\% PUMS Census file for Fulton County, Georgia. For $\varepsilon=1$
 and each $B \in \{5\times 10^5, 5\times 10^6, 5\times 10^7\}$, estimate the RMSE of DP mean income for
@@ -162,7 +163,7 @@ of each PUMA dataset is public information.} Run this analysis to compare (i) th
 Laplace mechanism for a mean and (ii) the
 algorithm from Part~\ref{part:ExpWinsorized}.  Show box-and-whisker plots of the DP mean incomes for each PUMA and algorithm, noting the true means. 
 (In the GitHub repo, we have given you \texttt{hw6\_starter.py} for producing such plots comparing 
-the trimmed mean algorithm from Part~\ref{part:TrimLap} to the ordinary
+the trimmed mean algorithm from Part~\ref{part:ExpWinsorized} to the ordinary
 Laplace mechanism.)
 Order PUMA by mean income, or perhaps skew of income, or anything you think reveals an interesting pattern.  Give an intuitive explanation of the cases (datasets and parameter settings) in which algorithm (i) performs better than algorithm (ii) and vice-versa. 
 
