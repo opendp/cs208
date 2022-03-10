@@ -111,7 +111,7 @@ Define $q : \cG \rightarrow \N$ by taking $q(G)$ to be the number of isolated (i
 Calculate the following measures of sensitivity of $q$:
 \begin{enumerate}
     \item The global sensitivity: $\GS_q$.
-    \item The minimum local sensitivity: $\min_{G\in \cG} \LS_q(G)$.
+    \item The minimum local sensitivity: $\min_{G\in \cG} \LS_q(G)$. (Some of the approaches we mentioned in class, like Privately Bounding Local Sensitivity, Propose-Test-Release, and Smooth Sensitivity aim to add noise that's not too much larger than the local sensitivity, which can sometimes be much smaller than the global sensitivity.  It's not always possible to do this while preserving DP, but local sensitivity calculations like here and below help give a sense of how much we can gain from such methods.) 
     \item The maximum local sensitivity on $\cH$: $\max_{G\in \cH} \LS_q(G)$. \footnote{The answer differs from and motivates why we use restricted sensitivity.}
     \item The restricted sensitivity on $\cH$: $\RS_q^{\cH} = \max_{G,G'\in \cH, G\sim G'} |q(G)-q(G')|$.\footnote{The general definition of restricted sensitivity is a bit more involved, and also considers datasets $G$ and $G'$ that are not neighbors, but this simplified version is equivalent in the special case of $\cH$ and $\sim$ considered here.}
     (The material we surveyed on graph privacy and restricted sensitivity tells us that there is a mechanism that is $\eps$-DP on all of $\cG$, but only adds noise proportional to $\RS_q^{\cH}$ for graphs in $\cH$.)
