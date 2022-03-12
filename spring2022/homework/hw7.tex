@@ -1,0 +1,137 @@
+%=================================================================
+\documentclass[11pt]{article}
+
+\def\draft{1}
+
+
+\usepackage{amsmath,amssymb,amsthm,enumitem, graphicx,verbatim,hyperref,verbatim,xcolor,rotating,setspace}
+\usepackage[top=1in, right=1in, left=1in, bottom=1.5in]{geometry}
+\definecolor{spot}{rgb}{0.6,0,0}
+\newcommand{\instructions}{\noindent \textbf{Instructions:} Submit a single PDF file to Gradescope containing your solutions, code, plots, and analyses. Make sure to list all collaborators and references.}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{openprob}[theorem]{Open Problem}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{observation}[theorem]{Observation}
+
+\newtheoremstyle{solution}%
+  {\topsep}{\topsep}{\normalfont}{}%
+  {\itshape}{.}{5pt}{}
+\theoremstyle{solution}
+\newtheorem*{solution}{Solution}
+
+% Math macros
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Exp}{\mathrm{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Normal}{\mathcal{N}}
+\newcommand{\Bin}{\mathrm{Bin}}
+\newcommand{\Bern}{\mathrm{Bern}}
+\newcommand{\Lap}{\mathrm{Lap}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\Range}{\mathrm{Range}}
+\newcommand{\Supp}{\mathrm{Supp}}
+\def\norm#1{\mathopen\| #1 \mathclose\|}% use instead of $\|x\|$
+\newcommand{\brackets}[1]{\langle #1\rangle}
+
+% PUMS macros
+\newcommand{\data}{\texttt{data}}
+\newcommand{\pub}{\texttt{pub}}
+\newcommand{\pubA}{\texttt{alice}}
+\newcommand{\us}{\texttt{uscitizen}}
+\newcommand{\sex}{\texttt{sex}}
+\newcommand{\age}{\texttt{age}}
+\newcommand{\educ}{\texttt{educ}}
+\newcommand{\married}{\texttt{married}}
+\newcommand{\divorced}{\texttt{divorced}}
+\newcommand{\latino}{\texttt{latino}}
+\newcommand{\black}{\texttt{black}}
+\newcommand{\asian}{\texttt{asian}}
+\newcommand{\children}{\texttt{children}}
+\newcommand{\employed}{\texttt{employed}}
+\newcommand{\militaryservice}{\texttt{militaryservice}}
+\newcommand{\disability}{\texttt{disability}}
+\newcommand{\englishability}{\texttt{englishability}}
+
+\newcommand{\zo}{\{0,1\}}
+
+% Macros from previous section notes
+\newcommand{\sol}{\noindent \textit{Solution.}~}
+\newcommand{\ezdp}{$(\epsilon,0)$-differentially private}
+\newcommand{\ezdpy}{$(\epsilon,0)$-differential privacy}
+\newcommand{\eddpy}{$(\epsilon, \delta)$-differential privacy}
+\newcommand{\eddp}{$(\epsilon, \delta)$-differentially private}
+
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\cG}{\mathcal{G}}
+\newcommand{\GS}{\mathrm{GS}}
+\newcommand{\LS}{\mathrm{LS}}
+\newcommand{\RS}{\mathrm{RS}}
+
+\newcommand{\sort}{\mathrm{sort}}
+
+
+\title{\vspace{-1.5cm} HW7: Ethics and DP-SGD}
+\author{CS 208 Applied Privacy for Data Science, Spring 2022}
+\date{\textbf{Version 1.0: Due Fri, Mar. 25, 5:00pm.}}
+
+
+%=================================================================
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+    \item \textbf{Embedded EthiCS assignment:}
+    See separate pdf.
+    
+    \item \textbf{DP-SGD:}
+    In our code example in class,\footnote{See \url{https://github.com/opendp/cs208/blob/main/spring2022/examples/wk6_dpsgd_full.ipynb}} 
+    we saw how to release an estimated Logistic regression for predicting marital status from education level using DP-SGD to optimize the log-likelihood loss function.  Convert this code to release the probability of employment given education level and disability status (these are the same variables we used in the Opacus example). You will need to modify the loss function, the gradient clipping, and Gaussian noise addition to handle the additional variable present here compared to the code from class.
+
+    
+    As discussed in the class, the learning rate parameter needs to be set correctly in order to obtain convergence in the DP-SGD setting. 
+    The learning rate $\nu$ in the notebook is a 2-dim vector (the coefficient of education level and the intercept).\footnote{Ordinarily,
+    the learning rate parameter is treated as a single scalar that multiplies the entire gradient.  Allowing different learning rates per coordinate amounts to also normalizing the different independent variables.}
+    Since we are
+    now adding one more prediction variable, we need a third learning rate parameter, which you are going to find privately.  (You can keep the education coefficient and intercept learning rates the same as in the notebook.)
+
+    Run your code and create $K=10$ differentially private models (each with privacy parameter $\epsilon=1$ and $\delta=1e-6$) across a sequence of learning rates.  (You can leave all the other parameters as in the exemplar code, or adjust them to reasonable values.) Choose one of these models to release, by means of the exponential mechanism with privacy parameter $\epsilon=1$.  Use a score function in the exponential mechanism that is the negative of the loss function you used in training. Show the parameters of the DP model that is trained using the chosen learning rate. 
+    
+    The privacy loss of the entire procedure above can be analyzed by applying standard composition theorems, but this will incur a loss that grows with the number $K$ of models trained. However, a theorem of Liu and Talwar (STOC 2019) shows that in fact one can do this model selection with only a constant-factor increase in the privacy-loss parameter $\epsilon$, with no dependence on  $K$.
+\iffalse    
+    To analyze the privacy of this DP parameter selection process, it is straightforward to consider the composition over $K$ runs of the DP models and the exponential mechanism. This approach will give us $O(\epsilon K)$-DP which allows for privacy budget of only $\epsilon/K$ for each DP model (or $\epsilon\sqrt{\ln \frac{1}{\delta}}/\sqrt{K}$ if using advanced composition). In fact, since we are only going to release one model, this approach will waste privacy-loss budget. Theorem 1.3 in [Li and Talware 18] \footnote{https://arxiv.org/pdf/1811.07971.pdf} addresses this issue and shows that overall privacy loss can be bounded by $O(\epsilon)$.
+\fi    
+    
+    \item \textbf{Revised Project Ideas:}
+    You should have received feedback on your initial project ideas on Gradescope. Based on this feedback, we would like you to revise your ideas and create your project group (1-3 people per group).
+    By \textbf{Monday 3/21}, please post your current topic ideas in the Google sheet we shared in Ed.
+    With this homework submission on \textbf{Friday 3/25}, you should settle on your project group and submit your revised ideas for further feedback.
+    Feel free to talk to any of the course staff in more detail as you are thinking through your revised idea. Please read the
+    ``Final Project Guidelines'' (\url{https://github.com/opendp/cs208/blob/main/spring2022/final%20project/Final%20Project%20Guidelines.pdf}) 
+    document on the course website and
+    submit a paragraph as described in the ``Topic Ideas (revision after Spring Break)'' bullet.
+\end{enumerate}
+
+\end{document}

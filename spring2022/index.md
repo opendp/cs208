@@ -62,6 +62,7 @@
 | Problem Set 6 (due Fri 3/11)             |                                                | [pdf](homework/hw6.pdf), [tex](homework/hw6.tex)                |
 | Section 6                               |                                                | [pdf](section/section6.pdf)                                     | 
 | Tue 3/8                                 | Machine Learning with DP (cont'd)    | [pdf](presentations/MLwithDP-lecture.pdf)                           |  |
+| Problem Set 7 (due Fri 3/25)             |                                                | [pdf](homework/hw7.pdf), [tex](homework/hw7.tex)                |
 
 
 [jan18:pdf]: files/course_preview.pdf
