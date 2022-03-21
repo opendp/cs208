@@ -18,6 +18,7 @@
 * [Annotated Course Bibliography]
 * [Guidelines for Reading and Commenting]
 * [Example Notebooks (GitHub)]
+* [Final project guidelines]
 
 [Syllabus]: https://opendp.github.io/cs208/spring2022/files/cs208_spring2022_syllabus.pdf
 [gcal]: https://calendar.google.com/calendar/u/0?cid=Y19lYjYwZ2NzcDdoZTBwamZqMG1ldGs0NnE3MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
@@ -27,6 +28,7 @@
 [Annotated Course Bibliography]: files/cs208_annotated_bibliography.pdf
 [Guidelines for Reading and Commenting]: https://opendp.github.io/cs208/spring2022/files/reading_and_commenting_guidelines.pdf
 [Example Notebooks (GitHub)]: https://github.com/opendp/cs208/tree/main/spring2022/examples
+[Final project guidelines]: https://github.com/opendp/cs208/tree/main/spring2022/final%20project/Final%20Project%20Guidelines.pdf
 
 
 ### Schedule
@@ -62,7 +64,7 @@
 | Problem Set 6 (due Fri 3/11)             |                                                | [pdf](homework/hw6.pdf), [tex](homework/hw6.tex)                |
 | Section 6                               |                                                | [pdf](section/section6.pdf)                                     | 
 | Tue 3/8                                 | Machine Learning with DP (cont'd)    | [pdf](presentations/MLwithDP-lecture.pdf)                           |  |
-| Thurs 3/10                                 | Embedded EthiCS module    |                            |  | Nissenbuam, Privacy in Context, Introduction and Chapter 7
+| Thurs 3/10                              | Embedded EthiCS module                         |                                                                  | Nissenbuam, Privacy in Context, Introduction and Chapter 7                                                    |
 | Problem Set 7 (due Fri 3/25)             |                                                | [pdf](homework/hw7.pdf), [tex](homework/hw7.tex)                |
 
 
