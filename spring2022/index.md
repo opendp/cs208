@@ -64,9 +64,10 @@
 | Problem Set 6 (due Fri 3/11)             |                                                | [pdf](homework/hw6.pdf), [tex](homework/hw6.tex)                |
 | Section 6                               |                                                | [pdf](section/section6.pdf)                                     | 
 | Tue 3/8                                 | Machine Learning with DP (cont'd)    | [pdf](presentations/MLwithDP-lecture.pdf)                           |  |
-| Thurs 3/10                              | Embedded EthiCS module                         |                                                                  | Nissenbuam, Privacy in Context, Introduction and Chapter 7                                                    |
+| Thurs 3/10                              | Embedded EthiCS module                         |  [pdf](presentations/Embedded-EthiCS-module.pdf)                | Nissenbuam, Privacy in Context, Introduction and Chapter 7                                                    |
 | Problem Set 7 (due Fri 3/25)             |                                                | [pdf](homework/hw7.pdf), [tex](homework/hw7.tex)                |
-
+| Tue 3/22                                 | Programming Frameworks and Query Systems      |                                                                |  [He-Near] Sections 7.0, 7.2, 7.3, 7.6, 8.0, and 8.1                                                          |
+| Thurs 3/24                                 | Programming Frameworks and Query Systems    |                           |  |
 
 [jan18:pdf]: files/course_preview.pdf
 [jan18:video]: https://harvard.zoom.us/rec/play/rNU5_swSdM3xVtAd3rTReJtniCNhE4oKY54CWsA2hIPpnt2PmZGPbO-yOvIs0NpIS9y1ilRJ6SWsvH9P.hVnF5j1z4LYMDVYM
@@ -92,3 +93,4 @@
 [Chetty-Friedman JPC]: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/716/688
 [Opportunity Atlas]: https://opportunityinsights.org/wp-content/uploads/2018/10/atlas_summary.pdf
 [Deep Learning with DP]: https://arxiv.org/abs/1607.00133
+[He-Near]: https://dpfordb.github.io/
