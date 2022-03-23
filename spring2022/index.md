@@ -66,6 +66,7 @@
 | Tue 3/8                                 | Machine Learning with DP (cont'd)    | [pdf](presentations/MLwithDP-lecture.pdf)                           |  |
 | Thurs 3/10                              | Embedded EthiCS module                         |  [pdf](presentations/Embedded-EthiCS-module.pdf)                | Nissenbuam, Privacy in Context (Intro and Ch 7)                                                    |
 | Problem Set 7 (due Fri 3/25)             |                                                | [pdf](homework/hw7.pdf), [tex](homework/hw7.tex)                |
+| Embedded EthiCS Assignment (due Fri 3/25)             |                                                | [pdf](homework/hw7_Embedded_EthiCS.pdf)              |
 | Tue 3/22                                 | Programming Frameworks and Query Systems      |                                                                |  [DP for DB] (Secs 7.0, 7.2, 7.3, 7.6, 8.0, 8.1)                                                          |
 | Thurs 3/24                                 | Programming Frameworks and Query Systems    |                                                                |  [PSI] (Secs 0-3)             |
 
