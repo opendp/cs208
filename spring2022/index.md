@@ -64,14 +64,16 @@
 | Problem Set 6 (due Fri 3/11)             |                                                | [pdf](homework/hw6.pdf), [tex](homework/hw6.tex)                |
 | Section 6                                |                                                | [pdf](section/section6.pdf)                                     | 
 | Tue 3/8                                  | Machine Learning with DP (cont'd)    | [pdf](presentations/MLwithDP-lecture.pdf)                           |  |
-| Thurs 3/10                               | Embedded EthiCS module                         |  [pdf](presentations/Embedded-EthiCS-module.pdf)                | Nissenbuam, Privacy in Context (Intro and Ch 7)                                                    |
+| Thu 3/10                               | Embedded EthiCS module                         |  [pdf](presentations/Embedded-EthiCS-module.pdf)                | Nissenbuam, Privacy in Context (Intro and Ch 7)                                                    |
 | Problem Set 7 (due Fri 3/25)             |                                                | [pdf](homework/hw7.pdf), [tex](homework/hw7.tex)                |
 | Embedded EthiCS Assignment (due Fri 3/25)|                                          | [pdf](homework/hw7_Embedded_EthiCS.pdf)              |
 | Section 7                                |                                                | [pdf](section/section7.pdf)                                     | 
 | Tue 3/22                                 | Programming Frameworks and Query Systems       |  [pdf](presentations/programming-query.pdf)                                                                |  [DP for DB] (Secs 7.0, 7.2, 7.3, 7.6, 8.0, 8.1)                                                          |
 | Thurs 3/24                               | OpenDP       |  [pdf](presentations/programming-query-2.pdf), [ipynb][wk8_opendp]                                                               |  [PSI] (Secs 0-3)            |
 | Problem Set 8a (due Fri 4/1)             |                                                | [pdf](homework/hw8.pdf), [tex](homework/hw8.tex)                |
-| Tues 3/29                               | The Local Model: Foundations       |  [pdf](presentations/localDP-foundations-lecture.pdf)                                                               |              |
+| Tue 3/29                               | The Local Model: Foundations       |  [pdf](presentations/localDP-foundations-lecture.pdf)                                                               |              |
+| Thu 3/31                               | The Local Model       |                                                              |     [Learning with Privacy at Scale]         |
+
 
 [jan18:pdf]: files/course_preview.pdf
 [jan18:video]: https://harvard.zoom.us/rec/play/rNU5_swSdM3xVtAd3rTReJtniCNhE4oKY54CWsA2hIPpnt2PmZGPbO-yOvIs0NpIS9y1ilRJ6SWsvH9P.hVnF5j1z4LYMDVYM
@@ -100,3 +102,4 @@
 [DP for DB]: https://dpfordb.github.io/
 [PSI]: https://privacytools.seas.harvard.edu/publications/psipaper
 [wk8_opendp]: examples/wk8_opendp.ipynb
+[Learning with Privacy at Scale]: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
