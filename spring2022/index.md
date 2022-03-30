@@ -71,6 +71,8 @@
 | Tue 3/22                                 | Programming Frameworks and Query Systems       |  [pdf](presentations/programming-query.pdf)                                                                |  [DP for DB] (Secs 7.0, 7.2, 7.3, 7.6, 8.0, 8.1)                                                          |
 | Thurs 3/24                               | OpenDP       |  [pdf](presentations/programming-query-2.pdf), [ipynb][wk8_opendp]                                                               |  [PSI] (Secs 0-3)            |
 | Problem Set 8a (due Fri 4/1)             |                                                | [pdf](homework/hw8.pdf), [tex](homework/hw8.tex)                |
+| Section 8                                |                                                | [ipynb](section/section8.ipynb)                                     | 
+| **The Local Model** |                                       |                                                                 |      
 | Tue 3/29                               | The Local Model: Foundations       |  [pdf](presentations/localDP-foundations-lecture.pdf)                                                               |              |
 | Thu 3/31                               | The Local Model       |                                                              |     [Learning with Privacy at Scale]         |
 
