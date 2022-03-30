@@ -69,7 +69,7 @@
 | Embedded EthiCS Assignment (due Fri 3/25)|                                          | [pdf](homework/hw7_Embedded_EthiCS.pdf)              |
 | Section 7                                |                                                | [pdf](section/section7.pdf)                                     | 
 | Tue 3/22                                 | Programming Frameworks and Query Systems       |  [pdf](presentations/programming-query.pdf)                                                                |  [DP for DB] (Secs 7.0, 7.2, 7.3, 7.6, 8.0, 8.1)                                                          |
-| Thurs 3/24                               | Programming Frameworks and Query Systems       |  [pdf](presentations/programming-query-2.pdf), [ipynb][wk8_opendp]                                                               |  [PSI] (Secs 0-3)            |
+| Thurs 3/24                               | OpenDP       |  [pdf](presentations/programming-query-2.pdf), [ipynb][wk8_opendp]                                                               |  [PSI] (Secs 0-3)            |
 | Problem Set 8a (due Fri 4/1)             |                                                | [pdf](homework/hw8.pdf), [tex](homework/hw8.tex)                |
 | Tues 3/29                               | The Local Model: Foundations       |  [pdf](presentations/localDP-foundations-lecture.pdf)                                                               |              |
 
