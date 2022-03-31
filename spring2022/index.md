@@ -60,10 +60,10 @@
 | Problem Set 5 (due Fri 3/4)              |                                                | [pdf](homework/hw5.pdf), [tex](homework/hw5.tex)                |
 | Section 5                                |                                                | [pdf](section/section5.pdf)                                     |  
 | Tue 3/1                                  | Statistical Releases: the Opportunity Atlas    | [pdf](presentations/DP_CensusSynthetic.pdf)                           | [Opportunity Atlas]; [Chetty-Friedman JPC] (Sec 3)                                                                |
-| Tue 3/1 and Thu 3/3                      | Machine Learning with DP                       | [pdf](presentations/DP_OI_SGD.pdf) [ipynb](examples/wk6_dpsgd_full.ipynb)                              | [Deep Learning with DP] (Secs 1-3.1, 5.2)                                                               |
+| Tue 3/1 and Thu 3/3                      | Machine Learning with DP                       | [pdf](presentations/DP_OI_SGD.pdf), [ipynb](examples/wk6_dpsgd_full.ipynb)                              | [Deep Learning with DP] (Secs 1-3.1, 5.2)                                                               |
 | Problem Set 6 (due Fri 3/11)             |                                                | [pdf](homework/hw6.pdf), [tex](homework/hw6.tex)                |
 | Section 6                                |                                                | [pdf](section/section6.pdf)                                     | 
-| Tue 3/8                                  | Machine Learning with DP (cont'd)              | [pdf](presentations/MLwithDP-lecture.pdf)                       | [ipynb](examples/wk7_opacus_example.ipynb)  |
+| Tue 3/8                                  | Machine Learning with DP (cont'd)              | [pdf](presentations/MLwithDP-lecture.pdf), [ipynb](examples/wk7_opacus_example.ipynb)                       |   |
 | Thu 3/10                                 | Embedded EthiCS module                         |  [pdf](presentations/Embedded-EthiCS-module.pdf)                | Nissenbuam, Privacy in Context (Intro and Ch 7)                                                   |
 | Problem Set 7 (due Fri 3/25)             |                                                | [pdf](homework/hw7.pdf), [tex](homework/hw7.tex)                |
 | Embedded EthiCS Assignment (due Fri 3/25)|                                                | [pdf](homework/hw7_Embedded_EthiCS.pdf)              |
