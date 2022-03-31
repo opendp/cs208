@@ -18,6 +18,7 @@
 * [Annotated Course Bibliography]
 * [Guidelines for Reading and Commenting]
 * [Example Notebooks (GitHub)]
+* [Final project guidelines]
 
 [Syllabus]: https://opendp.github.io/cs208/spring2022/files/cs208_spring2022_syllabus.pdf
 [gcal]: https://calendar.google.com/calendar/u/0?cid=Y19lYjYwZ2NzcDdoZTBwamZqMG1ldGs0NnE3MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
@@ -27,38 +28,53 @@
 [Annotated Course Bibliography]: files/cs208_annotated_bibliography.pdf
 [Guidelines for Reading and Commenting]: https://opendp.github.io/cs208/spring2022/files/reading_and_commenting_guidelines.pdf
 [Example Notebooks (GitHub)]: https://github.com/opendp/cs208/tree/main/spring2022/examples
+[Final project guidelines]: https://github.com/opendp/cs208/tree/main/spring2022/final%20project/Final%20Project%20Guidelines.pdf
 
 
 ### Schedule
 
-| Date                                    | Title                                          | Slides/Notes                                                    | Advance Reading                                                                                                 |
-|-----------------------------------------|------------------------------------------------|-----------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| Tue 1/18                                | Course Preview                                 | [pdf][jan18:pdf], [Recording][jan18:video]                      |                                                                                                                 |
-| **Attacks on Privacy**                  |                                                |                                                                 |                                                                                                                 |
-| Tue 1/25                                | Course Overview & Attacks on Privacy           | [pdf][jan25:pdf]                                                |                                                                                                                 |
-| Thu 1/27                                | Reconstruction Attacks                         | [pdf](presentations/reconstruction.pdf)                         | [Tanner], [Barbaro-Zeller], [Narayanan-Shmatikov]                                                               |
-| Problem Set 1 (due Weds 2/2)            |                                                | [pdf](homework/hw1.pdf), [tex](homework/hw1.tex)                |                                                                                                                 |
-| Section 1                               |                                                | [pdf](section/section1.pdf)                                     |                                                                                                                 |
-| Tue 2/01                                | Reconstruction & Membership Attacks            | [pdf](presentations/membership.pdf)                             | [Smith-Ullman] Reconstruction lecture notes, Sec 1-2.1, Sec 3, [Ruggles-van Riper], [Jessica Hullman blog post] |
-| Thu 2/03                                | Membership Attacks                             | [pdf](presentations/membership-attacks.pdf), [ipynb][wk2_mem]   | [P3G Consortium et al.],  [Korolova (§1,4,6,8)]                                                                 |
-| Problem Set 2 (due Fri 2/11)            |                                                | [pdf](homework/hw2.pdf), [tex](homework/hw2.tex)                |                                                                                                                 |
-| Section 2                               |                                                | [pdf](section/section2.pdf)                                     |                                                                                                                 |
-| **Foundations of Differential Privacy** |                                                |                                                                 |                                                                                                                 |
-| Tue 2/08                                | Definition, basic mechanisms                   | [pdf](presentations/DP-foundations1.pdf)                        | [DP Primer Secs III-IV.B]                                                                                       |
-| Thu 2/10                                | DP Foundations: the Laplace Mechanism          | [pdf](presentations/DP-laplace.pdf), [ipynb][wk3_lap]           | [U.S. Broadband Coverage Data Set](https://arxiv.org/pdf/2103.14035v2.pdf), [Smith-Ullman] Lecture 4, Sec 4     |
-| Problem Set 3 (due Fri 2/18)            |                                                | [pdf](homework/hw3.pdf), [tex](homework/hw3.tex)                |                                                                                                                 |
-| Section 3                               |                                                | [pdf](section/section3.pdf)                                     |                                                                                                                 |
-| Tue 2/15                                | More DP Foundations                            | [pdf](presentations/DP-foundations2.pdf)                        | [DP Primer Secs IV.C-VI.B]                                                                                      |
-| Thu 2/17                                | The Gaussian Mechanism                         | [pdf](presentations/DP-gaussian-mechanism.pdf), [ipynb wk4_*]   | [Smith-Ullman] Lecture 5 Sec 1, Lecture 9 (Lemma 1.2), Lecture 9, Sec 2 up to Thm 2.1, Lecture 10 Sec 1        |
-| Problem Set 4 (due Fri 2/25)            |                                                | [pdf](homework/hw4.pdf), [tex](homework/hw4.tex)                |
-| Section 4                               |                                                | [pdf](section/section4.pdf)                                     |  
-| Tue 2/22                                | Beyond Noise Addition                          | [pdf](presentations/beyond-noise.pdf), [ipynb][wk5_exponential] | [Smith-Ullman] Lecture 6 Secs 1.0-1.1, [Smith-Raskhodnikova encyclopedia] article: DP for graph data            |
+| Date                                     | Title                                          | Slides/Notes                                                    | Advance Reading                                                                                                 |
+|------------------------------------------|------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| Tue 1/18                                 | Course Preview                                 | [pdf][jan18:pdf], [Recording][jan18:video]                      |                                                                                                                 |
+| **Attacks on Privacy**                   |                                                |                                                                 |                                                                                                                  |
+| Tue 1/25                                 | Course Overview & Attacks on Privacy           | [pdf][jan25:pdf]                                                |                                                                                                                 |
+| Thu 1/27                                 | Reconstruction Attacks                         | [pdf](presentations/reconstruction.pdf)                         | [Tanner], [Barbaro-Zeller], [Narayanan-Shmatikov]                                                               |
+| Problem Set 1 (due Weds 2/2)             |                                                | [pdf](homework/hw1.pdf), [tex](homework/hw1.tex)                |                                                                                                                 |
+| Section 1                                |                                                | [pdf](section/section1.pdf)                                     |                                                                                                                 |
+| Tue 2/01                                 | Reconstruction & Membership Attacks            | [pdf](presentations/membership.pdf)                             | [Smith-Ullman] Reconstruction lecture notes (Sec 1-2.1, Sec 3), [Ruggles-van Riper], [Jessica Hullman blog post] |
+| Thu 2/03                                 | Membership Attacks                             | [pdf](presentations/membership-attacks.pdf), [ipynb][wk2_mem]   | [P3G Consortium et al.],  [Korolova (§1,4,6,8)]                                                                 |
+| Problem Set 2 (due Fri 2/11)             |                                                | [pdf](homework/hw2.pdf), [tex](homework/hw2.tex)                |                                                                                                                  |
+| Section 2                                |                                                | [pdf](section/section2.pdf)                                     |                                                                                                                 |
+| **Foundations of Differential Privacy**  |                                                |                                                                 |                                                                                                                 |
+| Tue 2/08                                 | Definition, basic mechanisms                   | [pdf](presentations/DP-foundations1.pdf)                        | [DP Primer Secs III-IV.B]                                                                                       |
+| Thu 2/10                                 | DP Foundations: the Laplace Mechanism          | [pdf](presentations/DP-laplace.pdf), [ipynb][wk3_lap]           | [U.S. Broadband Coverage Data Set](https://arxiv.org/pdf/2103.14035v2.pdf), [Smith-Ullman] Lecture 4 (Sec 4)     |
+| Problem Set 3 (due Fri 2/18)             |                                                | [pdf](homework/hw3.pdf), [tex](homework/hw3.tex)                |                                                                                                                 |
+| Section 3                                |                                                | [pdf](section/section3.pdf)                                     |                                                                                                                 |
+| Tue 2/15                                 | More DP Foundations                            | [pdf](presentations/DP-foundations2.pdf)                        | [DP Primer Secs IV.C-VI.B]                                                                                      |
+| Thu 2/17                                 | The Gaussian Mechanism                         | [pdf](presentations/DP-gaussian-mechanism.pdf), [ipynb wk4_*]   | [Smith-Ullman] Lecture 5 (Sec 1), Lecture 9 (Lemma 1.2, Sec 2 up to Thm 2.1), Lecture 10 (Sec 1)        |
+| Problem Set 4 (due Fri 2/25)             |                                                | [pdf](homework/hw4.pdf), [tex](homework/hw4.tex)                |
+| Section 4                                |                                                | [pdf](section/section4.pdf)                                     |  
+| Tue 2/22                                 | Beyond Noise Addition                          | [pdf](presentations/beyond-noise.pdf), [ipynb][wk5_exponential] | [Smith-Ullman] Lecture 6 (Secs 1.0-1.1), [Smith-Raskhodnikova encyclopedia] article: DP for graph data            |
 | **Implementing Centralized DP** |                                       |                                                                 |      
-| Thu 2/24                                | Synthetic Data: the 2020 Census                | [pdf](presentations/DP_CensusSynthetic.pdf)                     | [2020 Census Data Products and Privacy Methods] Sec 2.0-2.2, Sec 3 (all), Sec 5.0                               |
-| Section 5                               |                                                | [pdf](section/section5.pdf)                                     |  
-| Tue 3/1                                 | Statistical Releases: the Opportunity Atlas    | [pdf](presentations/DP_CensusSynthetic.pdf)                           | [Opportunity Atlas]; [Chetty-Friedman JPC] Sec 3                                                                |
-| Problem Set 5 (due Fri 3/4)             |                                                | [pdf](homework/hw5.pdf), [tex](homework/hw5.tex)                |
-| Tue 3/1 and Thu 3/3                     | Machine Learning with DP                       | [pdf](presentations/DP_OI_SGD.pdf)                              | [Deep Learning with DP] (Sections 1-3.1; 5.2)                                                               |
+| Thu 2/24                                 | Synthetic Data: the 2020 Census                | [pdf](presentations/DP_CensusSynthetic.pdf)                     | [2020 Census Data Products and Privacy Methods] (Secs 2.0-2.2, 3, 5.0)                               |
+| Problem Set 5 (due Fri 3/4)              |                                                | [pdf](homework/hw5.pdf), [tex](homework/hw5.tex)                |
+| Section 5                                |                                                | [pdf](section/section5.pdf)                                     |  
+| Tue 3/1                                  | Statistical Releases: the Opportunity Atlas    | [pdf](presentations/DP_CensusSynthetic.pdf)                           | [Opportunity Atlas]; [Chetty-Friedman JPC] (Sec 3)                                                                |
+| Tue 3/1 and Thu 3/3                      | Machine Learning with DP                       | [pdf](presentations/DP_OI_SGD.pdf)                              | [Deep Learning with DP] (Secs 1-3.1, 5.2)                                                               |
+| Problem Set 6 (due Fri 3/11)             |                                                | [pdf](homework/hw6.pdf), [tex](homework/hw6.tex)                |
+| Section 6                                |                                                | [pdf](section/section6.pdf)                                     | 
+| Tue 3/8                                  | Machine Learning with DP (cont'd)              | [pdf](presentations/MLwithDP-lecture.pdf)                       |  |
+| Thu 3/10                                 | Embedded EthiCS module                         |  [pdf](presentations/Embedded-EthiCS-module.pdf)                | Nissenbuam, Privacy in Context (Intro and Ch 7)                                                   |
+| Problem Set 7 (due Fri 3/25)             |                                                | [pdf](homework/hw7.pdf), [tex](homework/hw7.tex)                |
+| Embedded EthiCS Assignment (due Fri 3/25)|                                                | [pdf](homework/hw7_Embedded_EthiCS.pdf)              |
+| Section 7                                |                                                | [pdf](section/section7.pdf)                                     | 
+| Tue 3/22                                 | Programming Frameworks and Query Systems       |  [pdf](presentations/programming-query.pdf)                                                                |  [DP for DB] (Secs 7.0, 7.2, 7.3, 7.6, 8.0, 8.1)                                                          |
+| Thurs 3/24                               | OpenDP       |  [pdf](presentations/programming-query-2.pdf), [ipynb][wk8_opendp]                                                               |  [PSI] (Secs 0-3)            |
+| Problem Set 8a (due Fri 4/1)             |                                                | [pdf](homework/hw8.pdf), [tex](homework/hw8.tex)                |
+| Section 8                                |                                                | [ipynb](section/section8.ipynb)                                 | 
+| **The Local Model** |                                       |                                                                 |      
+| Tue 3/29                                 | The Local Model: Foundations                   | [pdf](presentations/localDP-foundations-lecture.pdf)                                                               |              |
+| Thu 3/31                                 | The Local Model                                | [pdf](presentations/localDP-practicum.pdf)            |     [Learning with Privacy at Scale]         |
 
 
 [jan18:pdf]: files/course_preview.pdf
@@ -85,3 +101,7 @@
 [Chetty-Friedman JPC]: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/716/688
 [Opportunity Atlas]: https://opportunityinsights.org/wp-content/uploads/2018/10/atlas_summary.pdf
 [Deep Learning with DP]: https://arxiv.org/abs/1607.00133
+[DP for DB]: https://dpfordb.github.io/
+[PSI]: https://privacytools.seas.harvard.edu/publications/psipaper
+[wk8_opendp]: examples/wk8_opendp.ipynb
+[Learning with Privacy at Scale]: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf

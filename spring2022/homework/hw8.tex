@@ -1,0 +1,41 @@
+%=================================================================
+\documentclass[11pt]{article}
+
+\def\draft{1}
+
+\usepackage{amsmath,amssymb,amsthm,enumitem, graphicx,verbatim,hyperref,verbatim,xcolor,rotating,setspace}
+\usepackage{algorithm,algorithmic}
+\usepackage[top=1in, right=1in, left=1in, bottom=1.5in]{geometry}
+
+\title{\vspace{-1.5cm} HW8a: OpenDP}
+\author{CS 208 Applied Privacy for Data Science, Spring 2022}
+\date{\textbf{Version 1.0: Due Fri, April 1, 5:00pm.}}
+
+
+%=================================================================
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+\item Use the OpenDP library (\texttt{pip install opendp}) to answer the following.
+\footnote{Documentation: \url{https://docs.opendp.org/en/stable/user/application-structure.html}}
+\footnote{Aggregators: \url{https://docs.opendp.org/en/stable/user/transformation-constructors.html\#aggregators}} 
+\footnote{Example notebook: \url{https://github.com/opendp/cs208/blob/main/spring2022/examples/wk8\_opendp.ipynb}}
+\begin{enumerate}
+\item Solve for the ideal noise scale of the Gaussian mechanism with an input sensitivity of 4 (measured in absolute distance) and privacy utilization $(\epsilon=1, \delta=1e-6)$.
+\label{gaussian_noise_scale}
+\item Find the radius of a 95\% confidence interval for the noise addition in \ref{gaussian_noise_scale}.
+\item A policy research organization wants to know the smallest sample size necessary to release an ``accurate" $\epsilon$=1 DP mean income. Determine the smallest dataset size such that, with 95\% confidence, the DP release differs from the clipped dataset's mean by no more than 1000. Assume that neighboring datasets have a symmetric distance at most 2.\footnote{Symmetric distances are the most broadly applicable, and are the default dataset metric throughout the library.} Also assume a clipping bound of 500,000. You may need to use trial and error to set the binary search bounds.
+\item Find the largest clamping bound \texttt{b} for which clamping to \texttt{(-b, b)} admits an $\epsilon$=1 DP sized bounded sum over integers.\footnote{Binary search utilities in the library default to floats. Set integer bounds to search over integers.} Assume that two-sided geometric noise\footnote{Also known as discrete laplace noise. Favored over laplace when noising integers, to avoid float complications.} with scale parameter of 100 is added, and neighboring datasets have a symmetric distance at most 2.
+\item Briefly reflect on the usability of the library in a few sentences. Did you find it intuitive to solve for these missing unknowns? How could the documentation and/or interfaces be improved?
+\end{enumerate}
+
+\item Consider a dataset consisting of 32-bit signed integers clamped to $[-2^{16},2^{16}]$. 32-bit integers can be used to represent any integer in the range $[-2^{31},2^{31}-1]$.
+Give an example of a dataset and query that has unexpectedly high sensitivity in this practical setting, compared to a theoretical analysis.
+Propose a solution that preserves both utility and privacy.
+
+This question highlights how theoretical proofs oftentimes diverge from real implementations that use finite data types, and why it is recommended to use existing libraries that handle these concerns when making differentially private releases on sensitive datasets.
+
+\end{enumerate}
+\end{document}
