@@ -63,18 +63,18 @@
 | Tue 3/1 and Thu 3/3                      | Machine Learning with DP                       | [pdf](presentations/DP_OI_SGD.pdf)                              | [Deep Learning with DP] (Secs 1-3.1, 5.2)                                                               |
 | Problem Set 6 (due Fri 3/11)             |                                                | [pdf](homework/hw6.pdf), [tex](homework/hw6.tex)                |
 | Section 6                                |                                                | [pdf](section/section6.pdf)                                     | 
-| Tue 3/8                                  | Machine Learning with DP (cont'd)    | [pdf](presentations/MLwithDP-lecture.pdf)                           |  |
-| Thu 3/10                               | Embedded EthiCS module                         |  [pdf](presentations/Embedded-EthiCS-module.pdf)                | Nissenbuam, Privacy in Context (Intro and Ch 7)                                                    |
+| Tue 3/8                                  | Machine Learning with DP (cont'd)              | [pdf](presentations/MLwithDP-lecture.pdf)                       |  |
+| Thu 3/10                                 | Embedded EthiCS module                         |  [pdf](presentations/Embedded-EthiCS-module.pdf)                | Nissenbuam, Privacy in Context (Intro and Ch 7)                                                   |
 | Problem Set 7 (due Fri 3/25)             |                                                | [pdf](homework/hw7.pdf), [tex](homework/hw7.tex)                |
-| Embedded EthiCS Assignment (due Fri 3/25)|                                          | [pdf](homework/hw7_Embedded_EthiCS.pdf)              |
+| Embedded EthiCS Assignment (due Fri 3/25)|                                                | [pdf](homework/hw7_Embedded_EthiCS.pdf)              |
 | Section 7                                |                                                | [pdf](section/section7.pdf)                                     | 
 | Tue 3/22                                 | Programming Frameworks and Query Systems       |  [pdf](presentations/programming-query.pdf)                                                                |  [DP for DB] (Secs 7.0, 7.2, 7.3, 7.6, 8.0, 8.1)                                                          |
 | Thurs 3/24                               | OpenDP       |  [pdf](presentations/programming-query-2.pdf), [ipynb][wk8_opendp]                                                               |  [PSI] (Secs 0-3)            |
 | Problem Set 8a (due Fri 4/1)             |                                                | [pdf](homework/hw8.pdf), [tex](homework/hw8.tex)                |
-| Section 8                                |                                                | [ipynb](section/section8.ipynb)                                     | 
+| Section 8                                |                                                | [ipynb](section/section8.ipynb)                                 | 
 | **The Local Model** |                                       |                                                                 |      
-| Tue 3/29                               | The Local Model: Foundations       |  [pdf](presentations/localDP-foundations-lecture.pdf)                                                               |              |
-| Thu 3/31                               | The Local Model       |                                                              |     [Learning with Privacy at Scale]         |
+| Tue 3/29                                 | The Local Model: Foundations                   | [pdf](presentations/localDP-foundations-lecture.pdf)                                                               |              |
+| Thu 3/31                                 | The Local Model                                | [pdf](presentations/localDP-practicum.pdf)            |     [Learning with Privacy at Scale]         |
 
 
 [jan18:pdf]: files/course_preview.pdf
