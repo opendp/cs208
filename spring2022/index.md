@@ -69,12 +69,13 @@
 | Embedded EthiCS Assignment (due Fri 3/25)|                                                | [pdf](homework/hw7_Embedded_EthiCS.pdf)              |
 | Section 7                                |                                                | [pdf](section/section7.pdf)                                     | 
 | Tue 3/22                                 | Programming Frameworks and Query Systems       |  [pdf](presentations/programming-query.pdf)                                                                |  [DP for DB] (Secs 7.0, 7.2, 7.3, 7.6, 8.0, 8.1)                                                          |
-| Thurs 3/24                               | OpenDP       |  [pdf](presentations/programming-query-2.pdf), [ipynb][wk8_opendp]                                                               |  [PSI] (Secs 0-3)            |
+| Thu 3/24                                 | OpenDP       |  [pdf](presentations/programming-query-2.pdf), [ipynb][wk8_opendp]                                                               |  [PSI] (Secs 0-3)            |
 | Problem Set 8a (due Fri 4/1)             |                                                | [pdf](homework/hw8.pdf), [tex](homework/hw8.tex)                |
 | Section 8                                |                                                | [ipynb](section/section8.ipynb)                                 | 
 | **The Local Model** |                                       |                                                                 |      
-| Tue 3/29                                 | The Local Model: Foundations                   | [pdf](presentations/localDP-foundations-lecture.pdf)                                                               |              |
-| Thu 3/31                                 | The Local Model                                | [pdf](presentations/localDP-practicum.pdf)            |     [Learning with Privacy at Scale]         |
+| Tue 3/29                                 | Local Model: Foundations                       | [pdf](presentations/localDP-foundations-lecture.pdf)                                                               |              |
+| Thu 3/31                                 | Local Model: Practicum                         | [pdf](presentations/localDP-practicum.pdf)            |     [Learning with Privacy at Scale]         |
+| Tue 4/05                                 | Local Model: Implementations                   | [pdf](presentations/localDP-implementations.pdf)            |     [Federated Learning and Privacy]         |
 
 
 [jan18:pdf]: files/course_preview.pdf
@@ -105,3 +106,4 @@
 [PSI]: https://privacytools.seas.harvard.edu/publications/psipaper
 [wk8_opendp]: examples/wk8_opendp.ipynb
 [Learning with Privacy at Scale]: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
+[Federated Learning and Privacy]: https://cacm.acm.org/magazines/2022/4/259417-federated-learning-and-privacy/fulltext
