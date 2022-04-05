@@ -72,11 +72,22 @@
 | Thu 3/24                                 | OpenDP       |  [pdf](presentations/programming-query-2.pdf), [ipynb][wk8_opendp]                                                               |  [PSI] (Secs 0-3)            |
 | Problem Set 8a (due Fri 4/1)             |                                                | [pdf](homework/hw8.pdf), [tex](homework/hw8.tex)                |
 | Section 8                                |                                                | [ipynb](section/section8.ipynb)                                 | 
-| **The Local Model** |                                       |                                                                 |      
+| **Local and Distributed Models** |                                       |                                                                 |      
 | Tue 3/29                                 | Local Model: Foundations                       | [pdf](presentations/localDP-foundations-lecture.pdf)                                                               |              |
 | Thu 3/31                                 | Local Model: Practicum                         | [pdf](presentations/localDP-practicum.pdf)            |     [Learning with Privacy at Scale]         |
+| Section 9                                |                                                | [ipynb](section/section9.ipynb)                                 | 
 | Tue 4/05                                 | Local Model: Implementations                   | [pdf](presentations/localDP-implementations.pdf)            |     [Federated Learning and Privacy]         |
-
+| Thurs 4/07                                 | Other Distributed Models: Foundations                   |             |              |
+| Problem Set 8b (due Fri 4/15)             |                                                |               |
+| Section 10                                |                                                |                                 | 
+| Tues 4/12                                 | Other Distributed Models: Implementations                   |             |              |
+| **Societal Perspectives on Privacy** |                                       |                                                                 |     
+| Thurs 4/14                                 | Perspectives on Privacy: Law and Policy                  |             |              |
+| Section 11                                |                                                |                                 | 
+| Tues 4/19                                 | Perspectives on Privacy: Science & Technology Studies                 |             |              |
+| Thurs 4/21                                 | Industry and Government Panel                  |             |              |
+| Tues 4/26                                 | Conclusions                 |             |              |
+| Mon-Tues 5/9-10                                 | Project Presentations                 |             |              |
 
 [jan18:pdf]: files/course_preview.pdf
 [jan18:video]: https://harvard.zoom.us/rec/play/rNU5_swSdM3xVtAd3rTReJtniCNhE4oKY54CWsA2hIPpnt2PmZGPbO-yOvIs0NpIS9y1ilRJ6SWsvH9P.hVnF5j1z4LYMDVYM
