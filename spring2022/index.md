@@ -77,7 +77,7 @@
 | Thu 3/31                                 | Local Model: Practicum                         | [pdf](presentations/localDP-practicum.pdf)            |     [Learning with Privacy at Scale]         |
 | Section 9                                |                                                | [pdf](section/section9.pdf)                                 | 
 | Tue 4/05                                 | Local Model: Implementations                   | [pdf](presentations/localDP-implementations.pdf)            |     [Federated Learning and Privacy]         |
-| Thurs 4/07                                 | Other Distributed Models: Foundations                   |             |              |
+| Thurs 4/07                                 | Other Distributed Models: Foundations                   | [pdf](presentations/distributedmodels.pdf)            |              |
 | Problem Set 8b (due Fri 4/15)             |                                                |               |
 | Section 10                                |                                                |                                 | 
 | Tues 4/12                                 | Other Distributed Models: Implementations                   |             |              |
