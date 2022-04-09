@@ -1,0 +1,57 @@
+%=================================================================
+\documentclass[11pt]{article}
+
+\def\draft{1}
+
+\usepackage{amsmath,amssymb,amsthm,enumitem, graphicx,verbatim,hyperref,verbatim,xcolor,rotating,setspace}
+\usepackage{algorithm,algorithmic}
+\usepackage[top=1in, right=1in, left=1in, bottom=1.5in]{geometry}
+
+\title{\vspace{-1.5cm} HW8b: Local DP}
+\author{CS 208 Applied Privacy for Data Science, Spring 2022}
+\date{\textbf{Version 1.0: Due Fri, April 15, 5:00pm.}}
+
+
+%=================================================================
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[leftmargin=*]
+
+
+\item \textbf{DP Histogram in the Shuffle Model.} In this problem, you will construct an algorithm to release a DP histogram of categorical outcomes in the Shuffle Model, and will evaluate the accuracy and compare it against the accuracy under the Local Model and Central Model. 
+
+The dataset 
+\texttt{FultonPUMS5full.csv}
+provides the 5\% PUMS Census file for 
+Fulton. In class, we have seen an example\footnote{Local-DP histogram: \url{https://github.com/opendp/cs208/blob/main/spring2022/examples/wk9_local_model.ipynb}} 
+of releasing a Local-DP histogram of \texttt{educ} clamped to the interval $[1,16]$.  
+
+\begin{enumerate}
+\item 
+Convert the Local-DP algorithm to a Shuffle-DP algorithm using Privacy Amplification by Shuffling.  Specifically:
+
+\begin{enumerate}
+    \item Add a shuffling step that randomly permutes the locally randomized vectors obtained from each user's data.
+    
+    \item Given desired shuffle-privacy parameters $(\varepsilon,\delta)$, determine how to set the parameters of the local randomizer using the following privacy amplification by shuffling theorem [Feldman, McMillan, Talwar 2021]:\footnote{\url{https://arxiv.org/pdf/2012.12803.pdf}}:  If $R$ is $\varepsilon_0$-DP, then for every $\delta\in (0,1)$ such that $\varepsilon_0<\ln (n/16\ln(1/\delta))$,
+    $M(x_1,\ldots,x_n) = \mathrm{Shuffle}(R(x_1),\ldots,R(x_n))$ is $(\varepsilon,\delta)$-DP for 
+$$\varepsilon = \ln\left(1+\frac{\exp(\varepsilon_0)-1}{\exp(\varepsilon_0)+1}\cdot\left(\frac{8\sqrt{\exp(\varepsilon_0)\ln(4/\delta)}}{\sqrt{n}}+\frac{8\exp(\varepsilon_0)}{n}\right)\right).$$
+
+    \item For post-processing the shuffled vectors to estimate the histogram, you can use the same post-processing that was used for the local DP algorithm.
+    
+\end{enumerate}
+
+\item Compare the performance of the Shuffle-DP algorithm, the Local-DP algorithm, and the Central-DP algorithm\footnote{Code for the Central-DP histogram: \url{https://github.com/opendp/cs208/blob/main/spring2022/examples/wk3_laplace_mechanism_and_opendp.ipynb}}
+on subsamples of size $n$ of the dataset, varying $n$ from $100$ to $20000$.  Throughout use privacy parameters
+ $\varepsilon=1$ and $\delta=10^{-5}$. 
+On the same graph, plot the sample size $n$ versus error for all three algorithms, where we measure error by the maximum over all bins of the difference between the true count and the DP count.
+
+From your plot, at what value of $n$ does the Shuffle-DP algorithm start to outperform the local-DP algorithm?
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}
