@@ -78,7 +78,7 @@
 | Section 9                                |                                                | [pdf](section/section9.pdf)                                 | 
 | Tue 4/05                                 | Local Model: Implementations                   | [pdf](presentations/localDP-implementations.pdf)            |     [Federated Learning and Privacy]         |
 | Thurs 4/07                               | Other Distributed Models: Foundations          | [pdf](presentations/distributedmodels.pdf)            |       [DP for DB] (Chapter 9)         |
-| Problem Set 8b (due Fri 4/15)            |                                                |               |
+| Problem Set 8b (due Fri 4/15)            |                                                | [pdf](homework/hw8b.pdf)               |
 | Section 10                               |                                                |                                 | 
 | Tues 4/12                                | Other Distributed Models: Implementations                   |             |              |
 | **Societal Perspectives on Privacy**     |                                       |                                                                 |     
