@@ -80,7 +80,7 @@
 | Thurs 4/07                               | Other Distributed Models: Foundations          | [pdf](presentations/distributedmodels.pdf)            |       [DP for DB] (Chapter 9)         |
 | Problem Set 8b (due Fri 4/15)            |                                                | [pdf](homework/hw8b.pdf)               |
 | Section 10                               |                                                |                                 | 
-| Tues 4/12                                | Other Distributed Models: Implementations                   |             |              |
+| Tues 4/12                                | Other Distributed Models: Implementations      | [pdf](presentations/end-to-end-privacy.pdf)           |              |
 | **Societal Perspectives on Privacy**     |                                       |                                                                 |     
 | Thurs 4/14                               | Perspectives on Privacy: Law and Policy                  |             |              |
 | Section 11                               |                                                |                                 | 
