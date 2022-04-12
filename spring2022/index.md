@@ -80,7 +80,7 @@
 | Thurs 4/07                               | Other Distributed Models: Foundations          | [pdf](presentations/distributedmodels.pdf)            |       [DP for DB] (Chapter 9)         |
 | Problem Set 8b (due Fri 4/15)            |                                                | [pdf](homework/hw8b.pdf)               |
 | Section 10                               |                                                |                                 | 
-| Tues 4/12                                | Other Distributed Models: Implementations      | [pdf](presentations/end-to-end-privacy.pdf)           |              |
+| Tues 4/12                                | Other Distributed Models: Implementations      | [pdf](presentations/end-to-end-privacy.pdf)           |   [Privacy-Preserving RCT]           |
 | **Societal Perspectives on Privacy**     |                                       |                                                                 |     
 | Thurs 4/14                               | Perspectives on Privacy: Law and Policy                  |             |              |
 | Section 11                               |                                                |                                 | 
@@ -118,3 +118,4 @@
 [wk8_opendp]: examples/wk8_opendp.ipynb
 [Learning with Privacy at Scale]: https://docs-assets.developer.apple.com/ml-research/papers/learning-with-privacy-at-scale.pdf
 [Federated Learning and Privacy]: https://cacm.acm.org/magazines/2022/4/259417-federated-learning-and-privacy/fulltext
+[Privacy-Preserving RCT]: https://dl.acm.org/doi/10.1145/3474123.3486764
