@@ -83,7 +83,6 @@
 | Tues 4/12                                | Other Distributed Models: Implementations      | [pdf](presentations/end-to-end-privacy.pdf)           |   [Privacy-Preserving RCT]           |
 | **Societal Perspectives on Privacy**     |                                       |                                                                 |     
 | Thurs 4/14                               | Perspectives on Privacy: Law and Policy                  |             |              |
-| Section 11                               |                                                |                                 | 
 | Tues 4/19                                | Perspectives on Privacy: Science & Technology Studies                 |             |              |
 | Thurs 4/21                               | Industry and Government Panel                  |             |              |
 | Tues 4/26                                | Conclusions                 |             |              |
