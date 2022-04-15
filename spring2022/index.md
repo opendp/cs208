@@ -83,7 +83,7 @@
 | Tues 4/12                                | Other Distributed Models: Implementations      | [pdf](presentations/end-to-end-privacy.pdf)           |   [Privacy-Preserving RCT]           |
 | **Societal Perspectives on Privacy**     |                                       |                                                                 |     
 | Thurs 4/14                               | Perspectives on Privacy: Law and Policy                  |             |    [Nissim-Wood] (Secs 2.1, 2.3), [Solove] (pgs. 479-83, 488-91), [Cohen] (pgs. 1915-20, 1926-27)          |
-| Tues 4/19                                | Perspectives on Privacy: Science & Technology Studies                 |             |              |
+| Tues 4/19                                | Perspectives on Privacy: Science & Technology Studies                 |             |   [Winner] (pgs. 121-124, 130-131) [Green-Viljoen] (Secs 1-2) [Mulligan-Koopman-Doty] (pgs. 1-5, 9-10), [Sarathy] (optional)          |
 | Thurs 4/21                               | Industry and Government Panel                  |             |              |
 | Tues 4/26                                | Conclusions                 |             |              |
 | Mon-Tues 5/9-10                          | Project Presentations                 |             |              |
@@ -121,3 +121,7 @@
 [Nissim-Wood]: https://privacytools.seas.harvard.edu/files/privacytools/files/nissim_wood_-_is_privacy_privacy_.pdf
 [Cohen]: https://cdn.harvardlawreview.org/wp-content/uploads/pdfs/vol126_cohen.pdf
 [Solove]: https://deliverypdf.ssrn.com/delivery.php?ID=785068073073025084118014104076101007098032068060033065078102095014099121031107087031057121038126047045032106114097020094095108035045012081119009013007028118119077041022082071125065114094107095107112100099006123088065120109070065090096095104107072&EXT=pdf&INDEX=TRUE
+[Sarathy]: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079222
+[Winner]: https://faculty.cc.gatech.edu/~beki/cs4001/Winner.pdf
+[Green-Viljoen]: https://www.benzevgreen.com/20-fat-realism/
+[Mulligan-Koopman-Doty]: https://www.law.berkeley.edu/wp-content/uploads/2017/07/Privacy-is-an-essentially.pdf
