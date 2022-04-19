@@ -83,7 +83,7 @@
 | Tues 4/12                                | Other Distributed Models: Implementations      | [pdf](presentations/end-to-end-privacy.pdf)           |   [Privacy-Preserving RCT]           |
 | **Societal Perspectives on Privacy**     |                                       |                                                                 |     
 | Thurs 4/14                               | Perspectives on Privacy: Law and Policy                  |             |    [Nissim-Wood] (Secs 2.1, 2.3), [Solove] (pgs. 479-83, 488-91), [Cohen] (pgs. 1915-20, 1926-27)          |
-| Tues 4/19                                | Perspectives on Privacy: Science & Technology Studies                 |             |   [Winner] (pgs. 121-124, 130-131) [Green-Viljoen] (Secs 1-2) [Mulligan-Koopman-Doty] (pgs. 1-5, 9-10), [Sarathy] (optional)          |
+| Tues 4/19                                | Perspectives on Privacy: Science & Technology Studies                 |    [pdf](presentations/DP_and_STS.pdf)         |   [Winner] (pgs. 121-124, 130-131) [Green-Viljoen] (Secs 1-2) [Mulligan-Koopman-Doty] (pgs. 1-5, 9-10), [Sarathy] (optional)          |
 | Thurs 4/21                               | Industry and Government Panel                  |             |              |
 | Tues 4/26                                | Conclusions                 |             |              |
 | Mon-Tues 5/9-10                          | Project Presentations                 |             |              |
