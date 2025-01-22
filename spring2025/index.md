@@ -6,7 +6,7 @@
 
 **Regular meeting time**: Mondays & Wednesdays 11:15-12:30, starting 1/25
 
-**Location**: TBD
+**Location**: 2.112 in 114 Western Ave, Allston, MA (in the building next to the SEC)
 
 ### Resources
 TBD
