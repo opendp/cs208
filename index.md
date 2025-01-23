@@ -1,4 +1,4 @@
-# CS 208 (Applied Privacy for Data Science)
+# CS 2080 (Applied Privacy for Data Science)
 
 ## Overview
 
