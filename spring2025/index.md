@@ -9,7 +9,6 @@
 **Location**: 2.112 in 114 Western Ave, Allston, MA (in the building next to the SEC)
 
 ### Resources
-* [Schedule, Lecture Notes, and Assignments](https://opendp.github.io/cs208/spring2025)
 * [Discussions on Ed](https://edstem.org/us/courses/74326)
 * [Reading on Perusall](https://app.perusall.com/courses/compsci-2080-applied-privacy-for-data-science/)[ (reading guidelines)](https://opendp.github.io/cs208/spring2025/files/reading_and_commenting_guidelines.pdf)
 * [Annotated Course Bibliography]( https://opendp.github.io/cs208/spring2025/files/cs208_annotated_bibliography.pdf)
