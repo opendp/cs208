@@ -19,7 +19,7 @@
 | Date                                     | Title                                          | Slides/Notes                                                    | Advance Reading                                                                                                 |
 |------------------------------------------|------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | Monday (1/27)                            | Course Overview                                | To be released                                                  |                                                                                                                  |
-| *Attacks on Privacy*                     |                                                |                                                                 |
+| **Attacks on Privacy**                     |                                                |                                                                 |
 | Wednesday (1/29)                         | Re-identification Attacks                      |                                                                 |
 | Monday (2/3)                             | Reconstruction Attacks                         |                                                                 |
 | Wednesday (2/5)                          | Membership Inference Attacks                   |                                                                 |
