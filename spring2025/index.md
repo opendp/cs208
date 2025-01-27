@@ -19,7 +19,7 @@
 
 | Date                                     | Title                                          | Slides/Notes                                                    | Advance Reading                                                                                                 |
 |------------------------------------------|------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| Monday (1/27)                            | Course Overview                                | [slides](lectures/lecture-1-overview.pdf)                                                  |                                                                                                                  |
+| Monday (1/27)                            | Course Overview                                | [pdf](lectures/lecture-1-overview.pdf)                                                  |                                                                                                                  |
 | **Attacks on Privacy**                     |                                                |                                                                 |
 | Wednesday (1/29)                         | Re-identification Attacks                      |                                                                 |
 | Monday (2/3)                             | Reconstruction Attacks                         |                                                                 |
