@@ -11,7 +11,7 @@
 ### Resources
 * [Syllabus](files/syllabus.pdf)
 * [Discussions on Ed](https://edstem.org/us/courses/74326)
-* [Reading on Perusall](https://app.perusall.com/courses/compsci-2080-applied-privacy-for-data-science/)[ (reading guidelines)](https://opendp.github.io/cs208/spring2025/files/reading_and_commenting_guidelines.pdf)
+* [Reading on Perusall](https://app.perusall.com/courses/compsci-2080-applied-privacy-for-data-science/)[ (reading & commenting guidelines)](https://opendp.github.io/cs208/spring2025/files/reading_and_commenting_guidelines.pdf)
 * [Annotated Course Bibliography]( https://opendp.github.io/cs208/spring2025/files/cs208_annotated_bibliography.pdf)
 * Video Recordings at Panopto (access via Canvas)
 
