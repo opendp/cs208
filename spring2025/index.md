@@ -21,7 +21,7 @@
 |------------------------------------------|------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | Monday (1/27)                            | Course Overview                                | [pdf](lectures/lecture-1-overview.pdf)                                                  |                                                                                                                  |
 | **Attacks on Privacy**                     |                                                |                                                                 |
-| Wednesday (1/29)                         | Re-identification Attacks                      |                                                                 |
+| Wednesday (1/29)                         | Re-identification Attacks                      | [pdf](lectures/lecture-2-reidentification-reconstruction-attacks.pdf)                                                                |
 | Monday (2/3)                             | Reconstruction Attacks                         |                                                                 |
 | Wednesday (2/5)                          | Membership Inference Attacks                   |                                                                 |
 
