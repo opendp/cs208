@@ -1,0 +1,193 @@
+\documentclass[11pt]{article}
+
+\def\draft{0}
+
+\input{hw_style}
+
+\title{\vspace{-1.5cm} HW 1:  Probability Review and Reidentification Attacks}
+\author{CS 2080 Applied Privacy for Data Science, Spring 2025}
+\date{\textbf{Version 2}: Due Friday, Feb. 7, 5pm.}
+
+
+\begin{document}
+\maketitle
+
+\vspace{-3ex}
+
+\instructions
+
+\begin{enumerate}[leftmargin=*]
+
+\item \textbf{Probability Review}
+
+\begin{enumerate}
+    \item  Let $S\sim \Bin(n,p)$ be a binomial random variable.  That is, $S=X_1+X_2+\cdots+X_n$, where 
+    $X_1,\ldots,X_n$ are independent $\{0,1\}$-valued Bernoulli random variables where $\Pr[X_i = 1]=p$ (i.e. coin tosses where the probability of heads is $p$).  Calculate the standard deviation $\sigma[S]$. \\
+    
+    \underline{Hint:} \textit{recall that if $X$ and $Y$ are independent random variables, then $\Var[X+Y]=\Var[X]+\Var[Y]$, where $\Var$ denotes the variance.} \\
+
+    \item Let $Z_1,\ldots,Z_k$ be independent random variables that are drawn from a Gaussian distribution $\Normal(0, \sigma^2)$, let $M=\max\{|Z_1|,|Z_2|,\ldots,|Z_k|\}$ and let $\Phi : \R\rightarrow [0,1]$ be the CDF of a standard normal $\Normal(0,1)$ distribution.  Show that for every $t>0$
+    $$\Pr[M \geq t\sigma ] = 1- (1 - 2\Phi(-t))^k$$
+
+    \label{part:maxnormals-exact}
+
+    \item Now show that for every $t > 0$, $$\Pr[M \geq t\sigma ] \leq 2k\cdot \Phi(-t)$$
+    \label{part:ineq}
+    
+    \item It is known that for all $x\geq 0$, we have 
+    $$\Phi(-x) \leq \frac{1}{\sqrt{2\pi}}\cdot \frac{1}{x}\cdot e^{-x^2/2}$$
+    Using this fact and Parts~\ref{part:maxnormals-exact} and \ref{part:ineq}, show that for $t = \sqrt{2\ln k+7}$, we have
+    $$\Pr[M \geq t\sigma] < .01,$$
+    where $M$ is defined as in Part~\ref{part:maxnormals-exact}.
+
+    
+    \item Let $S_1,\ldots,S_k$ be independent $\Bin(n,p)$ random variables.  The Central Limit Theorem (CLT) implies that as $n\rightarrow \infty$, each $Y_i=(S_i-\Exp[S_i])/\sigma[S_i]$ converges in distribution to a standard $\Normal(0,1)$ normal distribution. Pretending that $Y_i$ is actually a normal distribution (i.e. ignoring the rate of convergence in the CLT\footnote{While we have ignored the rate of convergence in the Central Limit Theorem here, similar bounds with slightly worse constants can be proven rigorously using ``Chernoff-Hoeffding Bounds,'' provided that $p(1-p)n\geq c\log k$ for an appropriate constant $c$}), show that
+    $$\Pr\left[\max_i |S_i-pn| \geq \sqrt{2\ln k + 7} \cdot\sqrt{p(1-p) n}\right] < .01$$
+      
+    
+    \item Review the definitions of asymptotic notation in Section 1 notes or Section 3.1 of the Cormen-Leiserson-Rivest-Stein text. 
+
+    Fill in the table below with T (true) or F (false) to indicate the relationship between $f$ and $g$. For example, if $f=O(g)$, the first cell of the row should be T.
+
+
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+    \hline
+         $f$ & $g$ & $O$ & $o$ & $\Omega$ & $\omega$ & $\Theta$\\
+         \hline
+         $n^2 + 3n + 7$ & $10n^3 + 5n$ & & & & & \\            
+         \hline
+         $\log ( n^{\sqrt{n}})$ & $4\sqrt{n \log n}$ & & & & & \\
+         \hline
+         $n + 2\log n$ & $n$ & & & & & \\
+         \hline
+         $3^n$ & $n^3 2^n$ & & & & & \\
+         \hline
+         $\log(n^3 + 1)$ & $(\log n) + 10$ & & & & & \\
+         \hline
+    \end{tabular}
+\end{center}
+
+    
+    Above and throughout the course, $\log$ denotes the logarithm base 2, and $\ln$ denotes the logarithm base $e$.
+    
+
+\end{enumerate}
+
+\item \textbf{Reidentification Attack}
+
+In the GitHub repo,\footnote{\url{https://github.com/opendp/cs208/tree/main/spring2025/data}} you will find the Public Use Micro Sample (PUMS) dataset from the 2000 US Census \texttt{FultonPUMS5full.csv}.  This is a sample from the ``Long Form'' from Georgia residents, which contained many more questions than the regular questionnaire, and was randomly assigned to some individuals during the decennial Census. (It has since been replaced by a continuously collected survey known as the \emph{American Community Survey}.)  
+
+Also in that folder is the codebook file for the PUMS dataset that lists the variables available in the release.  Note this is the 5\% sample which means that five percent of records are randomly sampled and released.
+Assume that there was no disclosure avoidance techniques applied to this data.
+
+In the style of Latanya Sweeney's record linkage reidentification attack,\footnote{\url{https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1748-720X.1997.tb01885.x}} in this problem you will propose a reidentification attack on the PUMS dataset by identifying demographic variables that, if known from another auxiliary source, could uniquely identify individuals.  Note that while Sweeney used zipcodes as the geographic indicator, individuals in this Census release are identified by Public Use Microdata Areas (PUMAs) which are Census constructed geographic areas that contain at least 100,000 individuals. 
+
+\begin{enumerate}
+    \item Create a new Jupyter notebook and read in the PUMS dataset. For instructions on setting up a programming environment, installing Jupyter, and running your first notebook, see the \href{https://github.com/opendp/cs208/blob/main/spring2025/sections/section0-programming.pdf}{section 0 notes}. It is also fine if you prefer to work on Google Colab or other python IDEs. 
+
+    \item Determine the variables that you would match across the auxiliary source and the PUMS dataset. 
+ 
+    \begin{enumerate}
+
+        \item Write a function that takes in a dataset and a set of features/variables for that dataset, and returns the fraction of individuals in the dataset who are unique with respect to the specified variables. \footnote{Note there is also a short subset of the data in the file \texttt{FultonPUMS5sample100.csv} which might be useful for testing purposes as you write your function.}
+        \item Using your function, and your proposed reidentification attack using an auxiliary source, what is the fraction of unique individuals in the dataset you could attempt to reidentify from your proposed attack?  \\
+
+        \underline{Note on the auxiliary source:} You do not need to find a specific external dataset for the auxiliary source. You could simply explain what is the auxiliary knowledge that you need as an adversary to make the reidentification attack successful by:
+        \begin{itemize}
+            \item[--] Providing a list of three potential auxiliary sources.
+            \item[--] Arguing how the auxiliary knowledge needed for your attack could be found in these sources, which could simply be suggesting that a certain set of variables and individuals are likely to be present in the auxiliary sources.\\
+        \end{itemize}
+        
+        \item 
+        Recall that this is a 5\% sample from the full Census data.   As a ``back-of-the-envelope" calculation, roughly approximate what fraction of individuals would you expect to be unique if you could instead run your function on the entire Census dataset? Write a few sentences stating the assumptions underlying your calculation.\footnote{Hint: There are many ways to go about this, either analytically with some simplifying assumptions, or numerically with a simulation.  Analytically, if an individual has a $p$ chance of being unique among $N$ individuals, then think about what assumption you'd make to be able to say they have roughly a $p^k$ chance of being unique among $kN$ individuals.  
+
+        Numerically, you could instead plot the value your function from part (iii.) gives you as you use subsamples of the available data and increase the sample size up to the current size of the data, and then try to project that curve out to where it would be with 20 times that amount of data.}   Your logic is more important than the accuracy of the number itself.  
+$\Exp_{x\sim D}\left[(1-p_x)^{Nk-1}\right]\approx \left(\Exp_{x\sim D}\left[(1-p_x)^{N-1}\right]\right)^k$ 
+
+        
+    \end{enumerate}
+\end{enumerate}
+
+
+\end{enumerate}
+\iffalse
+\begin{thebibliography}
+
+\bibitem{CormenLeRiSt09} Cormen, Thomas H. and Leiserson, Charles E. and Rivest, Ronald L. and Stein, Clifford, ``Introduction to Algorithms, Third Edition", \emph{The MIT Press}, 2009.
+
+\end{thebibliography}
+\fi
+
+\newpage
+\vspace{-1cm}
+\input{hw1_pums_codebook}
+
+\end{document}
+
+\item \textbf{Reconstruction Attack} 
+
+Among the variables in the 2000 PUMS dataset above is $\us$, which asks the resident about their US Citizenship status. This is a sensitive piece of information, and including this question on the regular Census questionnaire has been a topic of recent controversy.\footnote{See e.g. \url{https://www.nytimes.com/2019/01/15/us/census-citizenship-question.html}} This PUMS dataset is public, but makes a good stand-in for a database that might be secured behind a query interface. We've provided a sample of size $n=\nval$.\ 
+
+In this problem, you will run experiments to evaluate the performance of the reconstruction attack on determining individuals' citizenship status. Treat the following variables in the dataset as public (so as an attacker you know them for all of the individuals in the dataset): 
+\begin{align}
+\pub =& (\sex, \age, \educ, \age, \married, \divorced, \latino, \black, \asian, \children, \nonumber \\ &\quad \employed, \militaryservice, \disability, \englishability).\nonumber
+\end{align}
+Each query in your attack should specify a boolean predicate 
+$p(\pub)\in \{0,1\}$ on the public variables (e.g. $p(\age/\educ > 4 ~\&\&~ \sex == 0)$), and receive as an answer an approximation to the value:
+$$\sum_{i : p(\pub_i)=1} \us_i,$$
+where $i$ ranges over the $n=\nval$ individuals in the PUMS dataset sample, \texttt{FultonPUMS5sample100.csv}, that we have provided.
+
+Your attack should make $2n$ queries, where each query corresponds to a different predicate $p_j$, $j=1,\ldots,2n$.\footnote{Suggestion: To create predicates that specify ``random'' subsets, you'll want to randomly hash a long vector of integer values $v=(v_1,\ldots,v_d)$ containing each individual's public attributes into a binary value. A good way to do this is to fix a moderately large prime number $P$ (say of magnitude in the 100's), choose random numbers $r_1,\ldots,r_d\in \{0,\ldots,P-1\}$, and 
+define $p(v) = ((\sum_d r_d v_d) \bmod P) \bmod 2$.}
+Using the description of these predicates, the public data $\pub_1,\ldots,\pub_n$, and the noisy answers to the queries, you should try to reconstruct the $\us_i$ bits for as many users as possible.  
+
+You will run experiments on how your attack performs against the following defenses:
+\begin{enumerate}
+    \item Rounding: round each result to the nearest multiple of $R$ for a parameter $R$
+    \item Noise addition: add Gaussian noise of mean zero and variance $\sigma^2$, for a parameter $\sigma$, independently for each query.
+    \item Subsampling: randomly subsample a set $T$ consisting of $t$ out of the $n$ rows, for a paremeter $t$, and calculate the answer using only the rows in $T$ (scaling up by a factor of $n/t$).
+\end{enumerate}
+
+Varying parameters $R$, $\sigma$, and $T$ as integers from $0$ to $n$, produce plots showing and comparing the trade-off between the accuracy of the statistics (measured by root-mean-squared-error between answers and exact values) and the average fraction of values $\us_i$ that are successfully reconstructed. For each parameter setting, run 10 experiments with fresh randomness and plot the average data points.
+
+Make sure to identify the regime where your attack transitions from near-perfect reconstruction (fraction close to 1) to near-unsuccessful reconstruction (fraction close to 1/2). Add additional data points so that your graph is detailed around that transition point. 
+
+Note that you will be coding both the release mechanisms for each defense as well as the attack. The GitHub repo contains the code from the regression-based reconstruction attack from Monday's class\footnote{At \url{https://github.com/opendp/cs208/blob/master/examples/wk1_attacks/}\\ see \texttt{regressionAttack.r} and \texttt{regressionAttackOverQuerySize.r}}. (Be sure to pull the most recent copy.)  You can directly expand from this code if you are working in R, or use it as a template if you are working in Python.
+
+\paragraph{BONUS:} 
+The above attack requires knowledge of all of the $\pub_i$'s.   Here we will sketch a version of the attack that only requires knowledge of a single $\pub_i$ and reconstructs $\us_i$ for that particular individual.   For extra credit, fill in the details and implement the attack and measure its performance.
+
+Above, we suggested using a random hash function of the form $p(v) = ((\sum_d r_dv_d) \bmod P) \bmod 2$ to select subsets of the dataset.   Instead, consider taking $P$ to be a prime of magnitude larger than $n$ by a small constant factor (somewhere between 2 and 10), choosing $r_1,\ldots,r_d$ once and for all, and defining the hash function $h(v)=\sum_d r_dv_d \bmod P$.  Since $P$ is significantly larger than $n$, there will be few collisions
+of the $\pub_i$'s under the hash function $h$.   Now for each query $p_j$, pick a random number $s_j\in \{0,\ldots,P-1\}$, and define $p_j(v) = ((s_j\cdot h(v)) \bmod P)\bmod 2$.
+Now you can do your linear regression with $P$ variables, one for each possible value of $h(\pub)$, since $h$ is not changing across the queries.  To attack a particular individual $i$, we look at the result of the regression for the variable associated with $h(\pub_i)$.  (If the regression
+is too slow, feel free to use smaller values of $n$ and $P$)
+
+
+\item \textbf{Membership Attack}
+
+Run a similar experiment to evaluate the effectiveness of the membership attack covered in class on the same sample of $n=\nval$ from the PUMS dataset above.  Specifically, find the highest level of accuracy (i.e. lowest RMSE) such that the reconstruction attack fails against all three defenses, where failure means reconstructing approximately 50\% of the bits. 
+Fix parameters for each of the three defenses that correspond to this level of accuracy, and produce a graph of the number of queries issued vs. the true positive probability of the membership attack (i.e. the probability that the attack says ``IN'' when Alice is a randomly chosen member of the dataset).
+You can use \texttt{membershipAttackCompleted.r} as a template, which contains the membership attack from lecture including all the modifications made during lecture.
+Here are guidelines for carrying out the attack:
+\begin{enumerate}
+    \item  We can think of the binary values in the membership attack described in class either as actual attributes or the results of Boolean predicates applied to the attributes. Since there are not enough actual attributes in the PUMS dataset to run a membership attack, create derived attributes in the following way. For the $j$th ``attribute'' of user $i$ in the membership attack, use the predicate $p_j(\pub_i)$, where
+    $p_j$ is a random predicate generated in the same way that you did in the reconstruction attack.
+    \item Feel free use to use counts or means as your statistics, as they are equivalent up to a scaling by a factor of $n$.  If you use means, be sure to scale the accuracy threshold you use accordingly.
+    \item Increase the number of queries/attributes until either the true positive probabilities start to converge or it becomes computationally infeasible.
+    \item Below we will mostly use notation from the membership attacks lecture, but we'll use $m$ for the number of queries (since above we used $d$ for the number of attributes in $\pub$) and  $\rho=(\rho_1,\ldots,\rho_m)$ for the population probabilities (since above $p_j$ denotes the $j$'th predicate). 
+\item To calculate the vector $\rho$ of population probabilities, you can either use the
+full Fulton Georgia PUMS dataset that we have provided (\texttt{FultonPUMS5full.csv} consisting of 25,766 individuals) or do an analytic calculation based on the random predicates you use.
+    \item Set the false positive probability to be $\delta=1/10n$.  To determine the corresponding threshold $T=T_{\rho,a}$, you can approximate the null distribution of your test statistic 
+     either using the resampling method shown in class on 2/11 or a normal approximation
+    $\mathcal{N}(0,\sigma^2)$ where
+    $\sigma^2$ is the variance of your test statistic.
+    \footnote{If you switch from $\{0,1\}$ to $\{-1,1\}$ as done in class on 2/11 and use the test statistic $\langle Y-\rho,a\rangle$ with $\rho,a\in [-1,1]^d$, then the variance is $\sum_{j=1}^d a_j^2\cdot (1-\rho_j^2)$.  If you stick with $\{0,1\}$ and use the test statistic $\langle Y-\rho,a-\rho\rangle$ from the corrected version of the 2/8 lecture notes, then the variance is  $\sum_{j=1}^d (a_j-\rho_j)^2\cdot \rho_j\cdot (1-\rho_j)$.}
+     Check that you are indeed achieving a small enough false positive probability by running your membership attack on some randomly chosen members of the full population dataset.
+\end{enumerate}
+
+\newpage
+\vspace{-1cm}
+\input{hw1_pums_codebook}
+
+\end{document}
