@@ -19,9 +19,9 @@
 
 | Date                                     | Title                                          | Slides/Notes                                                    | Advance Reading                                                                                                 |
 |------------------------------------------|------------------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| Monday (1/27)                            | Course Overview                                | [pdf](lectures/lecture-1-overview.pdf)                                                  | Hands-On Differential Privacy, Chapter 11                                                                                                                 |
+| Monday (1/27)                            | Course Overview                                | [pdf](lectures/lecture-1-overview.pdf)                                                  |                                                                                                                 |
 | **Attacks on Privacy**                     |                                                |                                                                 |
-| Wednesday (1/29)                         | Re-identification Attacks                      | [pdf](lectures/lecture-2-reidentification-reconstruction-attacks.pdf)                                                                |
+| Wednesday (1/29)                         | Re-identification Attacks                      | [pdf](lectures/lecture-2-reidentification-reconstruction-attacks.pdf)                                                                | Hands-On Differential Privacy, Chapter 11  |
 | Monday (2/3)                             | Reconstruction Attacks                         |                                                                 | [Tanner], [Narayanan-Shmatikov], [Castro-Cavoukian]
 | Wednesday (2/5)                          | Membership Inference Attacks                   |                                                                 |
 
