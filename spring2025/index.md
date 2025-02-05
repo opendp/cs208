@@ -25,7 +25,7 @@
 | Wednesday (1/29)                         | Re-identification Attacks                      | [pdf](lectures/lecture-2-reidentification-reconstruction-attacks.pdf)                                                                | Hands-On Differential Privacy, Chapter 11  |
 | Problem Set 1 (due Fri 2/7)              |                                                | [pdf](homeworks/ps1/ps1.pdf), [tex](homeworks/ps1/ps1.tex)                |                  |
 | Monday (2/3)                             | Reconstruction Attacks                         | [pdf1](lectures/lecture-3-discussion-and-reconstruction-attacks-practicum.pdf), [ipynb](examples/wk2_regression_attack.ipynb), [pdf2](lectures/lecture-3-part-2.pdf)  | [Tanner], [Narayanan-Shmatikov], [Castro-Cavoukian]
-| Wednesday (2/5)                          | Membership Inference Attacks                   | [ipynb](examples/wk2_membership_attack.ipynb)                                                                |
+| Wednesday (2/5)                          | Membership Inference Attacks                   | [pdf](lectures/lecture-4-membership-attacks.pdf), [ipynb](examples/wk2_membership_attack.ipynb)                                                                |
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
