@@ -103,7 +103,6 @@ In the style of Latanya Sweeney's record linkage reidentification attack,\footno
         Recall that this is a 5\% sample from the full Census data.   As a ``back-of-the-envelope" calculation, roughly approximate what fraction of individuals would you expect to be unique if you could instead run your function on the entire Census dataset? Write a few sentences stating the assumptions underlying your calculation.\footnote{Hint: There are many ways to go about this, either analytically with some simplifying assumptions, or numerically with a simulation.  Analytically, if an individual has a $p$ chance of being unique among $N$ individuals, then think about what assumption you'd make to be able to say they have roughly a $p^k$ chance of being unique among $kN$ individuals.  
 
         Numerically, you could instead plot the value your function from part (iii.) gives you as you use subsamples of the available data and increase the sample size up to the current size of the data, and then try to project that curve out to where it would be with 20 times that amount of data.}   Your logic is more important than the accuracy of the number itself.  
-$\Exp_{x\sim D}\left[(1-p_x)^{Nk-1}\right]\approx \left(\Exp_{x\sim D}\left[(1-p_x)^{N-1}\right]\right)^k$ 
 
         
     \end{enumerate}
