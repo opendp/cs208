@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+\usepackage{booktabs}
+\def\draft{0}
+
+\input{hw_style}
+
+\title{\vspace{-1.5cm} HW 2: Reconstruction and Membership Attacks}
+\author{CS 2080 Applied Privacy for Data Science, Spring 2025}
+\date{\textbf{Version 1.0: Due Fri, Feb. 14, 5:00pm.}}
+
+\begin{document}
+\maketitle
+
+\instructions
+
+\newcommand{\nval}{100}
+
+\begin{enumerate}[leftmargin=*]
+
+\item \textbf{A Bayesian Interpretation of MIAs}
+\newcommand{\Oprior}{O_{\mathit{prior}}}
+\newcommand{\Opost}{O_{\mathit{post}}}
+
+In formulating MIAs as frequentist hypothesis tests, we condition on Alice either being in or not in the dataset.  In a Bayesian formulation, we might instead assume that the adversary has a prior belief that Alice is in the dataset with some probability $p$.  A convenient measure of the adversary's belief is the {\em odds} $\Oprior = p/(1-p)$, which tends to $\infty$ as the certainty that Alice is in the dataset increases and tends to 0 as it decreases.
+
+\begin{enumerate}
+    \item Suppose an attacker carries out a Membership Inference Attack on Alice and receives an ``In'' result.  Let $\Opost$ be the odds corresponding to Alice's belief conditioned on ``In'' result from the MIA.  Write a formula for $\Opost$ in terms of $\Oprior$ and the TPR and FPR of the MIA (on the same data distribution).
+
+    \item Using your formula, briefly discuss (in a sentence or two) the significance of having a very small FPR, even when the TPR is very large (e.g. TPR=1).
+\end{enumerate}
+
+\item \textbf{Reconstruction Attack}  \label{prob:reconstruction}
+In the course Github repo, we have provided a fake healthcare dataset\footnote{\url{https://github.com/opendp/cs208/blob/main/spring2025/data/fake_healthcare_dataset_sample100.csv}} on $100$ individual patients. 
+Among the variables in the dataset is $\texttt{result}$ indicating whether or not the patient's tests came back normal (indicated by a $0$ value) or abnormal (indicated by a $1$ value).
+
+This is a sensitive piece of information, since it might reveal whether or not a given patient has an underlying health condition. The full data card for the dataset is given below.
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Attribute} & \textbf{Description} \\ \midrule
+\texttt{Age}       & Integer in the range 0--100 \\
+\texttt{Sex}       & 0: male, 1: female \\
+\texttt{Blood type}     & 0: A+,\, 1: A-,\, 2: B+,\, 3: B-,\, 4: AB+,\, 5: AB-,\, 6: O+,\, 7: O- \\
+\texttt{Admission type} & 0: elective,\, 1: urgent,\, 2: emergency \\
+\texttt{Test results}    & 0: normal,\, 1: abnormal \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The example dataset represents the type of information a hospital might wish to share with medical researchers. To uphold strong data security practices, the hospital could restrict access to the raw data and instead provide access to the data through a controlled query interface.
+
+
+
+In this problem, you will run experiments to evaluate the performance of the reconstruction attack on determining patients' \texttt{result} status. Treat the following variables in the dataset as public (so as an attacker you know them for all of the individuals in the dataset): 
+\begin{align}
+\pub =& (\texttt{age}, \texttt{sex}, \texttt{blood}, \texttt{admission})\nonumber
+\end{align}
+Each query in your attack should specify a ``random'' boolean predicate $q$ on the public variables (e.g. $q(\pub_i) = [\texttt{age}_i > 34 ~\&\&~ \texttt{admission}_i == 1]$), and receive as an answer an approximation to the subset sum query:
+\begin{equation}
+\sum_{i : q(\pub_i)=1} \texttt{result}_i,
+\label{eqn:sumquery}
+\end{equation}
+where $i$ ranges over the $100$ individuals in the healthcare dataset that we have provided.
+
+We have provided you with some (optional) starter code in \texttt{hw2\_starter.py}
+\footnote{Starter code at \url{https://github.com/opendp/cs208/blob/main/spring2025/homeworks/ps2/ps2_starter.py}} in the GitHub repo. 
+
+This includes definitions of:
+\begin{itemize}
+    \item \texttt{data}, a DataFrame containing the dataset you will be attacking.
+    \item \texttt{pub}, the names of the columns we are treating as public knowledge.
+    \item \texttt{execute\_subsetsums\_exact(predicates)}, a function that takes as input a list \texttt{predicates} on the \texttt{pub} variables and returns the list of (exact) answers to the corresponding subset sum queries on \texttt{data}, computed as in Equation~(\ref{eqn:sumquery}).
+    \item An example of using \texttt{execute\_subsetsums\_exact} to count both the number of female patients in the dataset and the number of emergency admissions.
+    \item A function \texttt{make\_random\_predicate()} that returns a (pseudo)random predicate $q$, which you can use to emulate the random subset sums that are used in the reconstruction attack as presented in class.
+\end{itemize}
+
+Carry out your attack and experiments in the following steps:
+\begin{enumerate}
+    \item Write a function \texttt{reconstruction\_attack(data\_pub,predicates,answers)} that takes as input \texttt{data\_pub}, a DataFrame restricted to public columns, a list \texttt{predicates} of predicates on the public attributes, and a list of  (possibly approximate) \texttt{answers} to the queries, and returns an attempted reconstruction of the sensitive ($\texttt{result}$) column as an array of boolean values of length $n$, where $n$ is the number of rows in $\texttt{data\_pub}$.  
+    Test your attack against $\data$ using $2n$ random queries generated by \texttt{make\_random\_predicate} and answered by \texttt{execute\_queries\_exact}.  It should, with high probability, reconstruct all of the sensitive bits correctly.
+    
+    \item Implement the following defenses by modifying \texttt{execute\_subsetsums\_exact}:  
+\begin{enumerate}
+    \item \texttt{execute\_subsetsums\_round(R,predicates)}: round each result to the nearest multiple of $R$.
+    \item \texttt{execute\_subsetsums\_noise(sigma,predicates)}:  add independent Gaussian noise of mean zero and variance $\sigma^2$ to each result.
+    \item\texttt{execute\_subsetsums\_sample(t,predicates)}: given a parameter $t\in \{1,\ldots,n\}$, randomly subsample a set $T$ consisting of $t$ out of the $n$ rows and calculate all of the answers using only the rows in $T$ (scaling up answers by a factor of $n/t$).
+\end{enumerate}
+\item Finally, run experiments on how your attack performs against the three defenses above.
+
+\begin{enumerate}
+    \item Create functions to compute the accuracy of the answers returned by each of the \texttt{execute\_subsetsums\_*} functions
+    (root-mean-squared-error between answers and exact values) and success of the attack (average fraction of values $\texttt{result}_i$ that are successfully reconstructed).
+    \item Vary parameters $R$, $\sigma$, and $t$ as integers from $1$ to $n$.
+    For each parameter setting, run 10 experiments with fresh randomness and plot the averages of the accuracy and reconstruction success fractions. 
+    \item Compare the trade-off between accuracy and success of the attack.
+    Make sure to identify the regime where your attack transitions from near-perfect reconstruction (fraction close to 1) to failed reconstruction (fraction reconstructed is no higher than the proportion of the majority value). 
+\end{enumerate}
+
+\end{enumerate}
+
+\item \textbf{Research Access vs. Privacy Protection} 
+Recall the reading on ``Public Access to Genome-Wide Data: Five Views on Balancing Research with Privacy and Protection" (assigned as pre-reading on 2/10). 
+Select two of the five views, and in a short paragraph (100-300 words), reflect on how the authors characterize uncertainty about the future when discussing risks or possibilities (eg. around privacy of human subjects, family disclosures, public participation in genomic studies, and scientific breakthroughs that benefit the public). Which future events are depicted as more certain or uncertain than others? What risks or possibilities are downplayed versus emphasized? What are the implicit assumptions made by the authors, and how do these assumptions shape their understandings of the privacy-utility tradeoff, and their arguments more broadly?
+\end{enumerate}
+
+\subsection*{Collaborators}
+Please list all collaborators for this problem set. ChatGPT and other AI tools should be treated similarly to collaboration with your peers in the 
+class.  You may use these tools to help you understand the material and as part of your 
+brainstorming process, but you should not be asking the tools to solve the homework problems 
+for you. If you do use such tools, you must cite them and  list the 
+prompts you entered and responses obtained below.
+\end{document}

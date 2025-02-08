@@ -6,7 +6,7 @@ import pandas as pd
 # Problem setup
 
 # Update to point to the dataset on your machine
-data: pd.DataFrame = pd.read_csv("https://raw.githubusercontent.com/opendp/cs208/refs/heads/main/spring2025/data/fake_healthcare_dataset.csv")
+data: pd.DataFrame = pd.read_csv("https://raw.githubusercontent.com/opendp/cs208/refs/heads/main/spring2025/data/fake_healthcare_dataset_sample100.csv")
 
 # names of public identifier columns
 pub = ["age", "sex", "blood", "admission"]
