@@ -27,7 +27,7 @@
 | Monday (2/3)                             | Reconstruction Attacks                         | [pdf1](lectures/lecture-3-discussion-and-reconstruction-attacks-practicum.pdf), [ipynb](examples/wk2_regression_attack.ipynb), [pdf2](lectures/lecture-3-part-2.pdf)  | [Tanner], [Narayanan-Shmatikov], [Castro-Cavoukian]
 | Wednesday (2/5)                          | Membership Inference Attacks                   | [pdf](lectures/lecture-4-membership-attacks.pdf)                 | [Ruggles-van Riper], [Jessica Hullman blog post], [Smith-Ullman]                                                            |
 | **DP Foundations**                       |                                               |                                                                  |                                         |
-| Monday (2/10)                            | DP Foundations: Definitions, Basic Mechanisms  |  [ipynb](examples/wk2b_membership_attack.ipynb)                 |  [P3G Consortium et al.], Hands-On Differential Privacy, Chapter 2                               |
+| Monday (2/10)                            | DP Foundations: Definitions, Basic Mechanisms  |  [pdf](lectures/lecture-5-dp-foundations.pdf), [ipynb](examples/wk2b_membership_attack.ipynb)                 |  [P3G Consortium et al.], Hands-On Differential Privacy, Chapter 2                               |
 | Wednesday (2/12)                         | DP Foundations: Properties of DP Mechanisms    |                                                               |                                     |
 | Monday (2/17) **No Class** - President's Day               |                               |                                                               |                                     |
 
