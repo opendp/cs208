@@ -29,7 +29,7 @@
 | Problem Set 2 (due Fri 2/14)              |                                                | [pdf](homeworks/ps2/ps2.pdf), [tex](homeworks/ps2/ps2.tex)                |                  |
 | **DP Foundations**                       |                                               |                                                                  |                                         |
 | Monday (2/10)                            | DP Foundations: Definitions, Basic Mechanisms  |  [pdf1](lectures/lecture-4b-membership-attack-review.pdf), [ipynb class example](examples/wk2b_membership_attack.ipynb), [ipynb w/ in-class updates](examples/wk2b_membership_attack_fixed.ipynb), [pdf2](lectures/lecture-5-dp-foundations.pdf)                 |  [P3G Consortium et al.], Hands-On Differential Privacy, Chapter 2                               |
-| Wednesday (2/12)                         | DP Foundations: Properties of DP Mechanisms    |                                                               |                                     |
+| Wednesday (2/12)                         | DP Foundations: Properties of DP Mechanisms    |   [ipynb class example](wk3_laplace_mechanism.ipynb)                                                            |                                     |
 | Monday (2/17) **No Class** - President's Day               |                               |                                                               |                                     |
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
