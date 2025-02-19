@@ -31,6 +31,7 @@
 | Monday (2/10)                            | DP Foundations: Definitions, Basic Mechanisms  |  [pdf1](lectures/lecture-4b-membership-attack-review.pdf), [ipynb class example](examples/wk2b_membership_attack.ipynb), [ipynb w/ in-class updates](examples/wk2b_membership_attack_fixed.ipynb), [pdf2](lectures/lecture-5-dp-foundations.pdf)                 |  [P3G Consortium et al.], Hands-On Differential Privacy, Chapter 2 (up to pg. 35)                               |
 | Wednesday (2/12)                         | DP Foundations: Properties of DP Mechanisms    |  [pdf](lectures/lecture-6-dp-foundations-p2.pdf), [ipynb class example](examples/wk3_laplace_mechanism.ipynb)                                                            | Hands-on Differential Privacy Ch. 2, pg 35-52                                     |
 | Monday (2/17) **No Class** - President's Day               |                               |                                                               |                                     |
+| Wednesday (2/19)                         | Composition                                     | [pdf](lectures/lecture-7-composition.pdf)                     | Hands-On Differential Privacy, Ch. 3      |
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
