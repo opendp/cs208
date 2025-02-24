@@ -34,7 +34,7 @@
 | Monday (2/17) **No Class** - President's Day               |                               |                                                               |                                     |
 | Wednesday (2/19)                         | Composition                                     | [pdf](lectures/lecture-7-composition.pdf)                     | Hands-On Differential Privacy, Ch. 3      |
 | Problem Set 4 (due Fri 2/28)             |                                                 | [pdf](homeworks/ps4/ps4.pdf), [tex](homeworks/ps4/ps4.tex)    |                                           |
-| Monday (2/24)                         | Practicum on Gaussian mechanism and composition                                     | [pdf](lectures/lecture-8-gaussian-practicum.pdf)                     | [Publishing Wikimedia Usage Data](https://www.tmlt.io/resources/publishing-wikipedia-usage-data-with-strong-privacy-guarantees) Hands-On Differential Privacy, Ch. 3, Ch. 4 (pp.85-92)     |
+| Monday (2/24)                         | Practicum on Gaussian mechanism and composition                                     | [pdf](lectures/lecture-8-gaussian-practicum.pdf)  [nb1](examples/wk4-gaussians.ipynb) [nb2](examples/wk4-confidence_intervals.ipynb) [nb3](examples/wk4-sample_aggregate.ipynb)                   | [Publishing Wikimedia Usage Data](https://www.tmlt.io/resources/publishing-wikipedia-usage-data-with-strong-privacy-guarantees) Hands-On Differential Privacy, Ch. 3, Ch. 4 (pp.85-92)     |
 
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
