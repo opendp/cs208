@@ -37,7 +37,7 @@
 | Wednesday (2/19)                         | Composition                                     | [pdf](lectures/lecture-7-composition.pdf)                     | Hands-On Differential Privacy, Ch. 3      |
 | Problem Set 4 (due Fri 2/28)             |                                                 | [pdf](homeworks/ps4/ps4.pdf), [tex](homeworks/ps4/ps4.tex)    |                                           |
 | Monday (2/24)                         | Practicum on Gaussian mechanism and composition                                     | [pdf](lectures/lecture-8-gaussian-practicum.pdf)  [nb1](examples/wk4_gaussians.ipynb) [nb2](examples/wk4_confidence_intervals.ipynb) [nb3](examples/wk4_sample_aggregate.ipynb)                   | [Publishing Wikimedia Usage Data](https://www.tmlt.io/resources/publishing-wikipedia-usage-data-with-strong-privacy-guarantees) Hands-On Differential Privacy, Ch. 3, Ch. 4 (pp.85-92)     |
-
+| Wednesday (2/26)                      | Communicating Differential Privacy                 | [pdf](lectures/lecture-9-communicating-dp.pdf)                | [Reading 1](https://theconversation.com/people-want-data-privacy-but-dont-always-know-what-theyre-getting-143782), [Reading 2](https://www.wired.com/story/apple-differential-privacy-shortcomings/), Hands-On Differential Privacy, Ch. 5                                   |
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
