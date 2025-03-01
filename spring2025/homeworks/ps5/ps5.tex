@@ -7,7 +7,7 @@
 
 \title{\vspace{-1.5cm} HW 5: Approximate DP, Composition, and Contextual Integrity}
 \author{CS 208 Applied Privacy for Data Science, Spring 2025}
-\date{\textbf{Version 1.0: Due Fri, Mar. 7, 11:59pm.}}
+\date{\textbf{Version 1.1: Due Fri, Mar. 7, 11:59pm.}}
 
 
 %=================================================================
@@ -34,6 +34,7 @@ $\Pr[M(x)=y]\leq e^\eps \cdot \Pr[M(x')=y]$.  (Note that this is only a sufficie
 \end{itemize}
 
 
+\enlargethispage{2\baselineskip}
 Consider the following mechanisms:
 
 \begin{enumerate} %[label=\roman*.]
@@ -43,10 +44,10 @@ Consider the following mechanisms:
 
     
     
-    \item The mechanism $M$ that takes a dataset $x\in \cS^{*}$ where each record $x_i\in \cS$ is an ascii string (e.g. the $i$'th individual's favorite surf break) and does the following:
+    \item The mechanism $M$ that takes a dataset\footnote{You can assume that the dataset length $|x| = n$ is odd} $x\in \cS^{*}$ where each record $x_i\in \cS$ is an ascii string (e.g. the $i$'th individual's favorite surf break) and does the following:
         \begin{enumerate}
             \item Calculate the $s\in \cS$ that maximizes $n_s = |\{ i : x_i = s\}|$ (i.e. the surf break that is the favorite of the most surfers), breaking ties arbitrarily.
-            \item If $n_s+\Lap(1/\varepsilon) \geq 2n/3$ (the top break wins by a supermajority), output $s$. 
+            \item If $n_s+\Lap(6) \geq 2n/3$ (the top break wins by a supermajority), output $s$. 
             \item Otherwise, output ``I don't reveal secret spots.''
         \end{enumerate}
     
