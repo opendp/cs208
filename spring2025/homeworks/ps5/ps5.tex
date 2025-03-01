@@ -47,7 +47,7 @@ Consider the following mechanisms:
     \item The mechanism $M$ that takes a dataset\footnote{You can assume that the dataset length $|x| = n$ is odd} $x\in \cS^{*}$ where each record $x_i\in \cS$ is an ascii string (e.g. the $i$'th individual's favorite surf break) and does the following:
         \begin{enumerate}
             \item Calculate the $s\in \cS$ that maximizes $n_s = |\{ i : x_i = s\}|$ (i.e. the surf break that is the favorite of the most surfers), breaking ties arbitrarily.
-            \item If $n_s+\Lap(6) \geq 2n/3$ (the top break wins by a supermajority), output $s$. 
+            \item If $n_s+\Lap(3) \geq 2n/3$ (the top break wins by a supermajority), output $s$. 
             \item Otherwise, output ``I don't reveal secret spots.''
         \end{enumerate}
     
