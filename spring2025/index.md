@@ -2,7 +2,7 @@
 
 **Instructors**: Salil Vadhan, James Honaker, and Priyanka Nanayakkara
 
-**Teaching Fellows**: Zachary Ratliff, Christian Aagnes, Sahil Kuchlous, Jason Tang, and Yanis Vandecasteele
+**Teaching Fellows**: Zachary Ratliff, Christian Aagnes, Sahil Kuchlous, Jason Tang, Yanis Vandecasteele, and Henry Wu
 
 **Regular meeting time**: Mondays & Wednesdays 11:15-12:30, starting 1/25
 
