@@ -6,7 +6,7 @@
 
 \title{\vspace{-1.5cm} HW 6: Synthetic Data Release and Embedded Ethics}
 \author{CS 208 Applied Privacy for Data Science, Spring 2025}
-\date{\textbf{Version 1.1: Due Fri, Mar. 14, 11:59pm.}}
+\date{\textbf{Version 1.2: Due Fri, Mar. 14, 11:59pm.}}
 
 
 %=================================================================
@@ -28,7 +28,7 @@
             a parameter $\varepsilon\geq 0$, a binning parameter $k$, and
             does the following:
             (a) bins the datapoints using a $k\times k$ grid, (b) constructs a $\varepsilon$-DP histogram $h$ of of the dataset, and (c) post-processes $h$ to construct an $\varepsilon$-DP synthetic dataset $\tilde{z} = ((\tilde{x}_1,\tilde{y}_1),\ldots,(\tilde{x}_m,\tilde{y}_m))
-            \in ([-1,1]\times [-1,1])^m$.  
+            \in ([-b,b]\times [-b,b])^m$.  
             \label{part:histogram}
             \item \textbf{Perform and evaluate linear regression on the synthetic data.} 
             Given a
