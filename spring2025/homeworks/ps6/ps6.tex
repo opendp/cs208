@@ -1,0 +1,101 @@
+%=================================================================
+\documentclass[11pt]{article}
+
+\def\draft{1}
+\input{hw_style}
+
+\title{\vspace{-1.5cm} HW 6: Synthetic Data Release and Embedded Ethics}
+\author{CS 208 Applied Privacy for Data Science, Spring 2025}
+\date{\textbf{Version 1.1: Due Fri, Mar. 14, 11:59pm.}}
+
+
+%=================================================================
+
+\begin{document}
+\maketitle
+
+\instructions
+
+\begin{enumerate}[leftmargin=*] 
+
+\item \textbf{DP Synthetic Data:}
+        In this problem, you will create and analyze DP synthetic data.
+        You will compare the results of running a regression on the synthetic data with your DP regression algorithm from HW4.
+
+        \begin{enumerate}
+            \item \textbf{Write a DP synthetic data function.}
+            Write a function that takes a data bound $b$, a dataset $z=((x_1,y_1),\ldots,(x_n,y_n))\in (([-b,b]\times [-b,b])^n$
+            a parameter $\varepsilon\geq 0$, a binning parameter $k$, and
+            does the following:
+            (a) bins the datapoints using a $k\times k$ grid, (b) constructs a $\varepsilon$-DP histogram $h$ of of the dataset, and (c) post-processes $h$ to construct an $\varepsilon$-DP synthetic dataset $\tilde{z} = ((\tilde{x}_1,\tilde{y}_1),\ldots,(\tilde{x}_m,\tilde{y}_m))
+            \in ([-1,1]\times [-1,1])^m$.  
+            \label{part:histogram}
+            \item \textbf{Perform and evaluate linear regression on the synthetic data.} 
+            Given a
+            DP synthetic data generator from Part (a), we can
+            perform DP linear regression by post-processing, running
+            standard OLS regression on $\tilde{z}$ to 
+            obtain an $\varepsilon$-DP slope $\tilde{\beta}$ minimizing 
+            $\sum_i (\tilde{y}_i-\tilde{\beta}\tilde{x}_i)^2$.
+
+        Evaluate the resulting DP regression estimates exactly as in HW4                Problem 2d, using parameters $\varepsilon=.1$, $b=1$, and $k=20$, and              many Monte Carlo trials of the following:
+           For each $n=100,200,300,\ldots,5000$, 
+            generate a dataset $z$, where the 
+            $x_i$'s are uniform in $[-1/2,1/2]$ and 
+            $y_i = \left[x_i + \mathcal{N}(0,.02)\right]_{-1}^{1}.$
+            Plot the bias and standard deviation of both the OLS estimate $\hat{\beta}$ and the DP estimate $\tilde{\beta}$ obtained by
+            post-processing the DP histogram.  
+            Your plot should have $n$ on the $x$-axis, and bias and standard deviation on the $y$-axis on a scale from $-1.0$ to $1.0$.
+            Try to run enough trials to obtain smooth curves.
+
+            \item \textbf{Compare the error.} 
+            Compare the bias and standard deviation of the above DP-histogram-based regression with the results obtained on HW4. 
+            Give an intuitive explanation for the differences you find.
+        \end{enumerate}
+        
+\item \textbf{Applying Contextual Integrity:} Imagine a fictional technology company called Coachable. Coachable designs wearable fitness trackers for athletes. Coachable trackers collect data points about users’ blood flow and temperature in order to measure their resting heart rate, heart rate variability, and respiratory rate throughout the day and night. These measurements are used to calculate metrics on users’ sleep quality (including duration in bed, duration asleep, number of disturbances, length of time spent in different sleep stages, etc.), their level of physical and mental stress, their recovery rate, readiness for activity, and their overall cardiovascular health. 
+In addition, users can log the following information in the Coachable journal to learn how different factors affect their training and performance: 
+
+\begin{itemize}
+    \item Alcohol and marijuana consumption 
+    \item Supplement use and dosage 
+    \item Caffeine consumption 
+    \item Medications and sleep aids 
+    \item Screen time and bedtime routines
+    \item Air travel 
+    \item Stretching and other recovery modalities 
+    \item Nutrition and diet plans 
+    \item Menstruation and pregnancy
+    \item Sexual activities
+\end{itemize}
+
+Coachable users receive detailed reports on how the behavior logged in their journal affects their athletic training, along with personalized training plans, lifestyle tips, and audio-guided workouts.
+
+\begin{enumerate}
+    \item Using the data they collect, suppose Coachable is planning to compute various summary statistics about behaviors, traits of users, and athletic performance. They plan to use these statistics to micro-target ads to its users. For example, they may use these insights to target ads for products including, but not limited to, diet plans, supplements, workout equipment, and recreational activities. They also plan to make these statistics available to researchers, advertisers, and sports recruiters who are interested in the relationship between behaviors, traits of users, and athletic performance.
+    
+    If we take the Coachable app to be playing a similar role as a human coach, explain how these additional data practices disrupt the informational norm(s) that operate in typical athlete-coach relationships. Explicitly identify the parameters of contextual integrity in your analysis.
+
+    \item Evaluate the disruptions you identified above. What are the context-specific values and goals of an athlete-coach relationship? How do these disruptions support or undermine these goals? Then, based on your evaluation, state whether you think Coachable should do anything differently with respect to these data practices. 
+
+    \item Now imagine that Coachable plans to compute the summary statistics under differential privacy. How would your analysis and recommendations in Parts 2 and 3 change, if at all? How would deployment decisions, like how $\varepsilon$ is set, impact your response?
+
+    \end{enumerate}
+
+\item \textbf{Sharing Project Ideas:}
+Recall that your final projects will be done in groups of 3-4 students. We would like you to form groups based on finding common interests with other students in the class, not just automatically grouping with people you already know. To that end, we will use the following process.
+\begin{itemize}
+    \item By Tuesday 3/18 11:59pm: review the feedback you received on your hw4 project topic ideas, and add one or two of your ideas (possibly revised based on our feedback) to the following spreadsheet: \href{https://docs.google.com/spreadsheets/d/1gxPtxZU835YJ_yZbDQtneGnusvXHWax4sDi-fodu2wA/edit?gid=0#gid=0}{Project Spreadsheet} 
+    \item By Friday 3/21 11:59pm: add your name to the `Expression of Interest' columns for at least two other topic ideas.
+\end{itemize}
+Looking ahead: by Monday 3/24 (immediately after Spring Break), you all will organize into groups (possibly with our help) and by Friday 3/28, you will submit a set of revised topic ideas with your group.
+\end{enumerate}
+
+\subsection*{Collaborators}
+Please list all collaborators for this problem set. ChatGPT and other AI tools should be treated similarly to collaboration with your peers in the 
+class.  You may use these tools to help you understand the material and as part of your 
+brainstorming process, but you should not be asking the tools to solve the homework problems 
+for you. If you do use such tools, you must cite them and  list the 
+prompts you entered and responses obtained below.
+
+\end{document}
