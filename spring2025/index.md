@@ -42,6 +42,7 @@
 | Monday (3/3)                          | Contextual Integrity                               | [pdf](lectures/lecture-10-contextual-integrity.pdf)           | Helen Nissenbaum, "Privacy in Context" Chapter 7                                     |
 | **Implementing Centralized DP**       |                   |           |                  |
 | Wednesday (3/5)                       | Beyond Noise Addition & Synthetic Data                                                   | [pdf](lectures/lecture-11-beyondnoise-synthetic.pdf)                                                              | Hands-On Differential Privacy, Ch 4. (pg. 94-101 on exponential mechanism), [JASON report](https://www2.census.gov/programs-surveys/decennial/2020/program-management/planning-docs/2020-census-data-products-privacy-methods.pdf) (Sections 2.0-2.2, 3, and 5.0 (stopping before 5.1)).     |
+| Monday (3/10)                                  | Statistical Releases: the Opportunity Atlas    |                           | [Opportunity Atlas]; [Chetty-Friedman JPC] (Sec 3)                                         
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
@@ -66,8 +67,11 @@
 [Federated Learning and Privacy]: https://cacm.acm.org/magazines/2022/4/259417-federated-learning-and-privacy/fulltext
 [Privacy-Preserving RCT]: https://dl.acm.org/doi/10.1145/3474123.3486764
 [Nissim-Wood]: https://privacytools.seas.harvard.edu/files/privacytools/files/nissim_wood_-_is_privacy_privacy_.pdf
+[Chetty-Friedman JPC]: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/716/688
+[Opportunity Atlas]: https://opportunityinsights.org/wp-content/uploads/2018/10/atlas_summary.pdf
 [Cohen]: https://cdn.harvardlawreview.org/wp-content/uploads/pdfs/vol126_cohen.pdf
 [Solove]: https://deliverypdf.ssrn.com/delivery.php?ID=785068073073025084118014104076101007098032068060033065078102095014099121031107087031057121038126047045032106114097020094095108035045012081119009013007028118119077041022082071125065>[Sarathy]: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079222
 [Winner]: https://faculty.cc.gatech.edu/~beki/cs4001/Winner.pdf
 [Green-Viljoen]: https://www.benzevgreen.com/20-fat-realism/
 [Mulligan-Koopman-Doty]: https://www.law.berkeley.edu/wp-content/uploads/2017/07/Privacy-is-an-essentially.pdf
+
