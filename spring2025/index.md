@@ -42,7 +42,9 @@
 | Monday (3/3)                          | Contextual Integrity                               | [pdf](lectures/lecture-10-contextual-integrity.pdf)           | Helen Nissenbaum, "Privacy in Context" Chapter 7                                     |
 | **Implementing Centralized DP**       |                   |           |                  |
 | Wednesday (3/5)                       | Beyond Noise Addition & Synthetic Data                                                   | [pdf](lectures/lecture-11-beyondnoise-synthetic.pdf)                                                              | Hands-On Differential Privacy, Ch 4. (pg. 94-101 on exponential mechanism), [JASON report](https://www2.census.gov/programs-surveys/decennial/2020/program-management/planning-docs/2020-census-data-products-privacy-methods.pdf) (Sections 2.0-2.2, 3, and 5.0 (stopping before 5.1)).     |
+| Problem Set 6 (due Fri 3/14)          |                                                  | [pdf](homeworks/ps5/ps5.pdf), [tex](homeworks/ps6/ps6.tex) |                         |
 | Monday (3/10)                                  | Statistical Releases: the Opportunity Atlas    |   [pdf](lectures/lecture-12-exponential-and-statistical-releases.pdf)  [nb1](examples/wk5_exponential.ipynb) [nb2](examples/wk5_confidence_intervals.ipynb) [nb3](examples/wk5_sample_aggregate.ipynb)                     | [Opportunity Atlas]; [Chetty-Friedman JPC] (Sec 3)                                         
+| Wednesday (3/12)                      | Attacks on Utility                                     | [pdf](lectures/lecture-13-attacks-on-utility.pdf)                            |                                        |
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
