@@ -48,7 +48,7 @@
 | Problem Set 7 (due Fri 3/28)          |                                                        | [pdf](homeworks/ps7/ps7.pdf), [tex](homeworks/ps7/ps7.tex)          |             |
 | Monday (3/17) **No Class** - Spring Break  |                 |                 |                |
 | Wednesday (3/19) **No Class** - Spring Break |                |                 |                |
-| Monday (3/24)                         | Machine Learning with DP                |  [disc.question](lectures/lecture-14-discussion.pdf)               |                               |
+| Monday (3/24)                         | Machine Learning with DP                |  [disc.question](lectures/lecture-14-discussion.pdf) [nb1 dpsgd](examples/wk6_dpsgd_incomplete.ipynb) [nb2 opacus](examples/wk6_opacus_example.ipynb)             |                               |
 | Wednesday (3/26)                      | Machine Learning with DP                |               | Hands-On Differential Privacy, Ch. 9 (skipping section on PATE)                                |
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
