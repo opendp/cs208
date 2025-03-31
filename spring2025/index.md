@@ -50,6 +50,8 @@
 | Wednesday (3/19) **No Class** - Spring Break |                |                 |                |
 | Monday (3/24)                         | Machine Learning with DP                |  [pdf](lectures/lecture-14-dpsgd.pdf) [nb1 COMPLETED VERSION dpsgd](examples/wk7_completed_dpsgd.ipynb) [nb2 opacus](examples/wk6_opacus_example.ipynb)             |                               |
 | Wednesday (3/26)                      | Machine Learning with DP                |  [pdf](lectures/lecture-15-dp-ml-theory.pdf)             | Hands-On Differential Privacy, Ch. 9 (skipping section on PATE)                                |
+| Monday (3/31)                      | Programming Frameworks for DP                |  [pdf](lectures/lecture-16-frameworks.pdf)             |                                 |
+
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
