@@ -50,6 +50,7 @@
 | Wednesday (3/19) **No Class** - Spring Break |                |                 |                |
 | Monday (3/24)                         | Machine Learning with DP                |  [pdf](lectures/lecture-14-dpsgd.pdf) [nb1 COMPLETED VERSION dpsgd](examples/wk7_completed_dpsgd.ipynb) [nb2 opacus](examples/wk6_opacus_example.ipynb)             |                               |
 | Wednesday (3/26)                      | Machine Learning with DP                |  [pdf](lectures/lecture-15-dp-ml-theory.pdf)             | Hands-On Differential Privacy, Ch. 9 (skipping section on PATE)                                |
+| Problem Set 8a (due Fri 4/4) | | [pdf](homeworks/ps8a/ps8a.pdf), [tex](homeworks/ps8a/ps8a.tex) | |
 | Monday (3/31)                      | Programming Frameworks for DP                |  [pdf](lectures/lecture-16-frameworks.pdf)             |                                 |
 
 
