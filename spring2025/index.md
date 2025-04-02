@@ -51,8 +51,8 @@
 | Monday (3/24)                         | Machine Learning with DP                |  [pdf](lectures/lecture-14-dpsgd.pdf) [nb1 COMPLETED VERSION dpsgd](examples/wk7_completed_dpsgd.ipynb) [nb2 opacus](examples/wk6_opacus_example.ipynb)             |                               |
 | Wednesday (3/26)                      | Machine Learning with DP                |  [pdf](lectures/lecture-15-dp-ml-theory.pdf)             | Hands-On Differential Privacy, Ch. 9 (skipping section on PATE)                                |
 | Problem Set 8a (due Fri 4/4) | | [pdf](homeworks/ps8a/ps8a.pdf), [tex](homeworks/ps8a/ps8a.tex) | |
-| Monday (3/31)                      | Programming Frameworks for DP                |  [pdf](lectures/lecture-16-frameworks.pdf)             |                                 |
-
+| Monday (3/31)                      | Programming Frameworks for DP                |  [pdf](lectures/lecture-16-frameworks.pdf)             | [Programming Frameworks for DP](https://arxiv.org/pdf/2403.11088)                                |
+| April (4/2)                        | Interfaces for DP                            |                                                        | [Visualizing the accuracy-privacy trade-off, Nanayakkara](https://medium.com/multiple-views-visualization-research-explained/visualizing-the-accuracy-privacy-trade-off-to-improve-budget-decisions-with-differential-privacy-66fc3efb34a)                 |
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
