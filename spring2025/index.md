@@ -54,7 +54,7 @@
 | Monday (3/31)                      | Programming Frameworks for DP                |  [pdf](lectures/lecture-16-frameworks.pdf)             | [Programming Frameworks for DP](https://arxiv.org/pdf/2403.11088)                                |
 | Wednesday (4/2)                        | Interfaces for DP                            | [pdf](lectures/lecture-17-interfaces-for-dp.pdf)                                                       | [Visualizing the accuracy-privacy trade-off, Nanayakkara](https://medium.com/multiple-views-visualization-research-explained/visualizing-the-accuracy-privacy-trade-off-to-improve-budget-decisions-with-differential-privacy-66fc3efb34a)                 |
 | Monday (4/7)                       | Local DP Foundations                             | [pdf](lectures/lecture-18-local-dp-foundations.pdf)                                                    |                                 | 
-| Wednesday (4/9)                    |                                                    |                                                        | [Near & He, Chapter 9](https://programming-dp.com/book.pdf)                             |
+| Wednesday (4/9)                    | Distributed Models                                                   | [pdf](lectures/lecture-19-distributed-models.pdf)                                                       | [Near & He, Chapter 9](https://programming-dp.com/book.pdf)                             |
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
