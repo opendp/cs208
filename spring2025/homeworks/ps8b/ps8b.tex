@@ -53,7 +53,7 @@ Given $x=(x_1,\ldots,x_n)$ and a parameter $\alpha\in [0,1]$ (e.g. $\alpha=.05$)
 $$\Pr_{x_1,\ldots,x_n\sim \Ber(p)}[p\in I_\alpha(x)] \geq 1-\alpha,$$
 and {\em small width}: namely that $|I_\alpha(x)|=u-\ell$ is as ``small as possible'' subject to the coverage constraint.
 
-The {\em Wald Interval}, uses the normal approximation and sets $$I_\alpha(x) = \left[\hat{p}-z_\alpha\sqrt{n\hat{p}(1-\hat{p})},\hat{p}-z_\alpha\sqrt{n\hat{p}(1-\hat{p})}\right],$$
+The {\em Wald Interval}, uses the normal approximation and sets $$I_\alpha(x) = \left[\hat{p}-z_\alpha\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},\hat{p}+z_\alpha\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\right],$$
 where $z_\alpha = \Phi^{-1}(1-\alpha/2)$.
 Unfortunately, because the normal approximation is inexact, the Wald Interval does not always satisfy coverage, particularly at small values of $p$; this is why there are other confidence interval methods. 
 
