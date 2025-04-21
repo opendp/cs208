@@ -89,7 +89,8 @@
 [Chetty-Friedman JPC]: https://journalprivacyconfidentiality.org/index.php/jpc/article/view/716/688
 [Opportunity Atlas]: https://opportunityinsights.org/wp-content/uploads/2018/10/atlas_summary.pdf
 [Cohen]: https://cdn.harvardlawreview.org/wp-content/uploads/pdfs/vol126_cohen.pdf
-[Solove]: https://deliverypdf.ssrn.com/delivery.php?ID=785068073073025084118014104076101007098032068060033065078102095014099121031107087031057121038126047045032106114097020094095108035045012081119009013007028118119077041022082071125065>[Sarathy]: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079222
+[Solove]: https://scholarship.law.upenn.edu/penn_law_review/vol154/iss3/1/
+[Sarathy]: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4079222
 [Winner]: https://faculty.cc.gatech.edu/~beki/cs4001/Winner.pdf
 [Green-Viljoen]: https://www.benzevgreen.com/20-fat-realism/
 [Mulligan-Koopman-Doty]: https://www.law.berkeley.edu/wp-content/uploads/2017/07/Privacy-is-an-essentially.pdf
