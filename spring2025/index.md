@@ -59,6 +59,9 @@
 | Problem Set 8b (due Fri 4/18)                    | | [pdf](homeworks/ps8b/ps8b.pdf), [tex](homeworks/ps8b/ps8b.tex)| |
 | Monday (4/14)                    | Local Models | [pdf](lectures/lecture-20-local-practicum.pdf), [nb](examples/wk10_local_model.ipynb)             |  |
 | Wednesday (4/16) | DP in Ad Conversion Measurement | [pdf](lectures/lecture-21-private-rcts.pdf) | [Movahedi et al Meta Implementation see sections 1-3](https://arxiv.org/pdf/2101.04766), [Ghazi et al Google Tutorial, see timestamps 1:15:00 to 1:35:00](https://dl.acm.org/doi/10.1145/3589335.3641252) |
+| **Societal Perspectives on Privacy**               |              |               |              |                 |
+| Monday (4/21)    | Privacy Law and DP              | [pdf](lectures/lecture-22-law.pdf)          | [Solove] (pp 479-83, 488-91), [Nissim-Wood] (2.a, 2.c)      |
+| Wednesday (4/23) |                                 |                                             |                              |
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
