@@ -61,7 +61,7 @@
 | Wednesday (4/16) | DP in Ad Conversion Measurement | [pdf](lectures/lecture-21-private-rcts.pdf) | [Movahedi et al Meta Implementation see sections 1-3](https://arxiv.org/pdf/2101.04766), [Ghazi et al Google Tutorial, see timestamps 1:15:00 to 1:35:00](https://dl.acm.org/doi/10.1145/3589335.3641252) |
 | **Societal Perspectives on Privacy**               |              |               |              |                 |
 | Monday (4/21)    | Privacy Law and DP              | [pdf](lectures/lecture-22-law.pdf)          | [Solove] (pp 479-83, 488-91), [Nissim-Wood] (2.a, 2.c)      |
-| Wednesday (4/23) |                                 |                                             |                              |
+| Wednesday (4/23) | Science and Technology Studies for DP | [pdf](lectures/lecture-23-sts.pdf)    | [Mulligan-Koopman-Doty] (pgs. 1-5, 9-10), [Winner], (pgs. 121-124, 130-131), [Abdu-Chambers-Mulligan-Jacobs](https://facctconference.org/static/papers24/facct24-77.pdf) |
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
