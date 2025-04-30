@@ -63,7 +63,7 @@
 | Monday (4/21)    | Privacy Law and DP              | [pdf](lectures/lecture-22-law.pdf)          | [Solove] (pp 479-83, 488-91), [Nissim-Wood] (2.a, 2.c)      |
 | Wednesday (4/23) | Science and Technology Studies for DP | [pdf](lectures/lecture-23-sts.pdf)    | [Mulligan-Koopman-Doty] (pgs. 1-5, 9-10), [Winner], (pgs. 121-124, 130-131), [Abdu-Chambers-Mulligan-Jacobs](https://facctconference.org/static/papers24/facct24-77.pdf) |
 | Monday (4/28)    | Industry Panel on Differential Privacy |                                      |                                                                  |
-| Wednesday (4/30) | Conclusion                            |                                       |                              |
+| Wednesday (4/30) | Conclusion                            | [pdf](lectures/lecture-24-conclusion.pdf)                                      |                              |
 
 [Tanner]: https://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#4b8a122d92c9
 [Barbaro-Zeller]: https://www.nytimes.com/2006/08/09/technology/09aol.html
