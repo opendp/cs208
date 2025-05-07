@@ -63,6 +63,7 @@
 | Monday (4/21)    | Privacy Law and DP              | [pdf](lectures/lecture-22-law.pdf)          | [Solove] (pp 479-83, 488-91), [Nissim-Wood] (2.a, 2.c)      |
 | Wednesday (4/23) | Science and Technology Studies for DP | [pdf](lectures/lecture-23-sts.pdf)    | [Mulligan-Koopman-Doty] (pgs. 1-5, 9-10), [Winner], (pgs. 121-124, 130-131), [Abdu-Chambers-Mulligan-Jacobs](https://facctconference.org/static/papers24/facct24-77.pdf) |
 | Monday (4/28)    | Industry and Government Panel on Differential Privacy |                                      |                                                                  |
+| **Wrap-Up**      |               |                  |                  |
 | Wednesday (4/30) | Conclusion                            | [pdf](lectures/lecture-24-conclusions.pdf)                                      |                              |
 | Thursday (5/8)   | Poster Session (Located in the West Atrium of SEC) |                              |                |
 
