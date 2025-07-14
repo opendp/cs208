@@ -9,7 +9,7 @@
   - [Paper](projects/zk-dp.pdf), [Poster](projects/zk-dp-poster.pdf)
 * **Evaluating Differentially Private Stochastic Gradient Descent Optimizers for Training Transformer Language Models**  
   - [Paper](projects/dp-sgd-transformers.pdf), [Poster](projects/dp-sgd-transformers-poster.pdf), [Github](https://github.com/ericgong2005/Differentially_Private_SGD)
-* **Differential Privacy in Retrieval-Augmented Generation (RAG) Systems]**  
+* **Differential Privacy in Retrieval-Augmented Generation (RAG) Systems**  
   - [Paper](projects/dp-rag.pdf)
 * **DP Clustering**  
   - [Github](https://github.com/connorbuchheit/DPClustering)
