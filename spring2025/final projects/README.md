@@ -14,7 +14,9 @@
 * **DP Clustering**  
   - [Github](https://github.com/connorbuchheit/DPClustering)
 * **Federated Learning with Differential Privacy Simulator**  
-  - [Github](https://github.com/GuessHuIAm/Federated-DP-Interface.git)
+  - [Github](https://github.com/GuessHuIAm/Federated-DP-Interface.git)  
+* **DP-AdamW: Investigating Decoupled Weight Decay and Bias Correction in Private Deep Learning**
+  - [Paper](https://icml.cc/virtual/2025/47975) (*Accepted to the ICML Workshop!) 
 
 ### Final Project Guidelines and Pointers
 - [Final Project Guidelines](Final%20Project%20Guidelines%202025.pdf)
